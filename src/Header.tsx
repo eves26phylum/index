@@ -1,7 +1,7 @@
 import { NavLink, type NavLinkProps } from "react-router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye as faFilledEye, faBook as faFilledBook, type IconDefinition } from '@fortawesome/free-solid-svg-icons';
-import { faEye } from '@fortawesome/free-regular-svg-icons';
+import { faEye as faFilledEye, faClipboard as faFilledClipboard, type IconDefinition, faFloppyDisk as faFilledFloppyDisk } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faClipboard, faFloppyDisk } from '@fortawesome/free-regular-svg-icons';
 export interface HeaderLinkProps extends NavLinkProps {
     
 }
@@ -15,10 +15,10 @@ export function MenuBar() {
     return <><header>
         <div className="header">
             <nav>
-                <HeaderLink to="/">About Me</HeaderLink>
+                <HeaderLink to="/">{IconAndTextCombo({filledIcon: faFilledClipboard, nonFilledIcon: faClipboard, children: "About Me"})}</HeaderLink>
                 <HeaderLink to="/blog">{IconAndTextCombo({filledIcon: faFilledEye, nonFilledIcon: faEye, children: "Projects"})}</HeaderLink>
-                <HeaderLink to="/dog_feeding_simulator">DogFeedingSimulator</HeaderLink>
-                <HeaderLink to="/contact">Contact</HeaderLink>
+                <HeaderLink to="/dog_feeding_simulator">{IconAndTextCombo({filledIcon: faFilledEye, nonFilledIcon: faEye, children: "DogFeedingSimulator"})}</HeaderLink>
+                <HeaderLink to="/contact">{IconAndTextCombo({filledIcon: faFilledFloppyDisk, nonFilledIcon: faFloppyDisk, children: "Contact"})}</HeaderLink>
             </nav>
         </div>
     </header>
