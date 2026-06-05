@@ -5,7 +5,7 @@ import { faEye } from '@fortawesome/free-regular-svg-icons';
 export interface HeaderLinkProps extends NavLinkProps {
     
 }
-export function IconAndTextCombo({filledIcon, nonFilledIcon, children}: {filledIcon: IconDefinition, nonFilledIcon: IconDefinition, children: React.ReactNode}) {
+export function IconAndTextCombo({filledIcon, nonFilledIcon, children}: {filledIcon: IconDefinition, nonFilledIcon: IconDefinition, children?: React.ReactNode}) {
     return ({isActive}: {isActive: boolean}) => {return <><FontAwesomeIcon icon={ isActive ? filledIcon : nonFilledIcon }/><p>{children}</p></>};
 }
 export function HeaderLink({children, ...props}: HeaderLinkProps) {
@@ -16,7 +16,7 @@ export function MenuBar() {
         <div className="header">
             <nav>
                 <HeaderLink to="/">About Me</HeaderLink>
-                <HeaderLink to="/blog">{({isActive}) => {return <><FontAwesomeIcon icon={ isActive ? faFilledEye : faEye }/><p>Projects</p></>}}</HeaderLink>
+                <HeaderLink to="/blog">{IconAndTextCombo({filledIcon: faFilledEye, nonFilledIcon: faEye, children: "Projects"})}</HeaderLink>
                 <HeaderLink to="/dog_feeding_simulator">DogFeedingSimulator</HeaderLink>
                 <HeaderLink to="/contact">Contact</HeaderLink>
             </nav>
