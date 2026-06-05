@@ -1,4 +1,3 @@
-import React from "react";
 import { NavLink, type NavLinkProps } from "react-router"
 export interface HeaderLinkProps extends NavLinkProps {
     
