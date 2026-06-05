@@ -1,23 +1,22 @@
 import { BrowserRouter, Routes, Route, NavLink } from 'react-router';
 import './App.css';
+import { MenuBar } from './Header';
+import { NotFound } from './NotFound';
 
 export function App() {
   return <>
-    <header>
-      <div className="header">
-        <p>greatfuton</p>
-      </div>
-    </header>
-    <nav>
+    <BrowserRouter>
+      <MenuBar/>
+      <nav>
 
-    </nav>
-    <main>
-      <BrowserRouter>
-        <Routes>
-          <Route path=""/>
-          <Route path=""/>
-        </Routes>
-      </BrowserRouter>
-    </main>
+      </nav>
+      <main>
+          <Routes>
+            <Route path=""/>
+            <Route path=""/>
+            <Route path="*" element={<NotFound/>}/>
+          </Routes>
+      </main>
+    </BrowserRouter>
   </>;
 }

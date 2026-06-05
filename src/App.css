@@ -1,3 +1,7 @@
+:root {
+    --accent-colour: rgb(255, 0, 0);
+}
+
 @font-face {
   font-family: 'PublicSans';
   src: url('./assets/fonts/PublicSans-VariableFont_wght.ttf') format('truetype');
@@ -14,12 +18,28 @@ p {
   padding: 0;
   box-sizing: border-box;
 }
-header {
+header:has(.header) {
     background-color: rgb(65, 65, 65);
     display: flex;
     padding: 0.5rem 1rem;
     font-family: 'PublicSans';
     color: white;
+}
+.mainContent {
+    padding: 0.5rem 1rem;
+}
+main {
+    font-family: 'PublicSans';
+}
+.header nav {
+    gap: 1rem;
+    display: flex;
+}
+.nav-link {
+    color: white;
+}
+.nav-active {
+    color: var(--accent-colour);
 }
 body {
     margin: 0;
