@@ -23,14 +23,26 @@ header:has(.header) {
     display: flex;
     padding: 0.5rem 1rem;
     font-family: 'PublicSans';
+    position: sticky;
+    top: 0;
     color: white;
 }
 .mainContent {
     padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    gap: 1rem;
+}
+.notFound {
+    justify-content: center;
 }
 main {
     font-family: 'PublicSans';
-}
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+} /* i love flex */
 .header nav {
     gap: 1rem;
     display: flex;
@@ -41,10 +53,15 @@ main {
 .nav-active {
     color: var(--accent-colour);
 }
+#root {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
 body {
     margin: 0;
     padding: 0;
-}
-main {
     min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
 }
