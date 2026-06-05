@@ -109,6 +109,7 @@ main {
     /* width: max-content; */
     /* display: inline-flex; */
     display: flex;
+    flex-grow: 1;
 }
 .header .title {
     align-items: center;
@@ -117,8 +118,10 @@ main {
 }
 .nav-link {
     color: white;
+    flex-grow: 1;
     display: flex;
     align-items: center;
+    justify-content: center;
     gap: 0.25rem;
     padding: 1rem;
     text-decoration: none;
