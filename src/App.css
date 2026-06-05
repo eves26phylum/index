@@ -117,6 +117,8 @@ main {
 }
 .nav-link {
     color: white;
+    display: flex;
+    align-items: center;
     padding: 1rem;
     text-decoration: none;
 }

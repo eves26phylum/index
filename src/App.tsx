@@ -10,9 +10,8 @@ export function App() {
       <main>
         <AllRoutes/>
       </main>
-      <footer>
-        <p>Hiiiiii</p>
-      </footer>
+      {/* <footer>
+      </footer> */}
     </BrowserRouter>
   </>;
 }
