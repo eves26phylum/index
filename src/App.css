@@ -1,5 +1,6 @@
 :root {
     --accent-colour: rgb(255, 0, 0);
+    --border: rgb(182, 182, 182);
 }
 
 @font-face {
@@ -21,18 +22,21 @@ p {
 header:has(.header) {
     background-color: rgb(65, 65, 65);
     display: flex;
-    padding: 0.5rem 1rem;
+    padding: 0;
     font-family: 'PublicSans';
     position: sticky;
     top: 0;
     color: white;
 }
 .mainContent {
-    padding: 0.5rem 1rem;
     display: flex;
+    align-items: flex-start;
     flex-direction: column;
     flex-grow: 1;
     flex-wrap: wrap;
+}
+.mainGaps {
+    padding: 0.5rem 1rem;
     gap: 1rem;
 }
 .notFound {
@@ -40,7 +44,11 @@ header:has(.header) {
     flex-direction: row;
     align-items: center;
     flex-grow: 0;
-    /* justify-content: center; */
+    justify-content: center;
+}
+footer {
+    background-color: rgb(228, 228, 228);
+    padding: 1rem;
 }
 .standing {
     display: flex;
@@ -61,16 +69,61 @@ main {
     flex-direction: column;
     flex-grow: 1;
 } /* i love flex */
-.header nav {
-    gap: 1rem;
+.header {
+    align-items: stretch;
+    display: inline-flex;
+    justify-content: space-between;
+    flex-direction: row;
+    width: 100%;
+}
+.presentation {
+    /* justify-content: center; */
+    align-items: center;
     display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.default {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 1rem;
+    gap: 1rem;
+}
+.blog {
+    border-left: 1px var(--border) solid;
+    border-right: 1px var(--border) solid;
+    /* height: 100%; */
+    flex: 1;
+}
+.header nav {
+    /* gap: 1rem; */
+    /* width: max-content; */
+    /* display: inline-flex; */
+    display: flex;
+}
+.header .title {
+    align-items: center;
+    display: flex;
+    padding-left: 1rem
 }
 .nav-link {
     color: white;
+    padding: 1rem;
     text-decoration: none;
 }
-.nav-active {
+.nav-link:nth-child(odd) {
+    background-color: rgba(255, 255, 255, 0.048);
+}
+.nav-link:hover {
+    background-color: rgb(181, 0, 0);
+}
+.nav-link.nav-active {
     color: var(--accent-colour);
+    background-color: rgb(255, 255, 255);
+}
+.nav-link.nav-active:hover {
+    background-color: rgb(255, 255, 255);
 }
 #root {
     display: flex;

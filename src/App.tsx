@@ -7,12 +7,12 @@ export function App() {
   return <>
     <BrowserRouter>
       <MenuBar/>
-      <nav>
-
-      </nav>
       <main>
         <AllRoutes/>
       </main>
+      <footer>
+        <p>Hiiiiii</p>
+      </footer>
     </BrowserRouter>
   </>;
 }

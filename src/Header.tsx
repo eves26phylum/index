@@ -12,6 +12,7 @@ export function MenuBar() {
                 <HeaderLink to="/">About Me</HeaderLink>
                 <HeaderLink to="/blog">Projects</HeaderLink>
                 <HeaderLink to="/dog_feeding_simulator">DogFeedingSimulator</HeaderLink>
+                <HeaderLink to="/contact">Contact</HeaderLink>
             </nav>
         </div>
     </header>
