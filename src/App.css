@@ -1,5 +1,6 @@
 :root {
     --accent-colour: rgb(255, 0, 0);
+    --darkened-accent: rgb(181, 0, 0);
     --border: rgb(182, 182, 182);
 }
 
@@ -92,9 +93,16 @@ main {
 }
 .blog {
     border-left: 1px var(--border) solid;
+    width: 900px;
+    max-width: 100%;
     border-right: 1px var(--border) solid;
     /* height: 100%; */
     flex: 1;
+}
+@media screen and (max-width: 900px) {
+    .blog {
+        border: none;
+    }
 }
 .header nav {
     /* gap: 1rem; */
@@ -116,7 +124,7 @@ main {
     background-color: rgba(255, 255, 255, 0.048);
 }
 .nav-link:hover {
-    background-color: rgb(181, 0, 0);
+    background-color: var(--darkened-accent);
 }
 .nav-link.nav-active {
     color: var(--accent-colour);
