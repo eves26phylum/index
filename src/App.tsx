@@ -5,16 +5,19 @@ export function App() {
   return <>
     <header>
       <div className="header">
-        <p>YOURNAMEGOESHERE</p>
+        <p>greatfuton</p>
       </div>
     </header>
     <nav>
 
     </nav>
-    <BrowserRouter>
-      <Routes>
-
-      </Routes>
-    </BrowserRouter>
+    <main>
+      <BrowserRouter>
+        <Routes>
+          <Route path=""/>
+          <Route path=""/>
+        </Routes>
+      </BrowserRouter>
+    </main>
   </>;
 }

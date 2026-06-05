@@ -1,9 +1,30 @@
+@font-face {
+  font-family: 'PublicSans';
+  src: url('./assets/fonts/PublicSans-VariableFont_wght.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+p {
+  margin: 0;
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 header {
-    background-color: rgb(105, 105, 105);
+    background-color: rgb(65, 65, 65);
     display: flex;
     padding: 0.5rem 1rem;
+    font-family: 'PublicSans';
+    color: white;
 }
 body {
     margin: 0;
     padding: 0;
+}
+main {
+    min-height: 100dvh;
 }
