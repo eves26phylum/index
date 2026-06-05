@@ -1,7 +1,7 @@
-import { BrowserRouter, Routes, Route, NavLink } from 'react-router';
+import { BrowserRouter } from 'react-router';
 import './App.css';
 import { MenuBar } from './Header';
-import { NotFound } from './NotFound';
+import { AllRoutes } from './Routes';
 
 export function App() {
   return <>
@@ -11,11 +11,7 @@ export function App() {
 
       </nav>
       <main>
-          <Routes>
-            <Route path=""/>
-            <Route path=""/>
-            <Route path="*" element={<NotFound/>}/>
-          </Routes>
+        <AllRoutes/>
       </main>
     </BrowserRouter>
   </>;

@@ -32,11 +32,28 @@ header:has(.header) {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+    flex-wrap: wrap;
     gap: 1rem;
 }
 .notFound {
-    margin-top: 134px;
+    /* margin-top: 134px; */
+    flex-direction: row;
+    align-items: center;
+    flex-grow: 0;
     /* justify-content: center; */
+}
+.standing {
+    display: flex;
+    flex-direction: column;
+    min-width: 400px;
+    gap: 1rem;
+}
+.F404Image {
+    width: 400px;
+    height: auto;
+}
+.behaveImage {
+    max-width: 100%;
 }
 main {
     font-family: 'PublicSans';
@@ -50,6 +67,7 @@ main {
 }
 .nav-link {
     color: white;
+    text-decoration: none;
 }
 .nav-active {
     color: var(--accent-colour);
