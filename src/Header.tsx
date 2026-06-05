@@ -17,7 +17,7 @@ export function MenuBar() {
             <nav>
                 <HeaderLink to="/">{IconAndTextCombo({filledIcon: faFilledClipboard, nonFilledIcon: faClipboard, children: "About Me"})}</HeaderLink>
                 <HeaderLink to="/blog">{IconAndTextCombo({filledIcon: faFilledEye, nonFilledIcon: faEye, children: "Projects"})}</HeaderLink>
-                <HeaderLink to="/dog_feeding_simulator">{IconAndTextCombo({filledIcon: faFilledEye, nonFilledIcon: faEye, children: "DogFeedingSimulator"})}</HeaderLink>
+                <HeaderLink to="/dog_feeding_simulator">:3 DogFeedingSimulator</HeaderLink>
                 <HeaderLink to="/contact">{IconAndTextCombo({filledIcon: faFilledFloppyDisk, nonFilledIcon: faFloppyDisk, children: "Contact"})}</HeaderLink>
             </nav>
         </div>
