@@ -120,6 +120,9 @@ main {
     padding: 1rem;
     text-decoration: none;
 }
+footer {
+    font-family: 'PublicSans';
+}
 .nav-link:nth-child(odd) {
     background-color: rgba(255, 255, 255, 0.048);
 }
