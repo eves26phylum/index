@@ -35,7 +35,8 @@ header:has(.header) {
     gap: 1rem;
 }
 .notFound {
-    justify-content: center;
+    margin-top: 134px;
+    /* justify-content: center; */
 }
 main {
     font-family: 'PublicSans';
