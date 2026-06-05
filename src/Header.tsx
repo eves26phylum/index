@@ -1,0 +1,20 @@
+import React from "react";
+import { NavLink, type NavLinkProps } from "react-router"
+export interface HeaderLinkProps extends NavLinkProps {
+    
+}
+export function HeaderLink({children, ...props}: HeaderLinkProps) {
+    return <NavLink className={({isActive}) => {return isActive ? "nav-active" : "nav-link"}} {...props}>{children}</NavLink>;
+}
+export function MenuBar() {
+    return <><header>
+        <div className="header">
+            <nav>
+                <HeaderLink to="/">Home</HeaderLink>
+                <HeaderLink to="/blog">Blog</HeaderLink>
+                <HeaderLink to="/dog_feeding_simulator">DogFeedingSimulator</HeaderLink>
+            </nav>
+        </div>
+    </header>
+    </>
+}
