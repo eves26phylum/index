@@ -1,6 +1,7 @@
 :root {
     --accent-colour: rgb(255, 0, 0);
     --darkened-accent: rgb(181, 0, 0);
+    --darkened-accent-darker: rgb(132, 0, 0);
     --border: rgb(182, 182, 182);
 }
 
@@ -108,8 +109,9 @@ main {
     /* gap: 1rem; */
     /* width: max-content; */
     /* display: inline-flex; */
+    flex-wrap: wrap;
     display: flex;
-    flex-grow: 1;
+    /* flex-grow: 1; */
 }
 .header .title {
     align-items: center;
@@ -118,10 +120,11 @@ main {
 }
 .nav-link {
     color: white;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     display: flex;
+    /* min-width: 200px; */
     align-items: center;
-    justify-content: center;
+    /* justify-content: center; */
     gap: 0.25rem;
     padding: 1rem;
     text-decoration: none;
@@ -132,15 +135,20 @@ footer {
 .nav-link:nth-child(odd) {
     background-color: rgba(255, 255, 255, 0.048);
 }
-.nav-link:hover {
-    background-color: var(--darkened-accent);
+.nav-link:not(.nav-active):hover {
+    /* background-color: var(--darkened-accent); */
+    background: linear-gradient(to bottom, var(--darkened-accent-darker) 0%, var(--darkened-accent) 20%, var(--darkened-accent) 100%);
 }
 .nav-link.nav-active {
-    color: var(--accent-colour);
-    background-color: rgb(255, 255, 255);
+    /* color: var(--accent-colour); */
+    box-sizing: border-box;
+    border-top: 5px var(--accent-colour) solid;
+    padding-top: calc(1rem - 5px);
+    /* background-color: rgb(255, 255, 255); */
+    cursor: default;
 }
 .nav-link.nav-active:hover {
-    background-color: rgb(255, 255, 255);
+    /* background-color: rgb(255, 255, 255); */
 }
 #root {
     display: flex;
