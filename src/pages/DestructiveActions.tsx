@@ -4,7 +4,7 @@ import diskSpaceLeft from "../assets/images/diskSpaceLeft.png";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { ModalContext } from "../App";
-import type { DraggableModalType, ModalButtonsType, ModalDefaultButtonType, ModalHeaderType } from "../types/ModalTypes";
+import type { DraggableModalType, ModalBodyType, ModalButtonsType, ModalDefaultButtonType, ModalHeaderType } from "../types/ModalTypes";
 
 function getUnixTimestampOfTime(targetYear: number, targetMonth: number, targetDay: number): number {
     const formattedMonth = String(targetMonth).padStart(2, '0'); // left-pad hahaha
@@ -37,7 +37,7 @@ export function LearningProgressBar({progress, children}: {progress: number, chi
         </div>
     </div>
 }
-export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, ModalDefaultButton}: {DraggableModal: React.ComponentType<DraggableModalType>, ModalHeader: React.ComponentType<ModalHeaderType>, ModalButtons: React.ComponentType<ModalButtonsType>, ModalDefaultButton: React.ComponentType<ModalDefaultButtonType>}) {
+export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, ModalDefaultButton, ModalBody}: {DraggableModal: React.ComponentType<DraggableModalType>, ModalHeader: React.ComponentType<ModalHeaderType>, ModalButtons: React.ComponentType<ModalButtonsType>, ModalDefaultButton: React.ComponentType<ModalDefaultButtonType>, ModalBody: React.ComponentType<ModalBodyType>}) {
     const modals = useContext(ModalContext);
     const calculateSimulatedTime = () => {
         // return getUltraDeadline();
@@ -70,7 +70,9 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
                         <ModalHeader>
                             {uuid}
                         </ModalHeader>
-                        <p>Something went wrong</p>
+                        <ModalBody>
+                            <p>Something went wrong</p>
+                        </ModalBody>
                         <ModalButtons>
                             <ModalDefaultButton onClick={() => {
                                 modals.destroyModalByUUID(uuid);

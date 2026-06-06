@@ -201,7 +201,6 @@ footer {
     font-family: 'PublicSans';
     flex-direction: column;
     user-select: none;
-    z-index: 9999;
     -webkit-user-select: none;
     background-color: rgb(232, 232, 232);
 }
