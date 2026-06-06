@@ -90,7 +90,52 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
                         </ModalButtons>
                     </DraggableModal>, uuid);
                     }}>Shut Down OS</button>
-                    <button className="os-option" onClick={() => {}}>Restart OS</button>
+                    <button className="os-option" onClick={() => {
+                        const uuid = crypto.randomUUID();
+                        modals.addModal(<DraggableModal defaultPosition={{
+                            x: window.innerWidth / 2,
+                            y: window.innerHeight / 2
+                        }}>
+                        <ModalHeader>
+                            Are you sure you want to make everything red?
+                        </ModalHeader>
+                        <ModalBody>
+                            <p>Just making sure..</p>
+                        </ModalBody>
+                        <ModalButtons>
+                            <ModalDefaultButton onClick={() => {
+                                modals.destroyModalByUUID(uuid);
+                            }}>Cancel</ModalDefaultButton>
+                            <ModalDefaultButton onClick={() => {
+                                modals.destroyModalByUUID(uuid);
+                                document.documentElement.className = "red-book";
+                            }}>Confirm</ModalDefaultButton>
+                        </ModalButtons>
+                    </DraggableModal>, uuid);
+                    }}>Make everything red.</button>
+                    <button className="os-option" onClick={() => {
+                        const uuid = crypto.randomUUID();
+                        modals.addModal(<DraggableModal defaultPosition={{
+                            x: window.innerWidth / 2,
+                            y: window.innerHeight / 2
+                        }}>
+                        <ModalHeader>
+                            Are you sure you want to make everything green?
+                        </ModalHeader>
+                        <ModalBody>
+                            <p>Just making sure..</p>
+                        </ModalBody>
+                        <ModalButtons>
+                            <ModalDefaultButton onClick={() => {
+                                modals.destroyModalByUUID(uuid);
+                            }}>Cancel</ModalDefaultButton>
+                            <ModalDefaultButton onClick={() => {
+                                modals.destroyModalByUUID(uuid);
+                                document.documentElement.className = "geen-book";
+                            }}>Confirm</ModalDefaultButton>
+                        </ModalButtons>
+                    </DraggableModal>, uuid);
+                    }}>make everything geen</button>
                 </div>
             </div>
         </div>

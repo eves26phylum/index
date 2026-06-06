@@ -2,9 +2,11 @@ import { BrowserRouter } from 'react-router';
 import './App.css';
 import { MenuBar } from './components/Header';
 import { AllRoutes } from './Routes';
-import { useEffect, useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { createContext } from 'react';
+import { bootlog } from './assets/documents/bootlog';
 import React from 'react';
+import { BlinkingCursor } from './BlinkingCursor';
 
 export type uuid = ReturnType<Crypto["randomUUID"]>;
 export type ModalContextType = {
@@ -24,22 +26,76 @@ export const ModalContext = createContext<ModalContextType>({
     // return `What-What-What-What-What`;
   }
 });
-export function StartScreen({setHasLoaded}: {setHasLoaded: React.Dispatch<React.SetStateAction<boolean>>}) {
+function getLineDelay(lineIndex: number): number {
+  const roll = Math.random();
+  if (roll < 0.025) return 2 + Math.random() * 6;
+  if (roll < 0.05) return 300 + Math.random() * 600;
+  const base = 10 + Math.random() * 20;
+  const jitter = Math.random() < 0.4 ? Math.random() * 60 : 0;
+  return base + jitter;
+}
+export function StartScreen({ setHasLoaded }: { setHasLoaded: React.Dispatch<React.SetStateAction<boolean>> }) {
+  const containerRef = useRef<HTMLDivElement>(null);
+  const cursorRef = useRef<HTMLSpanElement>(null);
+  
+  const linesRef = useRef<string[]>(bootlog.split("\n"));
+  const currentLineIndex = useRef<number>(0);
+  const animationFrameId = useRef<number | null>(null);
+
   useEffect(() => {
     document.documentElement.classList.add("turned-off");
-    const id = setTimeout(()=> {
-      setHasLoaded(true)
-    }, 1000);
-    return () => {
-      document.documentElement.classList.remove("turned-off");
-      clearTimeout(id);
+    const lines = linesRef.current;
+    const container = containerRef.current;
+
+    const renderLoop = () => {
+      if (!container) return;
+      const linesPerFrame = 200; 
+      let linesAddedThisFrame = 0;
+
+      while (currentLineIndex.current < lines.length && linesAddedThisFrame < linesPerFrame) {
+        const textNode = document.createTextNode(lines[currentLineIndex.current] + "\n");
+        container.insertBefore(textNode, cursorRef.current);
+        
+        currentLineIndex.current++;
+        linesAddedThisFrame++;
+      }
+      window.scrollTo(0, document.documentElement.scrollHeight);
+      if (currentLineIndex.current < lines.length) {
+        animationFrameId.current = requestAnimationFrame(renderLoop);
+        return;
+      }
+      setTimeout(() => {
+        setHasLoaded(true);
+        document.documentElement.classList.remove("turned-off");
+      }, 250);
     };
-  });
-  return <>
-    <h1 style={{
-      color: "white"
-    }}>DogOS</h1>
-  </>;
+
+    animationFrameId.current = requestAnimationFrame(renderLoop);
+    return () => {
+      if (animationFrameId.current) {
+        cancelAnimationFrame(animationFrameId.current);
+      }
+    };
+  }, [setHasLoaded]);
+
+  return (
+    <div
+      ref={containerRef}
+      style={{
+        color: "white",
+        scrollbarWidth: "none",
+        overflow: "hidden",
+        fontFamily: "Consoleet",
+        fontSize: "8px",
+        display: "flex",
+        flexDirection: "column",
+        whiteSpace: "pre-wrap",
+      }}
+    >
+      {/* The cursor acts as our visual anchor marker for fast DOM insertion */}
+      <span ref={cursorRef}><BlinkingCursor /></span>
+    </div>
+  );
 }
 export type modal = {uuid: string, modal: React.ReactElement, zindex: number};
 export function App() {
