@@ -3,7 +3,7 @@ import { useRef, useState } from "react";
 import type { DraggableModalType, ModalBodyType, ModalButtonsType, ModalDefaultButtonType, ModalHeaderType } from '../types/ModalTypes';
 
 export function ModalDefaultButton({onClick}: ModalDefaultButtonType) {
-    return <button onClick={onClick}>Button</button>
+    return <button onClick={onClick} className="modal-button">Button</button>
 }
 export function ModalButtons({children}: ModalButtonsType) {
     return <div className="modal-buttons">
