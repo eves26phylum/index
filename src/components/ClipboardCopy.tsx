@@ -10,8 +10,10 @@ export function ClipboardCopyButton({ copy }: { copy: string }) {
     async function handleClick() {
         try {
             await navigator.clipboard.writeText(copy);
+            if (timeoutRef.current) clearTimeout(timeoutRef.current);
             setIsOpen(true);
             setLabel("copied to clipboard");
+            timeoutRef.current = useTimeout(() => {}, 5000);
         }
         catch (err) {
             window.alert(err);
