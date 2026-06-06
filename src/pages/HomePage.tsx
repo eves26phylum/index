@@ -26,7 +26,7 @@ export function HomePage() {
                     }}/>
                     </NavLink>
                 </Tooltip>
-                <Tooltip label="I think this is self-explanatory" open={true}>
+                <Tooltip label="VITE: A Frontend Build Tool" open={true}>
                     <NavLink to="https://vite.dev">
                         <img src="https://vite.dev/assets/vite-dark.D2ACe7TL.svg" className="icon-skill"/>
                     </NavLink>
