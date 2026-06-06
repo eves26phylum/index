@@ -58,10 +58,10 @@ export function DestructiveActions() {
             </div>
             <div className="group">
                 <strong>Destructive Actions</strong>
-                <div className="group gap">
-                    <button className="os-option">Destroy OS</button>
-                    <button>Goodbye</button>
-                </div>
+                <button className="os-option" onClick={() => {
+                    document.body.remove();
+                }}>Shut Down OS</button>
+                <button className="os-option" onClick={() => {}}>Restart OS</button>
             </div>
         </div>
     </div>;
