@@ -9,8 +9,10 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
     return <div className="mainContent presentation">
         <div className="default blog centered">
             <h1>My Contacts</h1>
-            <p>Email me at <code>index@example.com <ClipboardCopyButton copy="index@example.com"/></code></p>
-            <NavLink to="mailto:index@example.com">Send a Mail to Me</NavLink>
+            <div>
+                <p>Email me at <code>index@example.com <ClipboardCopyButton copy="index@example.com"/></code></p>
+                <NavLink to="mailto:index@example.com">Send Mail</NavLink>
+            </div>
         </div>
     </div>
 }

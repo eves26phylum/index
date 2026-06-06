@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useFloating, useHover, useInteractions, FloatingPortal } from '@floating-ui/react';
+import { useFloating, useHover, useInteractions, FloatingPortal, offset } from '@floating-ui/react';
 
 interface TooltipProps {
   label: React.ReactNode;
@@ -15,6 +15,7 @@ export default function Tooltip({ label, children, open }: TooltipProps) {
         open: effectiveOpen,
         onOpenChange: setIsHovered,
         placement: 'top',
+        middleware: [offset(4)]
     });
 
     const hover = useHover(context);

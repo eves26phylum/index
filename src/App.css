@@ -94,6 +94,10 @@ code {
     color: white;
     width: 24px;
     height: 24px;
+    transition: 2s background-color ease-in-out;
+}
+.clipboardCopy.green {
+    background-color: rgb(37, 176, 74);
 }
 .presentation {
     /* justify-content: center; */
@@ -150,6 +154,13 @@ code {
     gap: 0.25rem;
     padding: 1rem;
 }
+.tooltip {
+    background-color: rgb(203, 203, 203);
+    padding: 0.25rem;
+    font-size: 0.618rem;
+    font-family: 'PublicSans';
+    border-radius: 4px;
+}
 .nav-link:not(.redirect:hover) {
     text-decoration: none;
 }
@@ -166,8 +177,8 @@ footer {
 .nav-link.nav-active {
     /* color: var(--accent-colour); */
     box-sizing: border-box;
-    border-top: 5px var(--accent-colour) solid;
-    padding-top: calc(1rem - 5px);
+    border-top: 3px var(--accent-colour) solid;
+    padding-top: calc(1rem - 3px);
     /* background-color: rgb(255, 255, 255); */
     cursor: default;
 }
