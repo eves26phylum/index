@@ -67,16 +67,24 @@ export function HomePage() {
                     </NavLink>
                 </Tooltip>
                 <Tooltip label="CSS" open={true}>
-                    <FontAwesomeIcon icon={faCss} color={"#663399"} className="icon-skill"/>
+                    <NavLink to="https://developer.mozilla.org/en-US/docs/Web/CSS">
+                        <FontAwesomeIcon icon={faCss} color={"#663399"} className="icon-skill"/>
+                    </NavLink>
                 </Tooltip>
                 <Tooltip label="Rust (rust-lang)" open={true}>
-                    <FontAwesomeIcon icon={faRust} color={"#CE422B"} className="icon-skill"/>
+                    <NavLink to="https://rust-lang.org">
+                        <FontAwesomeIcon icon={faRust} color={"#CE422B"} className="icon-skill"/>
+                    </NavLink>
                 </Tooltip>
                 <Tooltip label="Bevy Engine" open={true}>
-                    <img src="https://camo.githubusercontent.com/ddeee711380332fdc0ece07deae09220003e9fd363db337fdafff227384683e8/68747470733a2f2f626576792e6f72672f6173736574732f626576795f6c6f676f5f6c696768745f6461726b5f616e645f64696d6d65642e737667" alt="Bevy" data-canonical-src="https://bevy.org/assets/bevy_logo_light_dark_and_dimmed.svg" className="icon-skill"/>
+                    <NavLink to="https://bevy.org">
+                        <img src="https://camo.githubusercontent.com/ddeee711380332fdc0ece07deae09220003e9fd363db337fdafff227384683e8/68747470733a2f2f626576792e6f72672f6173736574732f626576795f6c6f676f5f6c696768745f6461726b5f616e645f64696d6d65642e737667" alt="Bevy" data-canonical-src="https://bevy.org/assets/bevy_logo_light_dark_and_dimmed.svg" className="icon-skill"/>
+                    </NavLink>
                 </Tooltip>
                 <Tooltip label="MySQL" open={true}>
-                    <img src="https://www.mysql.com/common/logos/mysql-logo.svg" alt="MySQL" className="icon-skill"/>
+                    <NavLink to="https://mysql.com">
+                        <img src="https://www.mysql.com/common/logos/mysql-logo.svg" alt="MySQL" className="icon-skill"/>
+                    </NavLink>
                 </Tooltip>
             </div>
         </div>
