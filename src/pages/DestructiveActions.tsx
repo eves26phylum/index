@@ -4,6 +4,7 @@ import diskSpaceLeft from "../assets/images/diskSpaceLeft.png";
 import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { ModalContext } from "../App";
+import type { DraggableModalType, ModalButtonsType, ModalDefaultButtonType, ModalHeaderType } from "../types/ModalTypes";
 
 function getUnixTimestampOfTime(targetYear: number, targetMonth: number, targetDay: number): number {
     const formattedMonth = String(targetMonth).padStart(2, '0'); // left-pad hahaha
@@ -36,7 +37,7 @@ export function LearningProgressBar({progress, children}: {progress: number, chi
         </div>
     </div>
 }
-export function DestructiveActions() {
+export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, ModalDefaultButton}: {DraggableModal: React.ComponentType<DraggableModalType>, ModalHeader: React.ComponentType<ModalHeaderType>, ModalButtons: React.ComponentType<ModalButtonsType>, ModalDefaultButton: React.ComponentType<ModalDefaultButtonType>}) {
     const modals = useContext(ModalContext);
     const calculateSimulatedTime = () => {
         // return getUltraDeadline();
@@ -65,7 +66,21 @@ export function DestructiveActions() {
                 <div className="os-container">
                     <button className="os-option" onClick={() => {
                         const uuid = crypto.randomUUID();
-                        modals.addModal();
+                        modals.addModal(<DraggableModal>
+                        <ModalHeader>
+                            {uuid}
+                        </ModalHeader>
+                        <p>Something went wrong</p>
+                        <ModalButtons>
+                            <ModalDefaultButton onClick={() => {
+                                modals.destroyModalByUUID(uuid);
+                            }}></ModalDefaultButton>
+                            <ModalDefaultButton onClick={() => {
+                                document.documentElement.style = "background-color: black";
+                                document.body.remove();
+                            }}></ModalDefaultButton>
+                        </ModalButtons>
+                    </DraggableModal>);
                     }}>Shut Down OS</button>
                     <button className="os-option" onClick={() => {}}>Restart OS</button>
                 </div>

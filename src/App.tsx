@@ -8,10 +8,22 @@ import React from 'react';
 
 export type uuid = ReturnType<Crypto["randomUUID"]>;
 export type ModalContextType = {
-  destroyModalByUUID?: (uuid: uuid) => void,
-  addModal?: (modal: React.ReactElement, uuid?: uuid) => uuid
+  destroyModalByUUID: (uuid: uuid) => void,
+  addModal: (modal: React.ReactElement, uuid?: uuid) => uuid
 }
-export const ModalContext = createContext<ModalContextType>({});
+export const ModalContext = createContext<ModalContextType>({
+  destroyModalByUUID: () => {
+    const error = "Critical Error: destroyModalByUUID called before definition";
+    window.alert(error);
+    throw new Error(error);
+  },
+  addModal: () => {
+    const error = "Critical Error: addModal called before definition"; 
+    window.alert(error);
+    throw new Error(error);
+    // return `What-What-What-What-What`;
+  }
+});
 export function StartScreen({setHasLoaded}: {setHasLoaded: React.Dispatch<React.SetStateAction<boolean>>}) {
   setTimeout(()=> {setHasLoaded(true)}, 1000);
   return <></>;
