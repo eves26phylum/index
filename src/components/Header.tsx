@@ -27,7 +27,7 @@ export function MenuBar() {
                     <HeaderLink to="/">{IconAndTextCombo({filledIcon: faFilledClipboard, nonFilledIcon: faClipboard, children: "About Me"})}</HeaderLink>
                     <HeaderLink to="/projects">{IconAndTextCombo({filledIcon: faFilledEye, nonFilledIcon: faEye, children: "Projects"})}</HeaderLink>
                     {/* <HeaderLink to="/dog_feeding_simulator">{IconAndTextCombo({filledIcon: faFilledEye, nonFilledIcon: faEye, children: "Projects"})}</HeaderLink> */}
-                    <HeaderLink to="/contact">{IconAndTextCombo({filledIcon: faFilledFloppyDisk, nonFilledIcon: faFloppyDisk, children: "Contact"})}</HeaderLink>
+                    <HeaderLink to="/destructive_actions">{IconAndTextCombo({filledIcon: faFilledFloppyDisk, nonFilledIcon: faFloppyDisk, children: "Eves26PhylumOS Information"})}</HeaderLink>
                 </nav>
                 <nav>
                     <HeaderLink to="https://github.com/eves26phylum" className="redirect">{IconAndTextCombo({filledIcon: faGithub, children: "GitHub"})}</HeaderLink>

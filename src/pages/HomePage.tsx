@@ -8,10 +8,6 @@ export function HomePage() {
         <div className="default blog">
             <h1>eves26phylum</h1>
             <NavLink to="/projects">Projects</NavLink>
-            <div>
-                
-            </div>
-
             <h2>Experienced</h2>
             <div className="skill-list">
                 <Tooltip label="Visual Studio Code" open={true}>
