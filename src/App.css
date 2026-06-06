@@ -185,6 +185,24 @@ footer {
 .os-container {
     background-color: var(--secondary);
 }
+.modal-header {
+    background-color: blue;
+    user-select: none;
+    -webkit-user-select: none;
+}
+.modal-buttons {
+    justify-content: right;
+    display: flex;
+}
+.modal {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    user-select: none;
+    z-index: 9999;
+    -webkit-user-select: none;
+    background-color: red;
+}
 .os-option {
     width: 100%;
     padding: 0.5rem 1rem;
