@@ -80,7 +80,7 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
                                 document.body.remove();
                             }}></ModalDefaultButton>
                         </ModalButtons>
-                    </DraggableModal>);
+                    </DraggableModal>, uuid);
                     }}>Shut Down OS</button>
                     <button className="os-option" onClick={() => {}}>Restart OS</button>
                 </div>

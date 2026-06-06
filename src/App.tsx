@@ -2,7 +2,7 @@ import { BrowserRouter } from 'react-router';
 import './App.css';
 import { MenuBar } from './components/Header';
 import { AllRoutes } from './Routes';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { createContext } from 'react';
 import React from 'react';
 
@@ -25,27 +25,50 @@ export const ModalContext = createContext<ModalContextType>({
   }
 });
 export function StartScreen({setHasLoaded}: {setHasLoaded: React.Dispatch<React.SetStateAction<boolean>>}) {
-  setTimeout(()=> {setHasLoaded(true)}, 1000);
+  useEffect(() => {
+    const id = setTimeout(()=> {setHasLoaded(true)}, 1000);
+    return () => {
+      clearTimeout(id);
+    };
+  });
   return <></>;
 }
-export type modal = {uuid: string, modal: React.ReactElement};
+export type modal = {uuid: string, modal: React.ReactElement, zindex: number};
 export function App() {
   const [modals, setModals] = useState<modal[]>([]);
   const [hasLoaded, setHasLoaded] = useState<boolean>(false);
   const destroyModalByUUID = (uuid: string) => {
+    console.log(uuid);
     setModals(modals => modals.filter(modal => modal.uuid !== uuid));
   }
   const addModal = (modal: React.ReactElement, uuidProvider?: uuid) => {
     const uuid = uuidProvider || crypto.randomUUID();
-    setModals([...modals, {uuid: uuid, modal: modal}]);
+    const highestZIndex = modals.reduce((max, m) => Math.max(max, m.zindex), 9999);
+    setModals([...modals, {uuid: uuid, modal: modal, zindex: highestZIndex + 1}]);
     return uuid;
+  }
+  const bringToFront = (uuid: string) => {
+    setModals(prevModals => {
+      const highestZIndex = prevModals.reduce((max, m) => Math.max(max, m.zindex), 9999);
+      return prevModals.map(modal => 
+        modal.uuid === uuid ? { ...modal, zindex: highestZIndex + 1 } : modal
+      );
+    });
   }
   return <ModalContext.Provider value={{
     destroyModalByUUID: destroyModalByUUID,
     addModal: addModal
   }}>
     {modals.map((modal: modal, index: number) => {
-        return <React.Fragment key={modal.uuid}>{modal.modal}</React.Fragment>;
+        return <React.Fragment key={modal.uuid}>
+          <div style={{
+            zIndex: modal.zindex
+          }} onMouseDown={() => {
+            bringToFront(modal.uuid);
+          }}>
+            {modal.modal}
+          </div>
+          </React.Fragment>;
     })}
     { hasLoaded ?
     <BrowserRouter>

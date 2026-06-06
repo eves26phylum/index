@@ -1,6 +1,6 @@
 import Draggable from 'react-draggable';
-import { useRef } from "react";
-import type { DraggableModalType, ModalButtonsType, ModalDefaultButtonType, ModalHeaderType } from '../types/ModalTypes';
+import { useRef, useState } from "react";
+import type { DraggableModalType, ModalBodyType, ModalButtonsType, ModalDefaultButtonType, ModalHeaderType } from '../types/ModalTypes';
 
 export function ModalDefaultButton({onClick}: ModalDefaultButtonType) {
     return <button onClick={onClick}>Button</button>
@@ -12,6 +12,11 @@ export function ModalButtons({children}: ModalButtonsType) {
 }
 export function ModalHeader({children}: ModalHeaderType) {
     return  <div className="modal-header">
+                {children}
+            </div>
+}
+export function ModalBody({children}: ModalBodyType) {
+    return  <div className="modal-body">
                 {children}
             </div>
 }

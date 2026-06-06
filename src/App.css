@@ -196,12 +196,19 @@ footer {
 }
 .modal {
     position: absolute;
+    min-width: 200px;
     display: flex;
+    font-family: 'PublicSans';
     flex-direction: column;
     user-select: none;
     z-index: 9999;
     -webkit-user-select: none;
-    background-color: red;
+    background-color: rgb(232, 232, 232);
+}
+.modal-body {
+    padding: 0.5rem 1rem;
+    display: flex;
+    flex-direction: column;
 }
 .os-option {
     width: 100%;
