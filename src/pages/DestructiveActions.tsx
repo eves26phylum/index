@@ -81,9 +81,11 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
                                 modals.destroyModalByUUID(uuid);
                             }}>Cancel</ModalDefaultButton>
                             <ModalDefaultButton onClick={() => {
+                                document.documentElement.classList.add("turned-off");
                                 document.body.remove();
+                                setTimeout(() => {
                                 document.documentElement.innerHTML = "<img src='https://spinningtoaster.weebly.com/uploads/2/0/5/1/20512720/3136285_orig.gif' style='width: 100px; height: auto;'>";
-                                document.body.style = "display: flex; justify-content: center; align-items: center; background-color: black; height: 100dvh;";
+                                document.body.style = "display: flex; justify-content: center; align-items: center; background-color: black; height: 100dvh;";}, 2000);
                             }}>Confirm</ModalDefaultButton>
                         </ModalButtons>
                     </DraggableModal>, uuid);
