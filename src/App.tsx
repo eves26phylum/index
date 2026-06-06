@@ -49,7 +49,7 @@ export function StartScreen({ setHasLoaded }: { setHasLoaded: React.Dispatch<Rea
 
     const renderLoop = () => {
       if (!container) return;
-      const linesPerFrame = 200; 
+      const linesPerFrame = 250; 
       let linesAddedThisFrame = 0;
 
       while (currentLineIndex.current < lines.length && linesAddedThisFrame < linesPerFrame) {
@@ -67,7 +67,7 @@ export function StartScreen({ setHasLoaded }: { setHasLoaded: React.Dispatch<Rea
       setTimeout(() => {
         setHasLoaded(true);
         document.documentElement.classList.remove("turned-off");
-      }, 250);
+      }, 0);
     };
 
     animationFrameId.current = requestAnimationFrame(renderLoop);
@@ -92,7 +92,6 @@ export function StartScreen({ setHasLoaded }: { setHasLoaded: React.Dispatch<Rea
         whiteSpace: "pre-wrap",
       }}
     >
-      {/* The cursor acts as our visual anchor marker for fast DOM insertion */}
       <span ref={cursorRef}><BlinkingCursor /></span>
     </div>
   );
