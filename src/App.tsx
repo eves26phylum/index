@@ -26,12 +26,20 @@ export const ModalContext = createContext<ModalContextType>({
 });
 export function StartScreen({setHasLoaded}: {setHasLoaded: React.Dispatch<React.SetStateAction<boolean>>}) {
   useEffect(() => {
-    const id = setTimeout(()=> {setHasLoaded(true)}, 1000);
+    document.documentElement.classList.add("turned-off");
+    const id = setTimeout(()=> {
+      setHasLoaded(true)
+    }, 1000);
     return () => {
+      document.documentElement.classList.remove("turned-off");
       clearTimeout(id);
     };
   });
-  return <></>;
+  return <>
+    <h1 style={{
+      color: "white"
+    }}>DogOS</h1>
+  </>;
 }
 export type modal = {uuid: string, modal: React.ReactElement, zindex: number};
 export function App() {

@@ -5,6 +5,7 @@
     --border: rgb(182, 182, 182);
     --secondary: rgb(65, 65, 65);
     --odd: rgba(255, 255, 255, 0.048);
+    --accent-gradient-select: linear-gradient(to bottom, var(--darkened-accent-darker) 0%, var(--darkened-accent) 20%, var(--darkened-accent) 100%);
 }
 
 @font-face {
@@ -142,6 +143,9 @@ code {
     display: flex;
     /* flex-grow: 1; */
 }
+.justify-right {
+    justify-content: right;
+}
 .header .title {
     align-items: center;
     display: flex;
@@ -175,7 +179,7 @@ footer {
 }
 .nav-link:not(.nav-active):hover {
     /* background-color: var(--darkened-accent); */
-    background: linear-gradient(to bottom, var(--darkened-accent-darker) 0%, var(--darkened-accent) 20%, var(--darkened-accent) 100%);
+    background: var(--accent-gradient-select);
 }
 .progressBar {
     background-color: var(--secondary);
@@ -197,8 +201,20 @@ footer {
     gap: 1rem;
 }
 .modal-button {
-    padding: 0.5rem 1rem;
+    padding: 0.25rem 1rem;
     cursor: pointer;
+    background-color: white;
+    /* font-size: 1rem; */
+    border: 1px rgb(180, 180, 180) solid;
+    border: none;
+    box-shadow: 
+    0 0 0 1px rgba(0, 0, 0, 0.05),
+    0 2px 4px -1px rgba(0, 0, 0, 0.2);
+    border-radius: 4px;
+    font-family: 'PublicSans';
+}
+.modal-button:active {
+    background-color: rgb(219, 219, 219);
 }
 .modal {
     position: absolute;
@@ -227,14 +243,15 @@ footer {
     /* background: linear-gradient(to bottom, rgb(221, 221, 221) 0%, rgb(255, 255, 255) 100%); */
     background: none;
     font-family: 'PublicSans';
-    color: red;
+    color: white;
     display: flex;
-}
-.os-option:hover {
-    font-weight: bold;
 }
 .os-option:nth-child(odd) {
     background-color: var(--odd);
+}
+.os-option:hover {
+    /* font-weight: bold; */
+    background: var(--accent-gradient-select);
 }
 .yearsLeft {
     color: white;
@@ -267,7 +284,9 @@ footer {
     height: 24px;
     animation: move-stripes 0.5s linear infinite;
 }
-
+.turned-off {
+    background-color: black;
+}
 @keyframes move-stripes {
   from {
     background-position: 0 0;

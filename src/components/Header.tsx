@@ -29,7 +29,7 @@ export function MenuBar() {
                     {/* <HeaderLink to="/dog_feeding_simulator">{IconAndTextCombo({filledIcon: faFilledEye, nonFilledIcon: faEye, children: "Projects"})}</HeaderLink> */}
                     <HeaderLink to="/destructive_actions">{IconAndTextCombo({filledIcon: faFilledFloppyDisk, nonFilledIcon: faFloppyDisk, children: "Eves26PhylumOS Information"})}</HeaderLink>
                 </nav>
-                <nav>
+                <nav className="justify-right">
                     <HeaderLink to="https://github.com/eves26phylum" className="redirect">{IconAndTextCombo({filledIcon: faGithub, children: "GitHub"})}</HeaderLink>
                     <HeaderLink to="/email">{IconAndTextCombo({filledIcon: faEnvelope, children: "Mail"})}</HeaderLink>
                 </nav>

@@ -56,7 +56,7 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
             <p>Version 1 [up to date since 06/06/2026]</p>
             <NavLink to="/email">Report bugs or contact eves26phylum</NavLink>
             <div className="group">
-                <strong>Time Until Finished</strong>
+                <strong>Time Until Grown</strong>
                 <LearningProgressBar progress={progress}>
                     <p className="yearsLeft">{yearsLeft === "0.0" ? `ready to produce` : `${yearsLeft} years left`}</p>
                 </LearningProgressBar>
@@ -81,7 +81,7 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
                                 modals.destroyModalByUUID(uuid);
                             }}>Cancel</ModalDefaultButton>
                             <ModalDefaultButton onClick={() => {
-                                document.documentElement.style = "background-color: black";
+                                document.documentElement.classList.add("turned-off");
                                 document.body.remove();
                             }}>Confirm</ModalDefaultButton>
                         </ModalButtons>
