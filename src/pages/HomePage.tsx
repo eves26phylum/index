@@ -1,6 +1,6 @@
 import { NavLink } from "react-router";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faRust, faTypescript } from "@fortawesome/free-brands-svg-icons";
+import { faRust, faTypescript, faCss } from "@fortawesome/free-brands-svg-icons";
 export function HomePage() {
     return <div className="mainContent presentation">
         <div className="default blog">
@@ -19,11 +19,16 @@ export function HomePage() {
             </div>
             <div className="skill-list">
                 <FontAwesomeIcon icon={faTypescript} className="icon-skill"/>
+                <svg className="icon-skill" width="24px" height="24px" viewBox="-10.5 -9.45 21 18.9" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="0" r="2" fill="#61DBFB"></circle><g stroke="#61DBFB" stroke-width="1" fill="none"><ellipse rx="10" ry="4.5"></ellipse><ellipse rx="10" ry="4.5" transform="rotate(60)"></ellipse><ellipse rx="10" ry="4.5" transform="rotate(120)"></ellipse></g></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#E34F26" className="icon-skill"><path d="M1.5 0h21l-1.91 21.563L11.977 24l-8.564-2.438L1.5 0zm7.031 9.75l-.232-2.718 10.059.003.23-2.622L5.412 4.41l.698 8.01h9.126l-.326 3.426-2.91.804-2.955-.81-.188-2.11H6.248l.33 4.171L12 19.351l5.379-1.443.744-8.157H8.531z"></path></svg>
                 <img src="https://lua.org/images/luaa.gif" className="icon-skill"/>
             </div>
             <h2>Learning</h2>
             <div className="skill-list">
-                <FontAwesomeIcon icon={faRust} className="icon-skill"/>
+                <FontAwesomeIcon icon={faRust} color={"#CE422B"} className="icon-skill"/>
+                <FontAwesomeIcon icon={faCss} color={"#663399"} className="icon-skill"/>
+                <img src="https://camo.githubusercontent.com/ddeee711380332fdc0ece07deae09220003e9fd363db337fdafff227384683e8/68747470733a2f2f626576792e6f72672f6173736574732f626576795f6c6f676f5f6c696768745f6461726b5f616e645f64696d6d65642e737667" alt="Bevy" data-canonical-src="https://bevy.org/assets/bevy_logo_light_dark_and_dimmed.svg" className="icon-skill"/>
+                <img src="https://www.mysql.com/common/logos/mysql-logo.svg" alt="MySQL" className="icon-skill"/>
             </div>
         </div>
     </div>
