@@ -16,8 +16,8 @@ export function IconAndTextCombo({filledIcon, nonFilledIcon, children}: IconText
     const nonFilled = nonFilledIcon || filledIcon;
     return ({isActive}: {isActive: boolean}) => {return <><FontAwesomeIcon icon={ isActive ? filledIcon : nonFilled }/><p>{children}</p></>};
 }
-export function HeaderLink({children, ...props}: HeaderLinkProps) {
-    return <NavLink className={({isActive}) => {return isActive ? "nav-active nav-link" : "nav-link"}} {...props}>{children}</NavLink>;
+export function HeaderLink({children, className, ...props}: HeaderLinkProps) {
+    return <NavLink className={({isActive}) => {return isActive ? `nav-active nav-link ${className}` : `nav-link ${className}`}} {...props}>{children}</NavLink>;
 }
 export function MenuBar() {
     return <>
@@ -30,8 +30,8 @@ export function MenuBar() {
                     <HeaderLink to="/contact">{IconAndTextCombo({filledIcon: faFilledFloppyDisk, nonFilledIcon: faFloppyDisk, children: "Contact"})}</HeaderLink>
                 </nav>
                 <nav>
-                    <HeaderLink to="https://github.com/eves26phylum">{IconAndTextCombo({filledIcon: faGithub, children: "GitHub"})}</HeaderLink>
-                    <HeaderLink to="mailto:index@example.com">{IconAndTextCombo({filledIcon: faEnvelope, children: "Mail"})}</HeaderLink>
+                    <HeaderLink to="https://github.com/eves26phylum" className="redirect">{IconAndTextCombo({filledIcon: faGithub, children: "GitHub"})}</HeaderLink>
+                    <HeaderLink to="/email">{IconAndTextCombo({filledIcon: faEnvelope, children: "Mail"})}</HeaderLink>
                 </nav>
             </div>
         </header>

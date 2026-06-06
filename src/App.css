@@ -78,6 +78,23 @@ main {
     flex-direction: row;
     width: 100%;
 }
+code {
+    background-color: rgb(226, 226, 226);
+    padding: 0.25rem 0.25rem;
+    align-items: center;
+    display: flex;
+    gap: 0.25rem;
+}
+.clipboardCopy {
+    /* aspect-ratio: 1; */
+    border: none;
+    cursor: pointer;
+    background-color: black;
+    border-radius: 4px;
+    color: white;
+    width: 24px;
+    height: 24px;
+}
 .presentation {
     /* justify-content: center; */
     align-items: center;
@@ -91,6 +108,11 @@ main {
     align-items: flex-start;
     padding: 0.5rem 1rem;
     gap: 1rem;
+}
+.centered {
+    align-items: center;
+    display: flex;
+    justify-content: center;
 }
 .blog {
     border-left: 1px var(--border) solid;
@@ -127,6 +149,8 @@ main {
     /* justify-content: center; */
     gap: 0.25rem;
     padding: 1rem;
+}
+.nav-link:not(.redirect:hover) {
     text-decoration: none;
 }
 footer {
