@@ -193,6 +193,10 @@ footer {
 .modal-buttons {
     justify-content: right;
     display: flex;
+    gap: 1rem;
+}
+.modal-button {
+    padding: 0.5rem 1rem;
 }
 .modal {
     position: absolute;

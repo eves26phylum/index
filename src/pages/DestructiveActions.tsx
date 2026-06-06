@@ -49,6 +49,7 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
         const id = setTimeout(() => {setSimulatedTime(calculateSimulatedTime())}, 1000);
         return () => {clearTimeout(id)};
     });
+    console.log(window.screen)
     const yearsLeft = secondsToYears(getEnd() - progress * getEnd()).toFixed(1);
     return <div className="mainContent presentation">
         <img src={diskSpaceLeft} className="behaveImage" alt="Disk Space Left on Macintosh—not much is left"/>
@@ -66,7 +67,10 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
                 <div className="os-container">
                     <button className="os-option" onClick={() => {
                         const uuid = crypto.randomUUID();
-                        modals.addModal(<DraggableModal>
+                        modals.addModal(<DraggableModal defaultPosition={{
+                            x: window.innerWidth / 2,
+                            y: window.innerHeight / 2
+                        }}>
                         <ModalHeader>
                             {uuid}
                         </ModalHeader>
@@ -76,11 +80,11 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
                         <ModalButtons>
                             <ModalDefaultButton onClick={() => {
                                 modals.destroyModalByUUID(uuid);
-                            }}></ModalDefaultButton>
+                            }}>Cancel</ModalDefaultButton>
                             <ModalDefaultButton onClick={() => {
                                 document.documentElement.style = "background-color: black";
                                 document.body.remove();
-                            }}></ModalDefaultButton>
+                            }}>Confirm</ModalDefaultButton>
                         </ModalButtons>
                     </DraggableModal>, uuid);
                     }}>Shut Down OS</button>
