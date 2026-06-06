@@ -186,7 +186,7 @@ footer {
     background-color: var(--secondary);
 }
 .modal-header {
-    background-color: blue;
+    background-color: rgb(224, 224, 224);
     user-select: none;
     -webkit-user-select: none;
 }

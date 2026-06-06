@@ -1,8 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router";
 import diskSpaceLeft from "../assets/images/diskSpaceLeft.png";
-import { useEffect, useRef, useState } from "react";
-import Draggable from 'react-draggable';
+import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { ModalContext } from "../App";
 
 function getUnixTimestampOfTime(targetYear: number, targetMonth: number, targetDay: number): number {
     const formattedMonth = String(targetMonth).padStart(2, '0'); // left-pad hahaha
@@ -35,28 +36,8 @@ export function LearningProgressBar({progress, children}: {progress: number, chi
         </div>
     </div>
 }
-export function ModalDefaultButton({onClick}: {onClick: () => void}) {
-    return <button onClick={onClick}>Button</button>
-}
-export function ModalButtons({children}: {children?: React.ReactNode}) {
-    return <div className="modal-buttons">
-        {children}
-    </div>
-}
-export function ModalHeader({children}: {children: React.ReactNode}) {
-    return  <div className="modal-header">
-                {children}
-            </div>
-}
-export function DraggableModal({children}: {children?: React.ReactNode}) {
-    const nodeRef = useRef<HTMLDivElement>(null);
-    return <Draggable nodeRef={nodeRef} handle=".modal-header" defaultPosition={{ x: Math.random() * 300, y: Math.random() * 300 }}>
-            <div className="modal" ref={nodeRef}>
-                {children}
-            </div>
-        </Draggable>
-}
 export function DestructiveActions() {
+    const modals = useContext(ModalContext);
     const calculateSimulatedTime = () => {
         // return getUltraDeadline();
         return Math.floor(Date.now() / 1000);
@@ -67,12 +48,7 @@ export function DestructiveActions() {
         const id = setTimeout(() => {setSimulatedTime(calculateSimulatedTime())}, 1000);
         return () => {clearTimeout(id)};
     });
-    type modal = {uuid: string, modal: React.ReactElement};
-    const [modals, setModals] = useState<modal[]>([]);
     const yearsLeft = secondsToYears(getEnd() - progress * getEnd()).toFixed(1);
-    const destroyModalByUUID = (uuid: string) => {
-        setModals(prevModals => prevModals.filter(modal => modal.uuid !== uuid));
-    }
     return <div className="mainContent presentation">
         <img src={diskSpaceLeft} className="behaveImage" alt="Disk Space Left on Macintosh—not much is left"/>
         <div className="default blog">
@@ -87,26 +63,9 @@ export function DestructiveActions() {
             <div className="group">
                 <strong>Destructive Actions</strong>
                 <div className="os-container">
-                    {modals.map((modal: modal, index: number) => {
-                        return <React.Fragment key={index}>{modal.modal}</React.Fragment>;
-                    })}
                     <button className="os-option" onClick={() => {
-                        const thisUUID = crypto.randomUUID();
-                        setModals([...modals, {uuid: thisUUID, modal: <DraggableModal>
-                                <ModalHeader>
-                                    hi
-                                </ModalHeader>
-                                <p>Something went wrong</p>
-                                <ModalButtons>
-                                    <ModalDefaultButton onClick={() => {
-
-                                    }}></ModalDefaultButton>
-                                    <ModalDefaultButton onClick={() => {
-                                        document.documentElement.style = "background-color: black";
-                                        document.body.remove();
-                                    }}></ModalDefaultButton>
-                                </ModalButtons>
-                            </DraggableModal>}])
+                        const uuid = crypto.randomUUID();
+                        modals.addModal();
                     }}>Shut Down OS</button>
                     <button className="os-option" onClick={() => {}}>Restart OS</button>
                 </div>
@@ -114,3 +73,21 @@ export function DestructiveActions() {
         </div>
     </div>;
 }
+
+{/* 
+<DraggableModal>
+    <ModalHeader>
+        {thisUUID}
+    </ModalHeader>
+    <p>Something went wrong</p>
+    <ModalButtons>
+        <ModalDefaultButton onClick={() => {
+            destroyModalByUUID(thisUUID);
+        }}></ModalDefaultButton>
+        <ModalDefaultButton onClick={() => {
+            document.documentElement.style = "background-color: black";
+            document.body.remove();
+        }}></ModalDefaultButton>
+    </ModalButtons>
+</DraggableModal>
+*/}
