@@ -49,7 +49,6 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
         const id = setTimeout(() => {setSimulatedTime(calculateSimulatedTime())}, 1000);
         return () => {clearTimeout(id)};
     });
-    console.log(window.screen)
     const yearsLeft = secondsToYears(getEnd() - progress * getEnd()).toFixed(1);
     return <div className="mainContent presentation">
         <img src={diskSpaceLeft} className="behaveImage" alt="Disk Space Left on Macintosh—not much is left"/>
@@ -72,10 +71,10 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
                             y: window.innerHeight / 2
                         }}>
                         <ModalHeader>
-                            {uuid}
+                            Are you sure you want to shut down the computer now?
                         </ModalHeader>
                         <ModalBody>
-                            <p>Something went wrong</p>
+                            <p>You will need to reload the webpage to turn on the OS.</p>
                         </ModalBody>
                         <ModalButtons>
                             <ModalDefaultButton onClick={() => {

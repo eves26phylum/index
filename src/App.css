@@ -113,6 +113,7 @@ code {
     flex-direction: column;
     align-items: flex-start;
     padding: 0.5rem 1rem;
+    padding-top: 2rem;
     gap: 1rem;
 }
 .centered {
@@ -186,8 +187,8 @@ footer {
     background-color: var(--secondary);
 }
 .modal-header {
-    background-color: rgb(224, 224, 224);
     user-select: none;
+    font-weight: bold;
     -webkit-user-select: none;
 }
 .modal-buttons {
@@ -197,10 +198,13 @@ footer {
 }
 .modal-button {
     padding: 0.5rem 1rem;
+    cursor: pointer;
 }
 .modal {
     position: absolute;
     min-width: 200px;
+    max-width: 400px;
+    padding: 1rem;
     display: flex;
     font-family: 'PublicSans';
     flex-direction: column;
@@ -209,7 +213,7 @@ footer {
     background-color: rgb(232, 232, 232);
 }
 .modal-body {
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0rem;
     display: flex;
     flex-direction: column;
 }
