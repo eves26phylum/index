@@ -44,15 +44,16 @@ export function DestructiveActions() {
         const id = setTimeout(() => {setSimulatedTime(calculateSimulatedTime())}, 1000);
         return () => {clearTimeout(id)};
     });
+    const yearsLeft = secondsToYears(getEnd() - progress * getEnd()).toFixed(1);
     return <div className="mainContent presentation">
         <img src={diskSpaceLeft} className="behaveImage" alt="Disk Space Left on Macintosh—not much is left"/>
         <div className="default blog">
             <p>Version 1 [up to date since 06/06/2026]</p>
             <NavLink to="/email">Report bugs or contact eves26phylum</NavLink>
             <div className="group">
-                <strong>Production Time</strong>
+                <strong>Time Until Finished</strong>
                 <LearningProgressBar progress={progress}>
-                    <p className="yearsLeft">{`${secondsToYears(getEnd() - progress * getEnd()).toFixed(1)} years left`}</p>
+                    <p className="yearsLeft">{yearsLeft === "0.0" ? `ready to produce` : `${yearsLeft} years left`}</p>
                 </LearningProgressBar>
             </div>
             <div className="group">
