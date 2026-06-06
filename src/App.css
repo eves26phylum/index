@@ -3,6 +3,8 @@
     --darkened-accent: rgb(181, 0, 0);
     --darkened-accent-darker: rgb(132, 0, 0);
     --border: rgb(182, 182, 182);
+    --secondary: rgb(65, 65, 65);
+    --odd: rgba(255, 255, 255, 0.048);
 }
 
 @font-face {
@@ -22,7 +24,7 @@ p {
   box-sizing: border-box;
 }
 header:has(.header) {
-    background-color: rgb(65, 65, 65);
+    background-color: var(--secondary);
     display: flex;
     padding: 0;
     font-family: 'PublicSans';
@@ -168,17 +170,20 @@ footer {
     font-family: 'PublicSans';
 }
 .nav-link:nth-child(odd) {
-    background-color: rgba(255, 255, 255, 0.048);
+    background-color: var(--odd);
 }
 .nav-link:not(.nav-active):hover {
     /* background-color: var(--darkened-accent); */
     background: linear-gradient(to bottom, var(--darkened-accent-darker) 0%, var(--darkened-accent) 20%, var(--darkened-accent) 100%);
 }
 .progressBar {
-    background-color: rgb(82, 82, 82);
+    background-color: var(--secondary);
     border-bottom: 2px rgb(27, 27, 27) solid;
     height: 24px;
     width: 100%;    
+}
+.os-container {
+    background-color: var(--secondary);
 }
 .os-option {
     width: 100%;
@@ -187,8 +192,17 @@ footer {
     cursor: default;
     border: none;
     cursor: pointer;
-    background: linear-gradient(to bottom, rgb(221, 221, 221) 0%, rgb(255, 255, 255) 100%);
+    /* background: linear-gradient(to bottom, rgb(221, 221, 221) 0%, rgb(255, 255, 255) 100%); */
+    background: none;
+    font-family: 'PublicSans';
+    color: red;
     display: flex;
+}
+.os-option:hover {
+    font-weight: bold;
+}
+.os-option:nth-child(odd) {
+    background-color: var(--odd);
 }
 .yearsLeft {
     color: white;

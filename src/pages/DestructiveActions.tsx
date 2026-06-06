@@ -58,10 +58,13 @@ export function DestructiveActions() {
             </div>
             <div className="group">
                 <strong>Destructive Actions</strong>
-                <button className="os-option" onClick={() => {
-                    document.body.remove();
-                }}>Shut Down OS</button>
-                <button className="os-option" onClick={() => {}}>Restart OS</button>
+                <div className="os-container">
+                    <button className="os-option" onClick={() => {
+                        document.documentElement.style = "background-color: black";
+                        document.body.remove();
+                    }}>Shut Down OS</button>
+                    <button className="os-option" onClick={() => {}}>Restart OS</button>
+                </div>
             </div>
         </div>
     </div>;
