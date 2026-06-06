@@ -69,8 +69,9 @@ export function StartScreen({ setHasLoaded }: { setHasLoaded: React.Dispatch<Rea
         document.documentElement.classList.remove("turned-off");
       }, 0);
     };
-
-    animationFrameId.current = requestAnimationFrame(renderLoop);
+    setTimeout(() => {
+      animationFrameId.current = requestAnimationFrame(renderLoop);
+    }, 150);
     return () => {
       if (animationFrameId.current) {
         cancelAnimationFrame(animationFrameId.current);

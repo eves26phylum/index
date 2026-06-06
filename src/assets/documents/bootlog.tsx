@@ -1232,5 +1232,5 @@ function generateBootLogs(count: number): string[] {
 }
 
 export const bootlog: string = [...generateBootLogs(2000), ...Array.from({length: 1000}, () => {
-    return `Segmentation Fault (core dumped) at ${randHex(12)} ip ${randHex(12)} sp ${randHex(12)} error ${[4, 6, 7][Math.floor(Math.random() * 3)]} in libc.so`;
+    return `segfault at ${randHex(12)} ip ${randHex(12)} sp ${randHex(12)} error ${[4, 6, 7][Math.floor(Math.random() * 3)]} in libc.so`;
 })].join("\n");
