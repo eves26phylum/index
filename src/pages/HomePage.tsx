@@ -3,10 +3,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRust, faTypescript, faJs, faCss } from "@fortawesome/free-brands-svg-icons";
 import { faBrain } from "@fortawesome/free-solid-svg-icons";
 import Tooltip from "../components/Tooltip";
+// yeah sure upwards import isn't very good practice but who cares, my code editor has this inbuilt thing that changes the directory whenever you move the file
 export function HomePage() {
     return <div className="mainContent presentation">
         <div className="default blog">
             <h1>eves26phylum</h1>
+            <h2>[project goes here]</h2>
+            <p>Hi there! I'm eves26phylum, a 15 year old self-taught full-stack developer who is interested into the field of Game Development. I have been learning programming for 5 years.
+I'm interested in software development and creative planning. This year, I am thinking about alternate paths besides Game Development.</p>
             <NavLink to="/projects">Projects</NavLink>
             <h2>Experienced</h2>
             <div className="skill-list">
