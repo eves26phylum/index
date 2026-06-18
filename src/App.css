@@ -37,6 +37,7 @@ header:has(.header) {
     padding: 0;
     font-family: 'PublicSans';
     position: sticky;
+    z-index: 6767;
     top: 0;
     color: white;
 }
