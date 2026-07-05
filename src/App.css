@@ -7,7 +7,12 @@
     --odd: rgba(255, 255, 255, 0.048);
     --accent-gradient-select: linear-gradient(to bottom, var(--darkened-accent-darker) 0%, var(--darkened-accent) 20%, var(--darkened-accent) 100%);
 }
-
+table {
+    border-collapse: collapse;
+}
+td {
+    border: 1px solid black;
+}
 @font-face {
   font-family: 'PublicSans';
   src: url('./assets/fonts/PublicSans-VariableFont_wght.ttf') format('truetype');
