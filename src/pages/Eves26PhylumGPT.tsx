@@ -40,6 +40,8 @@ export function GPT() {
                     </tr>
                 </tbody>
             </table>
+            <strong>A sample response from our model:</strong>
+            <p>"Hello I fart"</p>
         </div>
     </div>
 }
