@@ -64,7 +64,7 @@ export function MenuBar() {
                         {hiddenCount > 0 && (
                             <button className={`drop-menu-toggle nav-link nav-item${isDropMenuOpen ? " open" : ""}`} onClick={() => setIsDropMenuOpen(open => !open)} aria-expanded={isDropMenuOpen}>
                                 <p>
-                                    More
+                                    more
                                 </p>
                                 <FontAwesomeIcon icon={faFilledCaretDown}/>
                             </button>
@@ -78,7 +78,7 @@ export function MenuBar() {
                 </nav>
                 <nav className="justify-right">
                     <HeaderLink to="https://github.com/eves26phylum" className="redirect">{IconAndTextCombo({ filledIcon: faGithub, children: "GitHub" })}</HeaderLink>
-                    <HeaderLink to="/email">{IconAndTextCombo({ filledIcon: faEnvelope, children: "Mail" })}</HeaderLink>
+                    <HeaderLink to="/email">{IconAndTextCombo({ filledIcon: faEnvelope, children: "mail" })}</HeaderLink>
                     <HeaderLink key="destructive_actions" to="/destructive_actions"><FontAwesomeIcon icon={faFilledCog}/></HeaderLink>
                 </nav>
             </div>
