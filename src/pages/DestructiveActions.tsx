@@ -5,43 +5,23 @@ import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { ModalContext } from "../App";
 import type { DraggableModalType, ModalBodyType, ModalButtonsType, ModalDefaultButtonType, ModalHeaderType } from "../types/ModalTypes";
+import { getUnixTimestampOfTime, secondsToYears, getUltraDeadline, getStartTask, getEnd, calculateUntilUltraDeadline, getCurrentTime } from "../utilities/age";
 
-function getUnixTimestampOfTime(targetYear: number, targetMonth: number, targetDay: number): number {
-    const formattedMonth = String(targetMonth).padStart(2, '0'); // left-pad hahaha
-    const formattedDay = String(targetDay).padStart(2, '0');
-    const isoString = `${targetYear}-${formattedMonth}-${formattedDay}T00:00:00+10:00`;
-    return Math.floor(Date.parse(isoString) / 1000);
-}
-function secondsToYears(seconds: number) {
-    return seconds / 31536000;
-}
-function getUltraDeadline() {
-    return getUnixTimestampOfTime(2029, 12, 30);
-}
-function getStartTask() {
-    return getUnixTimestampOfTime(2011, 12, 30);
-}
-function getEnd() {
-    return getUltraDeadline() - getStartTask();
-}
-function calculateUntilUltraDeadline(currentTime: number) {
-    return (currentTime - getStartTask()) / getEnd();
-}
-
-export function LearningProgressBar({progress, children}: {progress: number, children?: React.ReactNode}) {
+export function LearningProgressBar({progress, children, outerChildren}: {progress: number, children?: React.ReactNode, outerChildren?: React.ReactNode}) {
     return <div className="progressBar">
         <div className="progressIns" style={{
             width: `${progress * 100}%`
         }}>
             {children}
         </div>
+        {outerChildren}
     </div>
 }
 export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, ModalDefaultButton, ModalBody}: {DraggableModal: React.ComponentType<DraggableModalType>, ModalHeader: React.ComponentType<ModalHeaderType>, ModalButtons: React.ComponentType<ModalButtonsType>, ModalDefaultButton: React.ComponentType<ModalDefaultButtonType>, ModalBody: React.ComponentType<ModalBodyType>}) {
     const modals = useContext(ModalContext);
     const calculateSimulatedTime = () => {
         // return getUltraDeadline();
-        return Math.floor(Date.now() / 1000);
+        return getCurrentTime();
     }
     const [simulatedTime, setSimulatedTime] = useState<number>(calculateSimulatedTime());
     const progress = Math.max(calculateUntilUltraDeadline(simulatedTime), 0);
@@ -52,13 +32,13 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
     const yearsLeft = secondsToYears(getEnd() - progress * getEnd()).toFixed(1);
     return <div className="mainContent presentation">
         <img src={diskSpaceLeft} className="behaveImage" alt="Disk Space Left on Macintosh—not much is left"/>
-        <div className="default blog">
+        <div className="default end blog">
             <p>Version 1 [up to date since 06/06/2026]</p>
             <NavLink to="/email">Report bugs or contact eves26phylum</NavLink>
             <div className="group">
                 <strong>Time Until Grown</strong>
-                <LearningProgressBar progress={progress}>
-                    <p className="yearsLeft">{yearsLeft === "0.0" ? `ready to produce` : `${yearsLeft} years left`}</p>
+                <LearningProgressBar progress={progress} outerChildren={<p className="yearsLeft dogger">{yearsLeft === "0.0" ? `ready to produce` : `${yearsLeft} years left`}</p>}>
+                    <p className="yearsLeft">{secondsToYears(progress * getEnd()).toFixed(2)} years old</p>
                 </LearningProgressBar>
             </div>
             <div className="group">
@@ -90,6 +70,32 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
                         </ModalButtons>
                     </DraggableModal>, uuid);
                     }}>Shut Down OS</button>
+                    <button className="os-option" onClick={() => {
+                        const uuid = crypto.randomUUID();
+                        modals.addModal(<DraggableModal defaultPosition={{
+                            x: window.innerWidth / 2,
+                            y: window.innerHeight / 2
+                        }}>
+                        <ModalHeader>
+                            Are you sure you want to toggle dark mode
+                        </ModalHeader>
+                        <ModalBody>
+                            <p>This is an experimental feature! Most components have not been adapted to work with dark mode—yet.</p>
+                        </ModalBody>
+                        <ModalButtons>
+                            <ModalDefaultButton onClick={() => {
+                                modals.destroyModalByUUID(uuid);
+                            }}>Cancel</ModalDefaultButton>
+                            <ModalDefaultButton onClick={() => {
+                                modals.destroyModalByUUID(uuid);
+                                document.body.classList.toggle("dark_mode");
+                                localStorage.setItem('dark_mode', document.body.classList.contains("dark_mode").toString());
+                            }}>Confirm</ModalDefaultButton>
+                        </ModalButtons>
+                    </DraggableModal>, uuid);
+                    }}>turn {
+                        document.body.classList.contains("dark_mode") ? "off" : "on"
+                    } dark mode</button>
                     <button className="os-option" onClick={() => {
                         const uuid = crypto.randomUUID();
                         modals.addModal(<DraggableModal defaultPosition={{

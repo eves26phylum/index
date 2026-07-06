@@ -119,6 +119,9 @@ export function App() {
       );
     });
   }
+  useEffect(() => {
+    if (localStorage.getItem('dark_mode') === "true") document.body.classList.add("dark_mode");
+  }, [])
   return <ModalContext.Provider value={{
     destroyModalByUUID: destroyModalByUUID,
     addModal: addModal

@@ -6,7 +6,7 @@ type clipboardCopy = {
 }
 export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.ComponentType<clipboardCopy>}) {
     return <div className="mainContent presentation">
-        <div className="default blog centered">
+        <div className="default end blog centered">
             <h1>My Contacts</h1>
             <div>
                 <p>Email me at <code>{mail}<ClipboardCopyButton copy={mail}/></code></p>
