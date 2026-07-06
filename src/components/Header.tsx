@@ -62,9 +62,9 @@ export function MenuBar() {
                             </button>
                         )}
                         {isDropMenuOpen && (
-                            <div className="drop-menu">
+                            <nav className="drop-menu">
                                 {hiddenItems}
-                            </div>
+                            </nav>
                         )}
                     </div>
                 </nav>
