@@ -100,7 +100,7 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
                             Are you sure you want to toggle dark mode
                         </ModalHeader>
                         <ModalBody>
-                            <p>This is an experimental feature! Components haven't really been adapted to work with dark mode, yet.</p>
+                            <p>This is an experimental feature! Most components have not been adapted to work with dark mode—yet.</p>
                         </ModalBody>
                         <ModalButtons>
                             <ModalDefaultButton onClick={() => {
@@ -109,6 +109,7 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
                             <ModalDefaultButton onClick={() => {
                                 modals.destroyModalByUUID(uuid);
                                 document.body.classList.toggle("dark_mode");
+                                localStorage.setItem('dark_mode', document.body.classList.contains("dark_mode").toString());
                             }}>Confirm</ModalDefaultButton>
                         </ModalButtons>
                     </DraggableModal>, uuid);

@@ -5,12 +5,17 @@
     --border: rgb(182, 182, 182);
     --secondary: rgb(65, 65, 65);
     --odd: rgba(255, 255, 255, 0.048);
+    --text-color: black;
     --accent-gradient-select: linear-gradient(to bottom, var(--darkened-accent-darker) 0%, var(--darkened-accent) 20%, var(--darkened-accent) 100%);
 }
 body.dark_mode {
     --text-color: white;
+    --background-color: black;
     color: white; /* fallback */
     background-color: black;
+}
+.dark_mode a {
+    color: rgb(0, 119, 255);
 }
 table {
     border-collapse: collapse;
@@ -112,6 +117,7 @@ main {
 }
 code {
     background-color: rgb(226, 226, 226);
+    color: black;
     padding: 0.25rem 0.25rem;
     align-items: center;
     display: flex;
@@ -189,7 +195,7 @@ code {
     display: flex;
     padding-left: 1rem
 }
-.nav-link {
+nav .nav-link {
     color: white;
     /* flex-grow: 1; */
     display: flex;
@@ -201,6 +207,7 @@ code {
 }
 .tooltip {
     background-color: rgb(203, 203, 203);
+    color: black;
     padding: 0.25rem;
     font-size: 0.618rem;
     font-family: 'PublicSans';
@@ -274,6 +281,7 @@ footer {
     display: flex;
     font-family: 'PublicSans';
     flex-direction: column;
+    color: black;
     user-select: none;
     -webkit-user-select: none;
     background-color: rgb(232, 232, 232);
