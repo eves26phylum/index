@@ -13,7 +13,7 @@ export function HomePage() {
                 </div>
             </div>
             <div className="default">
-                <p>I am a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male who had played <NavLink target="_blank" to="https://roblox.com">ROBLOX</NavLink></p>
+                <p>I am a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male.</p>
             </div>
             <div className="default">
                 <strong>⚠️ VERY IMPORTANT ANNOUNCEMENT ⚠️</strong>
