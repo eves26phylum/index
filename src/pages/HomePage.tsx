@@ -13,12 +13,11 @@ export function HomePage() {
                 </div>
             </div>
             <div className="default">
-                <p>I am a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male</p>
+                <p>I am a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male who had played <NavLink target="_blank" to="https://roblox.com">ROBLOX</NavLink></p>
                 <NavLink to="/how_this_was_made">how this site was made & the inspiration for the theme</NavLink>
             </div>
             <div className="default">
-                <h2>the fun stuff (non serious)</h2>
-                <NavLink to="/futon_gpt">FutonGPT Announcement</NavLink>
+                <NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Area of Efficiency</NavLink>
             </div>
         </div>
     </div>

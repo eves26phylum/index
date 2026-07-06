@@ -1,7 +1,7 @@
 export function GPT() {
     return <div className="mainContent presentation">
         <div className="default end blog">
-            <h1>Releasing FutonGPT</h1>
+            <h1>FutonGPT Public Release Announcement: A New Era of Efficiency</h1>
             <p>Today—we're happy to announce that we're releasing FutonGPT.</p>
             <p>By default, it comes with FP4 quantisation. Cheapest model ever!</p>
             <p>With our cost saving mechanisms to reduce cost in running this large model, we have drastically reduced model size from the deprecated FUTONGPT 1.0 (100T Parameters) to FutonGPT 2.0 (1k Parameters) </p>
@@ -41,7 +41,7 @@ export function GPT() {
                 </tbody>
             </table>
             <strong>A sample response from our model:</strong>
-            <p>"Hello I fart"</p>
+            <p>"Hello World and I hope you have a great day I enjoy tasting lemons"</p>
         </div>
     </div>
 }
