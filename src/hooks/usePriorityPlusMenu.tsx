@@ -23,30 +23,38 @@ export function usePriorityPlusMenu<A extends HTMLElement, B extends HTMLElement
                 onOverflowChangeRef.current?.(0);
                 return;
             }
-
+            const originalState = domChildren.map(node => node.classList.contains("invisible"));
             // reset all back to normal
-            domChildren.forEach((node: Element) => {
+            domChildren.forEach((node) => {
                 node.classList.remove("invisible");
             });
 
             let hiddenCount = 0;
+            const remaining = [...domChildren];
             while (isOverflowing()) {
-                if (domChildren.length === 0) {
+                if (remaining.length === 0) {
                     console.warn("PriorityPlusMenu could not reduce elements enough :(");
                     break;
                 }
-                const theLuckyDomChild = domChildren.pop();
-                // theLuckyDomChild?.classList.add("invisible");
-                onOverflowChangeRef.current?.(hiddenCount);
+                const theLuckyDomChild = remaining.pop();
+                theLuckyDomChild?.classList.add("invisible");
                 hiddenCount++;
             }
 
+            // domChildren.forEach((node) => {
+            //     node.classList.remove("invisible");
+            // });
+            domChildren.forEach((node, index) => {
+                node.classList[originalState[index] ? "add" : "remove"]("invisible");
+            });
+
+            onOverflowChangeRef.current?.(hiddenCount);
         };
 
-        eventListenerFunction(); // run once on mount, otherwise a narrow initial viewport never gets evaluated
+        eventListenerFunction();
         window.addEventListener("resize", eventListenerFunction);
         return () => window.removeEventListener("resize", eventListenerFunction);
     }, []);
-
+    
     return [superGeniusRef, overflowCheckRef] as const;
 }

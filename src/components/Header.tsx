@@ -32,20 +32,19 @@ export function MenuBar() {
         if (count === 0) setIsDropMenuOpen(false); // nothing left to show, so don't leave an empty panel open
     });
 
-    const navItems = [
+    const rawNavItems = [
         <HeaderLink key="home" to="/">{IconAndTextCombo({ filledIcon: faFilledMoon, nonFilledIcon: faMoon, children: "eves26phylum" })}</HeaderLink>,
         <HeaderLink key="what_i_do" to="/what_i_do">{IconAndTextCombo({ filledIcon: faFilledClipboard, nonFilledIcon: faClipboard, children: "programmer life" })}</HeaderLink>,
         <HeaderLink key="destructive_actions" to="/destructive_actions">{IconAndTextCombo({ filledIcon: faFilledFloppyDisk, nonFilledIcon: faFloppyDisk, children: "eves26phylumOS information" })}</HeaderLink>,
-    ]
-    const hiddenItems = hiddenCount > 0 ? navItems.slice(navItems.length - hiddenCount) : [];
-    useLayoutEffect(() => {
-        Array.from(navItems).forEach((node: React.JSX.Element) => {
-            // node.props["className"] = "invisible";
-            return node;
-        });
-    }, [...hiddenItems]);
+    ];
 
+    const navItems = rawNavItems.map((item, index) => {
+        const isHidden = hiddenCount > 0 && index >= rawNavItems.length - hiddenCount;
+        return isHidden ? React.cloneElement(item, { className: "invisible" }) : item;
+    });
 
+    const hiddenItems = hiddenCount > 0 ? rawNavItems.slice(rawNavItems.length - hiddenCount) : [];
+    
     return <>
         <header>
             <div className="header" ref={overflowCheckRef}>
@@ -53,7 +52,7 @@ export function MenuBar() {
                     <nav ref={navRef}>
                         {navItems}
                     </nav>
-                    <div>
+                    <div className="doggy">
                         {hiddenCount > 0 && (
                             <button className="drop-menu-toggle nav-item" onClick={() => setIsDropMenuOpen(open => !open)} aria-expanded={isDropMenuOpen}>
                                 <FontAwesomeIcon icon={faEllipsis}/>
