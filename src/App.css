@@ -181,6 +181,9 @@ code {
         border: none;
     }
 }
+.drop-menu-toggle {
+    background-color: black;
+}
 .header nav {
     /* gap: 1rem; */
     /* width: max-content; */

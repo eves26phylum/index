@@ -1,4 +1,5 @@
 import { NavLink, type NavLinkProps } from "react-router";
+import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye as faFilledEye, faClipboard as faFilledClipboard, type IconDefinition, faFloppyDisk as faFilledFloppyDisk, faMoon as faFilledMoon } from '@fortawesome/free-solid-svg-icons';
 import { faEye, faClipboard, faFloppyDisk, faMoon } from '@fortawesome/free-regular-svg-icons';
@@ -41,7 +42,7 @@ export function MenuBar() {
     return <>
         <header>
             <div className="header" ref={overflowCheckRef}>
-                <div>
+                <nav>
                     <nav ref={navRef}>
                         {navItems}
                     </nav>
@@ -50,7 +51,7 @@ export function MenuBar() {
                             More
                         </button>
                     )}
-                </div>
+                </nav>
                 {isDropMenuOpen && (
                     <div className="drop-menu">
                         {hiddenItems}
