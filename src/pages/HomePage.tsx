@@ -16,9 +16,11 @@ export function HomePage() {
             <div className="default">
                 <p>I am a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male who enjoys using MacBooks
                 </p>
+                <NavLink to="/what_i_do">Looking for my software developer information?</NavLink>
             </div>
             <div className="default">
                 <strong>⚠️ VERY IMPORTANT ANNOUNCEMENT ⚠️</strong>
+                <p>(satire)</p>
                 {Array(500).fill(<NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Area of Efficiency</NavLink>)}
             </div>
         </div>

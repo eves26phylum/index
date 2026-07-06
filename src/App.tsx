@@ -7,6 +7,7 @@ import { createContext } from 'react';
 import { bootlog } from './assets/documents/bootlog';
 import React from 'react';
 import { BlinkingCursor } from './BlinkingCursor';
+import { Scroller } from './components/Scroller';
 
 export type uuid = ReturnType<Crypto["randomUUID"]>;
 export type ModalContextType = {
@@ -140,6 +141,7 @@ export function App() {
     { hasLoaded ?
     <BrowserRouter>
       <MenuBar/>
+      <Scroller/>
       <main>
         <AllRoutes/>
       </main>
