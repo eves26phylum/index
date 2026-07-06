@@ -20,7 +20,7 @@ export function HowThisWasMade() {
                 </div>
             </div>
             <strong>why i created this website</strong>
-            <p>I created this website to showcase the things I have created, and to practice my web development skills.</p>
+            <p>I created this website to showcase who I am, what things I have created, and to practice my web development skills.</p>
         </div>
     </div>
 }
