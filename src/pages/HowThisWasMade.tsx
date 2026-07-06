@@ -13,7 +13,7 @@ export function HowThisWasMade() {
             <p>Disk Space Left image at <NavLink to="/destructive_actions">Settings</NavLink> uses a screenshot from <NavLink target="_blank" to="https://apple.com">Apple</NavLink>'s macOS user interface.</p>
             <p>'hello' message from 'the great futon' image at <NavLink to="/what_i_do">programmer life</NavLink> uses a screenshot from <NavLink target="_blank" to="https://discord.com">Discord</NavLink>'s web user interface.</p>
             <p><NavLink target="_blank" to="https://fonts.google.com/specimen/Public+Sans">Public Sans</NavLink> was the primary font used for this website's user interface.</p>
-            <p><NavLink target="_blank" to="https://inai.de/projects/consoleet/">Consoleet</NavLink> font</p>
+            <p><NavLink target="_blank" to="https://inai.de/projects/consoleet/">Consoleet font source</NavLink></p>
             <strong>site design inspiration</strong>
             <div className="double-column">
                 <div className="default half">
@@ -25,7 +25,7 @@ export function HowThisWasMade() {
                 </div>
             </div>
             <strong>why i created this website</strong>
-            <p>I created this website to showcase who I am, what things I have created, and to practice my web development skills.</p>
+            <p>I created this website to showcase what things I have created, to display myself, and to practice my web development skills.</p>
         </div>
     </div>
 }
