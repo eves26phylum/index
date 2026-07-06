@@ -1,6 +1,6 @@
 export function GPT() {
     return <div className="mainContent presentation">
-        <div className="default blog">
+        <div className="default end blog">
             <h1>Releasing FutonGPT</h1>
             <p>Today—we're happy to announce that we're releasing FutonGPT.</p>
             <p>By default, it comes with FP4 quantisation. Cheapest model ever!</p>

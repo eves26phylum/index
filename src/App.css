@@ -7,12 +7,27 @@
     --odd: rgba(255, 255, 255, 0.048);
     --accent-gradient-select: linear-gradient(to bottom, var(--darkened-accent-darker) 0%, var(--darkened-accent) 20%, var(--darkened-accent) 100%);
 }
+body.dark_mode {
+    --text-color: white;
+    color: white; /* fallback */
+    background-color: black;
+}
 table {
     border-collapse: collapse;
 }
 td {
     border: 1px solid black;
     padding: 0.2rem;
+}
+.double-column {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    /* grid-template-columns: 1fr 1fr; */
+    /* gap: 1.5rem; */
+    /* max-width: calc(400px * 2 + 0rem); 0rem: is equivalent to gap property */
+}
+.half {
+    width: 100%;
 }
 @font-face {
   font-family: 'PublicSans';
@@ -128,8 +143,17 @@ code {
     flex-direction: column;
     align-items: flex-start;
     padding: 0.5rem 1rem;
-    padding-top: 2rem;
     gap: 1rem;
+}
+.row {
+    flex-direction: row;
+}
+.middle {
+    align-items: center;
+}
+.end {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 .centered {
     align-items: center;

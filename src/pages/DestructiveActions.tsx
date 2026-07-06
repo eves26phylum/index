@@ -52,7 +52,7 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
     const yearsLeft = secondsToYears(getEnd() - progress * getEnd()).toFixed(1);
     return <div className="mainContent presentation">
         <img src={diskSpaceLeft} className="behaveImage" alt="Disk Space Left on Macintosh—not much is left"/>
-        <div className="default blog">
+        <div className="default end blog">
             <p>Version 1 [up to date since 06/06/2026]</p>
             <NavLink to="/email">Report bugs or contact eves26phylum</NavLink>
             <div className="group">
@@ -90,6 +90,31 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
                         </ModalButtons>
                     </DraggableModal>, uuid);
                     }}>Shut Down OS</button>
+                    <button className="os-option" onClick={() => {
+                        const uuid = crypto.randomUUID();
+                        modals.addModal(<DraggableModal defaultPosition={{
+                            x: window.innerWidth / 2,
+                            y: window.innerHeight / 2
+                        }}>
+                        <ModalHeader>
+                            Are you sure you want to toggle dark mode
+                        </ModalHeader>
+                        <ModalBody>
+                            <p>This is an experimental feature! Components haven't really been adapted to work with dark mode, yet.</p>
+                        </ModalBody>
+                        <ModalButtons>
+                            <ModalDefaultButton onClick={() => {
+                                modals.destroyModalByUUID(uuid);
+                            }}>Cancel</ModalDefaultButton>
+                            <ModalDefaultButton onClick={() => {
+                                modals.destroyModalByUUID(uuid);
+                                document.body.classList.toggle("dark_mode");
+                            }}>Confirm</ModalDefaultButton>
+                        </ModalButtons>
+                    </DraggableModal>, uuid);
+                    }}>turn {
+                        document.body.classList.contains("dark_mode") ? "off" : "on"
+                    } dark mode</button>
                     <button className="os-option" onClick={() => {
                         const uuid = crypto.randomUUID();
                         modals.addModal(<DraggableModal defaultPosition={{

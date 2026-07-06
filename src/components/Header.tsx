@@ -1,7 +1,7 @@
 import { NavLink, type NavLinkProps } from "react-router";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye as faFilledEye, faClipboard as faFilledClipboard, type IconDefinition, faFloppyDisk as faFilledFloppyDisk } from '@fortawesome/free-solid-svg-icons';
-import { faEye, faClipboard, faFloppyDisk } from '@fortawesome/free-regular-svg-icons';
+import { faEye as faFilledEye, faClipboard as faFilledClipboard, type IconDefinition, faFloppyDisk as faFilledFloppyDisk, faMoon as faFilledMoon } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faClipboard, faFloppyDisk, faMoon } from '@fortawesome/free-regular-svg-icons';
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 export interface HeaderLinkProps extends NavLinkProps {
@@ -24,8 +24,9 @@ export function MenuBar() {
         <header>
             <div className="header">
                 <nav>
-                    <HeaderLink to="/">{IconAndTextCombo({filledIcon: faFilledClipboard, nonFilledIcon: faClipboard, children: "About Me"})}</HeaderLink>
-                    <HeaderLink to="/projects">{IconAndTextCombo({filledIcon: faFilledEye, nonFilledIcon: faEye, children: "Projects"})}</HeaderLink>
+                    <HeaderLink to="/">{IconAndTextCombo({filledIcon: faFilledMoon, nonFilledIcon: faMoon, children: "eves26phylum"})}</HeaderLink>
+                    <HeaderLink to="/what_i_do">{IconAndTextCombo({filledIcon: faFilledClipboard, nonFilledIcon: faClipboard, children: "what i do for a living"})}</HeaderLink>
+                    {/* <HeaderLink to="/projects">{IconAndTextCombo({filledIcon: faFilledEye, nonFilledIcon: faEye, children: "Projects"})}</HeaderLink> */}
                     {/* <HeaderLink to="/dog_feeding_simulator">{IconAndTextCombo({filledIcon: faFilledEye, nonFilledIcon: faEye, children: "Projects"})}</HeaderLink> */}
                     <HeaderLink to="/destructive_actions">{IconAndTextCombo({filledIcon: faFilledFloppyDisk, nonFilledIcon: faFloppyDisk, children: "Eves26PhylumOS Information"})}</HeaderLink>
                 </nav>

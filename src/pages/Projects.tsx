@@ -2,7 +2,7 @@ import { NavLink } from "react-router";
 import afghan from "../assets/images/3kmafghanistan.png";
 export function Projects() {
     return <div className="mainContent presentation">
-        <div className="default blog">
+        <div className="default end blog">
             <img src={afghan} className="behaveImage"/>
             <h1><NavLink to="https://github.com/eves26phylum/ProcedurallyGeneratedDeadlineMap_TS">3 Kilometer Afghanistan</NavLink></h1>
             <p>A procedurally generated map with modular, extensible code that uses custom biome rules and perlin-noise generation for the terrain.</p>
