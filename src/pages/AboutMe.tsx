@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRust, faTypescript, faJs, faCss } from "@fortawesome/free-brands-svg-icons";
 import { faBrain } from "@fortawesome/free-solid-svg-icons";
 import afghan from "../assets/images/3kmafghanistan.png";
-import myselfondiscord from "../assets/images/myselfondiscord.png";
 import deadlineuirecreation from "../assets/images/deadlineuirecreation.png";
 import Tooltip from "../components/Tooltip";
 import { getCurrentTime, getUnixTimestampOfTime, secondsToYears } from "../utilities/age";
@@ -14,7 +13,6 @@ export function AboutMe() {
         <div className="blog end">
             <div className="double-column">
                 <div className="default half">
-                    <img src={myselfondiscord} className="behaveImage"/>
                     <p>Hi there! I'm eves26phylum, a self-taught full-stack developer who is interested into the field of Game Development. I have been learning programming since {
                         secondsToYears(getCurrentTime() - getUnixTimestampOfTime(2019, 12, 30)).toFixed(1)
                     } years ago.
