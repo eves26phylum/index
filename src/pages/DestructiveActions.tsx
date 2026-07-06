@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 import { useContext } from "react";
 import { ModalContext } from "../App";
 import type { DraggableModalType, ModalBodyType, ModalButtonsType, ModalDefaultButtonType, ModalHeaderType } from "../types/ModalTypes";
-import { getUnixTimestampOfTime, secondsToYears, getUltraDeadline, getStartTask, getEnd, calculateUntilUltraDeadline } from "../utilities/age";
+import { getUnixTimestampOfTime, secondsToYears, getUltraDeadline, getStartTask, getEnd, calculateUntilUltraDeadline, getCurrentTime } from "../utilities/age";
 
 export function LearningProgressBar({progress, children, outerChildren}: {progress: number, children?: React.ReactNode, outerChildren?: React.ReactNode}) {
     return <div className="progressBar">
@@ -21,7 +21,7 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
     const modals = useContext(ModalContext);
     const calculateSimulatedTime = () => {
         // return getUltraDeadline();
-        return Math.floor(Date.now() / 1000);
+        return getCurrentTime();
     }
     const [simulatedTime, setSimulatedTime] = useState<number>(calculateSimulatedTime());
     const progress = Math.max(calculateUntilUltraDeadline(simulatedTime), 0);

@@ -7,6 +7,9 @@ export function getUnixTimestampOfTime(targetYear: number, targetMonth: number, 
 export function secondsToYears(seconds: number) {
     return seconds / 31536000;
 }
+export function getCurrentTime() {
+    return Math.floor(Date.now() / 1000);
+}
 export function getUltraDeadline() {
     return getUnixTimestampOfTime(2029, 12, 30);
 }

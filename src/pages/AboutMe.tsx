@@ -5,6 +5,8 @@ import { faBrain } from "@fortawesome/free-solid-svg-icons";
 import afghan from "../assets/images/3kmafghanistan.png";
 import myselfondiscord from "../assets/images/myselfondiscord.png";
 import Tooltip from "../components/Tooltip";
+import { getCurrentTime, getUnixTimestampOfTime, secondsToYears } from "../utilities/age";
+import { NeovimIconBecauseItWasTooBig } from "../components/NeovimIcon";
 // yeah sure upwards import isn't very good practice but who cares, my code editor has this inbuilt thing that changes the directory whenever you move the file
 export function AboutMe() {
     return <div className="mainContent presentation">
@@ -12,7 +14,9 @@ export function AboutMe() {
             <div className="double-column">
                 <div className="default half">
                     <img src={myselfondiscord} className="behaveImage"/>
-                    <p>Hi there! I'm eves26phylum, a self-taught full-stack developer who is interested into the field of Game Development. I have been learning programming for 5 years.
+                    <p>Hi there! I'm eves26phylum, a self-taught full-stack developer who is interested into the field of Game Development. I have been learning programming since {
+                        secondsToYears(getCurrentTime() - getUnixTimestampOfTime(2019, 12, 30)).toFixed(1)
+                    } years ago.
         I'm interested in software development and creative planning. This year, I am thinking about alternate paths besides Game Development.</p>
                 </div>
                 <div className="default half">
@@ -97,6 +101,11 @@ export function AboutMe() {
                         <Tooltip label="MySQL" open={true}>
                             <NavLink target="_blank" to="https://mysql.com">
                                 <img src="https://www.mysql.com/common/logos/mysql-logo.svg" alt="MySQL" className="icon-skill"/>
+                            </NavLink>
+                        </Tooltip>
+                        <Tooltip label="Neovim: A Vim-Based Text Editor" open={true}>
+                            <NavLink target="_blank" to="https://neovim.io/">
+                                <NeovimIconBecauseItWasTooBig className="icon-skill"/>
                             </NavLink>
                         </Tooltip>
                     </div>

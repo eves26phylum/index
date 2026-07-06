@@ -179,6 +179,7 @@ code {
     padding: 0.5rem 1rem;
     gap: 1rem;
 }
+
 .row {
     flex-direction: row;
 }
@@ -474,6 +475,7 @@ html.turned-off body {
 }
 .skill-list {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     gap: 1rem;
 }
