@@ -1,13 +1,12 @@
 import { useLayoutEffect, useRef, type RefObject } from "react";
 
-export function usePriorityPlusMenu() {
+export function usePriorityPlusMenu(dropMenu: React.ReactNode) {
     const superGeniusRef = useRef<HTMLElement | null>(null);
     useLayoutEffect(() => {
         // const observer = new ResizeObserver(() => {
         const eventListenerFunction = () => {
             const ref_current = superGeniusRef.current;
-            window.alert("what3")
-            if (!ref_current) return window.alert("what4");
+            if (!ref_current) return console.warn("PriorityPlusMenu didn't find the ref being attached to anything.");
             const isOverflowing = () => {
                 console.log(ref_current.scrollWidth, ref_current.offsetWidth)
                 return ref_current.scrollWidth > ref_current.offsetWidth;
@@ -23,7 +22,7 @@ export function usePriorityPlusMenu() {
             console.log(isOverflowing());
             while (isOverflowing()) {
                 if (domChildren.length === 0) {
-                    console.warn("PriorityPlusMenu could not reduce elements enough :(");
+                    console.warn("PriorityPlusMenu could not reduce elements enough... It's still overflowing.");
                     break;
                 }
                 const theLuckyDomChild =  domChildren.pop();

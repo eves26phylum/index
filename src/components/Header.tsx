@@ -22,7 +22,7 @@ export function HeaderLink({children, className, ...props}: HeaderLinkProps) {
     return <NavLink className={({isActive}) => {return isActive ? `nav-active nav-link ${className}` : `nav-link ${className}`}} {...props}>{children}</NavLink>;
 }
 export function MenuBar() {
-    const navRef = usePriorityPlusMenu();
+    const navRef = usePriorityPlusMenu(<div></div>);
     return <>
         <header>
             <div className="header">
