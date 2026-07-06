@@ -26,7 +26,7 @@ export function HeaderLink({ children, className = "", ...props }: HeaderLinkPro
 export function MenuBar() {
     const [hiddenCount, setHiddenCount] = useState(0);
     const [isDropMenuOpen, setIsDropMenuOpen] = useState(false);
-
+    
     const [navRef, overflowCheckRef] = usePriorityPlusMenu<HTMLElement, HTMLDivElement>((count) => {
         setHiddenCount(count);
         if (count === 0) setIsDropMenuOpen(false); // nothing left to show, so don't leave an empty panel open
@@ -79,7 +79,12 @@ export function MenuBar() {
                 <nav className="justify-right">
                     <HeaderLink to="https://github.com/eves26phylum" className="redirect">{IconAndTextCombo({ filledIcon: faGithub, children: "GitHub" })}</HeaderLink>
                     <HeaderLink to="/email">{IconAndTextCombo({ filledIcon: faEnvelope, children: "mail" })}</HeaderLink>
-                    <HeaderLink key="destructive_actions" to="/destructive_actions"><FontAwesomeIcon icon={faFilledCog}/></HeaderLink>
+                    <HeaderLink key="destructive_actions" to="/destructive_actions" className="mobile-view">
+                        <FontAwesomeIcon icon={faFilledCog}/>
+                    </HeaderLink>
+                    <HeaderLink key="destructive_actions" to="/destructive_actions" className="desktop-view">
+                        {IconAndTextCombo({ filledIcon: faFilledCog, children: "eves26phylum" })}
+                    </HeaderLink>
                 </nav>
             </div>
         </header>

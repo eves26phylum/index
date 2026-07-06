@@ -13,11 +13,23 @@
     --text-color: black;
     --accent-gradient-select: linear-gradient(to bottom, var(--darkened-accent-darker) 0%, var(--darkened-accent) 20%, var(--darkened-accent) 100%);
 }
+.mobile-view {
+    display: none !important;
+}
+.desktop-view {
+    display: inherit !important; /* !important specifity bs */
+}
 @media screen and (max-width: 600px) {
     :root {
         --nav-item-padding-y: 1rem;
         --nav-item-padding-x: 1rem;
         --how-thick-is-the-line: 3px;
+    }
+    .mobile-view {
+        display: inherit !important;
+    }
+    .desktop-view {
+        display: none !important;
     }
 }
 body.dark_mode {
@@ -474,7 +486,7 @@ html.turned-off body {
     border-top: var(--how-thick-is-the-line) var(--accent-colour) solid;
     padding-top: calc(var(--nav-item-padding-y) - var(--how-thick-is-the-line));
     color: white;
-    font-weight: bold;
+    /* font-weight: bold; */
     /* background-color: rgb(255, 255, 255); */
     cursor: default;
 }
