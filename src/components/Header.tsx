@@ -25,10 +25,10 @@ export function MenuBar() {
             <div className="header">
                 <nav>
                     <HeaderLink to="/">{IconAndTextCombo({filledIcon: faFilledMoon, nonFilledIcon: faMoon, children: "eves26phylum"})}</HeaderLink>
-                    <HeaderLink to="/what_i_do">{IconAndTextCombo({filledIcon: faFilledClipboard, nonFilledIcon: faClipboard, children: "what i do for a living"})}</HeaderLink>
+                    <HeaderLink to="/what_i_do">{IconAndTextCombo({filledIcon: faFilledClipboard, nonFilledIcon: faClipboard, children: "programmer life"})}</HeaderLink>
                     {/* <HeaderLink to="/projects">{IconAndTextCombo({filledIcon: faFilledEye, nonFilledIcon: faEye, children: "Projects"})}</HeaderLink> */}
                     {/* <HeaderLink to="/dog_feeding_simulator">{IconAndTextCombo({filledIcon: faFilledEye, nonFilledIcon: faEye, children: "Projects"})}</HeaderLink> */}
-                    <HeaderLink to="/destructive_actions">{IconAndTextCombo({filledIcon: faFilledFloppyDisk, nonFilledIcon: faFloppyDisk, children: "Eves26PhylumOS Information"})}</HeaderLink>
+                    <HeaderLink to="/destructive_actions">{IconAndTextCombo({filledIcon: faFilledFloppyDisk, nonFilledIcon: faFloppyDisk, children: "eves26phylumOS information"})}</HeaderLink>
                 </nav>
                 <nav className="justify-right">
                     <HeaderLink to="https://github.com/eves26phylum" className="redirect">{IconAndTextCombo({filledIcon: faGithub, children: "GitHub"})}</HeaderLink>
