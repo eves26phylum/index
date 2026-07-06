@@ -1,7 +1,7 @@
 import { NavLink, type NavLinkProps } from "react-router";
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye as faFilledEye, faClipboard as faFilledClipboard, type IconDefinition, faFloppyDisk as faFilledFloppyDisk, faMoon as faFilledMoon } from '@fortawesome/free-solid-svg-icons';
+import { faEye as faFilledEye, faClipboard as faFilledClipboard, type IconDefinition, faFloppyDisk as faFilledFloppyDisk, faMoon as faFilledMoon, faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { faEye, faClipboard, faFloppyDisk, faMoon } from '@fortawesome/free-regular-svg-icons';
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -20,7 +20,7 @@ export function IconAndTextCombo({ filledIcon, nonFilledIcon, children }: IconTe
     return ({ isActive }: { isActive: boolean }) => { return <><FontAwesomeIcon icon={isActive ? filledIcon : nonFilled} /><p>{children}</p></> };
 }
 export function HeaderLink({ children, className = "", ...props }: HeaderLinkProps) {
-    return <NavLink className={({ isActive }) => { return isActive ? `nav-active nav-link ${className}` : `nav-link ${className}` }} {...props}>{children}</NavLink>;
+    return <NavLink className={({ isActive }) => { return isActive ? `nav-active nav-item nav-link ${className}` : `nav-link nav-item ${className}` }} {...props}>{children}</NavLink>;
 }
 export function MenuBar() {
     const [hiddenCount, setHiddenCount] = useState(0);
@@ -47,8 +47,11 @@ export function MenuBar() {
                         {navItems}
                     </nav>
                     {hiddenCount > 0 && (
-                        <button className="drop-menu-toggle" onClick={() => setIsDropMenuOpen(open => !open)} aria-expanded={isDropMenuOpen}>
-                            More
+                        <button className="drop-menu-toggle nav-item" onClick={() => setIsDropMenuOpen(open => !open)} aria-expanded={isDropMenuOpen}>
+                            <FontAwesomeIcon icon={faEllipsis}/>
+                            <p>
+                                More
+                            </p>
                         </button>
                     )}
                 </nav>
