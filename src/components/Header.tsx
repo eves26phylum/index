@@ -4,6 +4,8 @@ import { faEye as faFilledEye, faClipboard as faFilledClipboard, type IconDefini
 import { faEye, faClipboard, faFloppyDisk, faMoon } from '@fortawesome/free-regular-svg-icons';
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { useEffect, useLayoutEffect, useRef } from "react";
+import { usePriorityPlusMenu } from "../hooks/usePriorityPlusMenu";
 export interface HeaderLinkProps extends NavLinkProps {
     
 }
@@ -20,10 +22,11 @@ export function HeaderLink({children, className, ...props}: HeaderLinkProps) {
     return <NavLink className={({isActive}) => {return isActive ? `nav-active nav-link ${className}` : `nav-link ${className}`}} {...props}>{children}</NavLink>;
 }
 export function MenuBar() {
+    const navRef = usePriorityPlusMenu();
     return <>
         <header>
             <div className="header">
-                <nav>
+                <nav ref={navRef}>
                     <HeaderLink to="/">{IconAndTextCombo({filledIcon: faFilledMoon, nonFilledIcon: faMoon, children: "eves26phylum"})}</HeaderLink>
                     <HeaderLink to="/what_i_do">{IconAndTextCombo({filledIcon: faFilledClipboard, nonFilledIcon: faClipboard, children: "programmer life"})}</HeaderLink>
                     {/* <HeaderLink to="/projects">{IconAndTextCombo({filledIcon: faFilledEye, nonFilledIcon: faEye, children: "Projects"})}</HeaderLink> */}

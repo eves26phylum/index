@@ -183,7 +183,9 @@ code {
     /* gap: 1rem; */
     /* width: max-content; */
     /* display: inline-flex; */
-    flex-wrap: wrap;
+    overflow-x: hidden;
+    /* flex-wrap: wrap; */
+    white-space: nowrap;
     display: flex;
     /* flex-grow: 1; */
 }
@@ -407,4 +409,8 @@ body {
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
+}
+.invisible {
+    display: none;
+    color: red;
 }
