@@ -24,7 +24,7 @@ export function AboutMe() {
             </div>
             <div className="default">
                 <p>
-                    <strong>Basically all</strong> of my projects are open-source—I believe people should be allowed to understand each other's work, build on what is presented, and ultimately share what we know so we can all help each other achieve anything.
+                    <strong>Basically all of my projects are open-source</strong>—I believe people should be allowed to understand each other's work, build on what is presented, and ultimately share what we know so we can all help each other achieve anything.
                 </p>
                 <p>Below, are a selection of things I have made.</p>
             </div>
