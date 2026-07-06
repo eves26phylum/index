@@ -468,6 +468,9 @@ html.turned-off body {
     /* height: 24px; */
     height: 24px;
 }
+.full-size {
+    width: 100%;
+}
 .icon-skill-big {
     width: auto;
     /* height: 48px; */

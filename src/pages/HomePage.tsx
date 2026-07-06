@@ -14,11 +14,14 @@ export function HomePage() {
             </div>
             <div className="default">
                 <p>I am a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male who had played <NavLink target="_blank" to="https://roblox.com">ROBLOX</NavLink></p>
-                <NavLink to="/how_this_was_made">how this site was made & the inspiration for the theme</NavLink>
             </div>
             <div className="default">
-                <NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Area of Efficiency</NavLink>
+                <strong>⚠️ VERY IMPORTANT ANNOUNCEMENT ⚠️</strong>
+                {Array(500).fill(<NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Area of Efficiency</NavLink>)}
             </div>
         </div>
+        <footer className="default full-size">
+            {/* <NavLink to="/how_this_was_made">how this site was made & the inspiration for the theme</NavLink> */}
+        </footer>
     </div>
 }
