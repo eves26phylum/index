@@ -62,7 +62,7 @@ export function MenuBar() {
                     </nav>
                     <div className="doggy">
                         {hiddenCount > 0 && (
-                            <button className={`drop-menu-toggle nav-item${isDropMenuOpen ? " open" : ""}`} onClick={() => setIsDropMenuOpen(open => !open)} aria-expanded={isDropMenuOpen}>
+                            <button className={`drop-menu-toggle nav-link nav-item${isDropMenuOpen ? " open" : ""}`} onClick={() => setIsDropMenuOpen(open => !open)} aria-expanded={isDropMenuOpen}>
                                 <p>
                                     More
                                 </p>
