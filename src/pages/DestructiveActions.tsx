@@ -28,13 +28,14 @@ function calculateUntilUltraDeadline(currentTime: number) {
     return (currentTime - getStartTask()) / getEnd();
 }
 
-export function LearningProgressBar({progress, children}: {progress: number, children?: React.ReactNode}) {
+export function LearningProgressBar({progress, children, outerChildren}: {progress: number, children?: React.ReactNode, outerChildren?: React.ReactNode}) {
     return <div className="progressBar">
         <div className="progressIns" style={{
             width: `${progress * 100}%`
         }}>
             {children}
         </div>
+        {outerChildren}
     </div>
 }
 export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, ModalDefaultButton, ModalBody}: {DraggableModal: React.ComponentType<DraggableModalType>, ModalHeader: React.ComponentType<ModalHeaderType>, ModalButtons: React.ComponentType<ModalButtonsType>, ModalDefaultButton: React.ComponentType<ModalDefaultButtonType>, ModalBody: React.ComponentType<ModalBodyType>}) {
@@ -57,8 +58,8 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
             <NavLink to="/email">Report bugs or contact eves26phylum</NavLink>
             <div className="group">
                 <strong>Time Until Grown</strong>
-                <LearningProgressBar progress={progress}>
-                    <p className="yearsLeft">{yearsLeft === "0.0" ? `ready to produce` : `${yearsLeft} years left`}</p>
+                <LearningProgressBar progress={progress} outerChildren={<p className="yearsLeft dogger">{yearsLeft === "0.0" ? `ready to produce` : `${yearsLeft} years left`}</p>}>
+                    <p className="yearsLeft">{secondsToYears(progress * getEnd()).toFixed(2)} years old</p>
                 </LearningProgressBar>
             </div>
             <div className="group">

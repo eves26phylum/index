@@ -226,9 +226,16 @@ footer {
     /* background-color: var(--darkened-accent); */
     background: var(--accent-gradient-select);
 }
+.dogger {
+    display: flex;
+    align-items: center;
+    padding: 0rem 0.5rem;
+}
 .progressBar {
     background-color: var(--secondary);
     border-bottom: 2px rgb(27, 27, 27) solid;
+    display: flex;
+    justify-content: space-between;
     height: 24px;
     width: 100%;    
 }
@@ -326,6 +333,7 @@ footer {
     background-color: var(--accent-colour);
     border-bottom: 2px var(--darkened-accent) solid;
     align-items: center;
+    justify-content: space-between;
     display: flex;
     padding: 0rem 0.5rem;
     background-image: linear-gradient(
