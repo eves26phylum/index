@@ -36,11 +36,11 @@ export function usePriorityPlusMenu<A extends HTMLElement, B extends HTMLElement
                     break;
                 }
                 const theLuckyDomChild = domChildren.pop();
-                theLuckyDomChild?.classList.add("invisible");
+                // theLuckyDomChild?.classList.add("invisible");
+                onOverflowChangeRef.current?.(hiddenCount);
                 hiddenCount++;
             }
 
-            onOverflowChangeRef.current?.(hiddenCount);
         };
 
         eventListenerFunction(); // run once on mount, otherwise a narrow initial viewport never gets evaluated

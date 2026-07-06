@@ -22,6 +22,7 @@ export function IconAndTextCombo({ filledIcon, nonFilledIcon, children }: IconTe
 export function HeaderLink({ children, className = "", ...props }: HeaderLinkProps) {
     return <NavLink className={({ isActive }) => { return isActive ? `nav-active nav-item nav-link ${className}` : `nav-link nav-item ${className}` }} {...props}>{children}</NavLink>;
 }
+
 export function MenuBar() {
     const [hiddenCount, setHiddenCount] = useState(0);
     const [isDropMenuOpen, setIsDropMenuOpen] = useState(false);
@@ -35,9 +36,15 @@ export function MenuBar() {
         <HeaderLink key="home" to="/">{IconAndTextCombo({ filledIcon: faFilledMoon, nonFilledIcon: faMoon, children: "eves26phylum" })}</HeaderLink>,
         <HeaderLink key="what_i_do" to="/what_i_do">{IconAndTextCombo({ filledIcon: faFilledClipboard, nonFilledIcon: faClipboard, children: "programmer life" })}</HeaderLink>,
         <HeaderLink key="destructive_actions" to="/destructive_actions">{IconAndTextCombo({ filledIcon: faFilledFloppyDisk, nonFilledIcon: faFloppyDisk, children: "eves26phylumOS information" })}</HeaderLink>,
-    ];
-
+    ]
     const hiddenItems = hiddenCount > 0 ? navItems.slice(navItems.length - hiddenCount) : [];
+    useLayoutEffect(() => {
+        Array.from(navItems).forEach((node: React.JSX.Element) => {
+            // node.props["className"] = "invisible";
+            return node;
+        });
+    }, [...hiddenItems]);
+
 
     return <>
         <header>
@@ -46,20 +53,22 @@ export function MenuBar() {
                     <nav ref={navRef}>
                         {navItems}
                     </nav>
-                    {hiddenCount > 0 && (
-                        <button className="drop-menu-toggle nav-item" onClick={() => setIsDropMenuOpen(open => !open)} aria-expanded={isDropMenuOpen}>
-                            <FontAwesomeIcon icon={faEllipsis}/>
-                            <p>
-                                More
-                            </p>
-                        </button>
-                    )}
-                </nav>
-                {isDropMenuOpen && (
-                    <div className="drop-menu">
-                        {hiddenItems}
+                    <div>
+                        {hiddenCount > 0 && (
+                            <button className="drop-menu-toggle nav-item" onClick={() => setIsDropMenuOpen(open => !open)} aria-expanded={isDropMenuOpen}>
+                                <FontAwesomeIcon icon={faEllipsis}/>
+                                <p>
+                                    More
+                                </p>
+                            </button>
+                        )}
+                        {isDropMenuOpen && (
+                            <div className="drop-menu">
+                                {hiddenItems}
+                            </div>
+                        )}
                     </div>
-                )}
+                </nav>
                 <nav className="justify-right">
                     <HeaderLink to="https://github.com/eves26phylum" className="redirect">{IconAndTextCombo({ filledIcon: faGithub, children: "GitHub" })}</HeaderLink>
                     <HeaderLink to="/email">{IconAndTextCombo({ filledIcon: faEnvelope, children: "Mail" })}</HeaderLink>
