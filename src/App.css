@@ -296,7 +296,7 @@ button.drop-menu-toggle.open, button.drop-menu-toggle:hover.open {
     color: var(--ghost);
 }
 .dark_mode .nav-link {
-    color: white;
+    color: var(--ghost);
 }
 .tooltip {
     background-color: rgb(203, 203, 203);
