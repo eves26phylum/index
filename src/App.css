@@ -3,7 +3,10 @@
     --darkened-accent: rgb(181, 0, 0);
     --darkened-accent-darker: rgb(132, 0, 0);
     --border: rgb(182, 182, 182);
+    --nav-item-padding-y: 0.5rem;
+    --nav-item-padding-x: 0.5rem;
     --secondary: rgb(65, 65, 65);
+    --ghost: rgb(200, 200, 200);
     --odd: rgba(255, 255, 255, 0.048);
     --text-color: black;
     --accent-gradient-select: linear-gradient(to bottom, var(--darkened-accent-darker) 0%, var(--darkened-accent) 20%, var(--darkened-accent) 100%);
@@ -61,6 +64,7 @@ header:has(.header) {
     background-color: var(--secondary);
     display: flex;
     padding: 0;
+    border-top: 1px solid var(--ghost);
     /* overflow-y: visible; */
     /* overflow-x: hidden; */
     font-family: 'PublicSans';
@@ -208,6 +212,11 @@ code {
     /* filter: blur(1px); */
     /* background-color: rgb(143, 143, 143); */
 }
+.drop-menu-toggle.open {
+    background: white;
+    border: 1px solid var(--accent-colour);
+    color: var(--accent-colour);
+}
 .header nav {
     /* gap: 1rem; */
     /* width: max-content; */
@@ -236,7 +245,7 @@ code {
 }
 .nav-item {
     gap: 0.25rem;
-    padding: 1rem;
+    padding: var(--nav-item-padding-y) var(--nav-item-padding-x);
     display: flex;
     white-space: nowrap;
     /* min-width: 200px; */
@@ -245,7 +254,8 @@ code {
     /* justify-content: center; */
 }
 .nav-link {
-    color: white;
+    /* color: white; */
+    color: var(--ghost);
 }
 .dark_mode .nav-link {
     color: white;
@@ -433,15 +443,17 @@ html.turned-off body {
 .nav-link.nav-active {
     /* color: var(--accent-colour); */
     box-sizing: border-box;
-    border-top: 3px var(--accent-colour) solid;
-    padding-top: calc(1rem - 3px);
+    border-top: 1px var(--accent-colour) solid;
+    padding-top: calc(var(--nav-item-padding-y) - 1px);
+    color: white;
+    font-weight: bold;
     /* background-color: rgb(255, 255, 255); */
     cursor: default;
 }
 .drop-menu .nav-link.nav-active {
-    padding-left: calc(1rem - 3px);
-    border-left: 3px var(--accent-colour) solid;
-    padding-top: 1rem;
+    padding-left: calc(var(--nav-item-padding-x) - 1px);
+    border-left: 1px var(--accent-colour) solid;
+    padding-top: var(--nav-item-padding-y);
     border-top: none;
 }
 /* .nav-link.nav-active:hover { */

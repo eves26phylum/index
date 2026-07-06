@@ -1,7 +1,7 @@
 import { NavLink, type NavLinkProps } from "react-router";
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye as faFilledEye, faClipboard as faFilledClipboard, type IconDefinition, faFloppyDisk as faFilledFloppyDisk, faMoon as faFilledMoon, faEllipsis } from '@fortawesome/free-solid-svg-icons';
+import { faEye as faFilledEye, faClipboard as faFilledClipboard, type IconDefinition, faFloppyDisk as faFilledFloppyDisk, faMoon as faFilledMoon, faEllipsis, faCog as faFilledCog, faCaretDown as faFilledCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { faEye, faClipboard, faFloppyDisk, faMoon } from '@fortawesome/free-regular-svg-icons';
 import { faGithub } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
@@ -35,7 +35,7 @@ export function MenuBar() {
     const rawNavItems = [
         <HeaderLink key="home" to="/">{IconAndTextCombo({ filledIcon: faFilledMoon, nonFilledIcon: faMoon, children: "about" })}</HeaderLink>,
         <HeaderLink key="what_i_do" to="/what_i_do">{IconAndTextCombo({ filledIcon: faFilledClipboard, nonFilledIcon: faClipboard, children: "programmer life" })}</HeaderLink>,
-        <HeaderLink key="destructive_actions" to="/destructive_actions">{IconAndTextCombo({ filledIcon: faFilledFloppyDisk, nonFilledIcon: faFloppyDisk, children: "eves26phylumOS information" })}</HeaderLink>,
+        // <HeaderLink key="destructive_actions" to="/destructive_actions">{IconAndTextCombo({ filledIcon: faFilledFloppyDisk, nonFilledIcon: faFloppyDisk, children: "eves26phylumOS information" })}</HeaderLink>
     ];
 
     const navItems = rawNavItems.map((item, index) => {
@@ -62,11 +62,11 @@ export function MenuBar() {
                     </nav>
                     <div className="doggy">
                         {hiddenCount > 0 && (
-                            <button className="drop-menu-toggle nav-item" onClick={() => setIsDropMenuOpen(open => !open)} aria-expanded={isDropMenuOpen}>
-                                <FontAwesomeIcon icon={faEllipsis}/>
+                            <button className={`drop-menu-toggle nav-item${isDropMenuOpen ? " open" : ""}`} onClick={() => setIsDropMenuOpen(open => !open)} aria-expanded={isDropMenuOpen}>
                                 <p>
                                     More
                                 </p>
+                                <FontAwesomeIcon icon={faFilledCaretDown}/>
                             </button>
                         )}
                         {isDropMenuOpen && (
@@ -79,6 +79,7 @@ export function MenuBar() {
                 <nav className="justify-right">
                     <HeaderLink to="https://github.com/eves26phylum" className="redirect">{IconAndTextCombo({ filledIcon: faGithub, children: "GitHub" })}</HeaderLink>
                     <HeaderLink to="/email">{IconAndTextCombo({ filledIcon: faEnvelope, children: "Mail" })}</HeaderLink>
+                    <HeaderLink key="destructive_actions" to="/destructive_actions"><FontAwesomeIcon icon={faFilledCog}/></HeaderLink>
                 </nav>
             </div>
         </header>

@@ -1,4 +1,5 @@
 import { NavLink } from "react-router";
+import { calculateUntilUltraDeadline, getEnd, secondsToYears } from "../utilities/age";
 
 export function HomePage() {
     return <div className="mainContent presentation">
@@ -10,7 +11,8 @@ export function HomePage() {
                 <p><NavLink target="_blank" to="https://discord.gg/5x7aUsNp2V">Discord</NavLink></p>
             </div>
             <div className="default">
-                <p>Missing</p>
+                <p>I am a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male</p>
+                
             </div>
             <div className="default">
                 <h2>the fun stuff (non serious)</h2>
