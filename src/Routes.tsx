@@ -9,10 +9,12 @@ import { DraggableModal, ModalBody, ModalButtons, ModalDefaultButton, ModalHeade
 import { GPT } from "./pages/Eves26PhylumGPT";
 import { GitHub } from "./pages/GitHub";
 import { HomePage } from "./pages/HomePage";
+import { HowThisWasMade } from "./pages/HowThisWasMade";
 export function AllRoutes() {
     return <Routes>
             <Route path="/" element={<HomePage/>}/>
             <Route path="/what_i_do" element={<AboutMe/>}/>
+            <Route path="/how_this_was_made" element={<HowThisWasMade/>}/>
             {/* <Route path="/projects" element={<Projects/>}/> */}
             <Route path="/destructive_actions" element={<DestructiveActions ModalButtons={ModalButtons} ModalDefaultButton={ModalDefaultButton} ModalHeader={ModalHeader} DraggableModal={DraggableModal} ModalBody={ModalBody}/>}/>
             <Route path="/email" element={<MailMe ClipboardCopyButton={ClipboardCopyButton}/>}/>

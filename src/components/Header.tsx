@@ -77,7 +77,7 @@ export function MenuBar() {
                     </div>
                 </nav>
                 <nav className="justify-right">
-                    <HeaderLink to="https://github.com/eves26phylum" className="redirect">{IconAndTextCombo({ filledIcon: faGithub, children: "GitHub" })}</HeaderLink>
+                    <HeaderLink target="_blank" to="https://github.com/eves26phylum" className="redirect">{IconAndTextCombo({ filledIcon: faGithub, children: "GitHub" })}</HeaderLink>
                     <HeaderLink to="/email">{IconAndTextCombo({ filledIcon: faEnvelope, children: "mail" })}</HeaderLink>
                     <HeaderLink key="destructive_actions" to="/destructive_actions" className="mobile-view">
                         <FontAwesomeIcon icon={faFilledCog}/>

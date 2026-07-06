@@ -7,14 +7,14 @@ export function HomePage() {
             <div className="default middle row">
                 <h1>eves26phylum</h1>
                 <div className="default row">
-                    <NavLink to="/github">GitHub</NavLink>
+                    <NavLink target="_blank" to="/github">GitHub</NavLink>
                     <NavLink to="/destructive_actions">Settings</NavLink>
                     <NavLink target="_blank" to="https://discord.gg/5x7aUsNp2V">Discord</NavLink>
                 </div>
             </div>
             <div className="default">
                 <p>I am a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male</p>
-                
+                <NavLink to="/how_this_was_made">how this site was made & the inspiration for the theme</NavLink>
             </div>
             <div className="default">
                 <h2>the fun stuff (non serious)</h2>
