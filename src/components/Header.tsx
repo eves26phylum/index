@@ -44,7 +44,15 @@ export function MenuBar() {
     });
 
     const hiddenItems = hiddenCount > 0 ? rawNavItems.slice(rawNavItems.length - hiddenCount) : [];
-    
+    useEffect(() => {
+        const onClick = () => {
+            setIsDropMenuOpen(false);
+        };
+        document.querySelector("main")?.addEventListener('click', onClick);
+        return () => {
+            document.querySelector("main")?.removeEventListener('click', onClick);
+        }
+    })
     return <>
         <header>
             <div className="header" ref={overflowCheckRef}>
