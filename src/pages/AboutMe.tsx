@@ -49,7 +49,7 @@ export function AboutMe() {
                 </div>
                 <p>A procedurally generated map with modular, extensible code that uses custom biome rules and perlin-noise generation for the terrain.</p>
                 <p>Made in ROBLOX with roblox-ts (TypeScript to Luau Transpiler) inside <NavLink to="https://www.roblox.com/games/12144402492/Deadline">ROBLOX Deadline by Recoil Group</NavLink></p>
-                <p>Inspired by Afghanistan's scenery and brought to a virtual world integrated with ROBLOX Deadline's semi-realistic, immersive firearm handling.</p>
+                <p>Inspired by Afghanistan's scenery</p>
                 <img src={deadlineuirecreation} className="behaveImage"/>
                 <h1><NavLink target="_blank" to="https://github.com/eves26phylum/DeadlineUIRecreation">Deadline UI Recreation</NavLink> </h1>
                     <div className="skill-list">
