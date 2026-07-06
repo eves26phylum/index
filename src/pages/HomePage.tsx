@@ -1,5 +1,6 @@
 import { NavLink } from "react-router";
 import { calculateUntilUltraDeadline, getEnd, secondsToYears } from "../utilities/age";
+import Tooltip from "../components/Tooltip";
 
 export function HomePage() {
     return <div className="mainContent presentation">
@@ -13,11 +14,12 @@ export function HomePage() {
                 </div>
             </div>
             <div className="default">
-                <p>I am a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male who had played <NavLink target="_blank" to="https://roblox.com">ROBLOX</NavLink></p>
-                <NavLink to="/how_this_was_made">how this site was made & the inspiration for the theme</NavLink>
+                <p>I am a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male who enjoys using MacBooks
+                </p>
             </div>
             <div className="default">
-                <NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Area of Efficiency</NavLink>
+                <strong>⚠️ VERY IMPORTANT ANNOUNCEMENT ⚠️</strong>
+                {Array(500).fill(<NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Area of Efficiency</NavLink>)}
             </div>
         </div>
     </div>
