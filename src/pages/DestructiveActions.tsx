@@ -106,7 +106,7 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
                             Are you sure you want to make everything red?
                         </ModalHeader>
                         <ModalBody>
-                            <p>Just making sure..</p>
+                            <p>Just making sure.. If you want to restore everything to normal—reload the page.</p>
                         </ModalBody>
                         <ModalButtons>
                             <ModalDefaultButton onClick={() => {
@@ -129,7 +129,7 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
                             Are you sure you want to make everything green?
                         </ModalHeader>
                         <ModalBody>
-                            <p>Just making sure..</p>
+                            <p>Just making sure.. If you want to restore everything to normal—reload the page.</p>
                         </ModalBody>
                         <ModalButtons>
                             <ModalDefaultButton onClick={() => {
