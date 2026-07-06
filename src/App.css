@@ -61,6 +61,7 @@ header:has(.header) {
     background-color: var(--secondary);
     display: flex;
     padding: 0;
+    overflow-x: hidden;
     font-family: 'PublicSans';
     position: sticky;
     z-index: 6767;
@@ -147,6 +148,7 @@ code {
 .default {
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
     align-items: flex-start;
     padding: 0.5rem 1rem;
     gap: 1rem;
@@ -183,7 +185,7 @@ code {
     /* gap: 1rem; */
     /* width: max-content; */
     /* display: inline-flex; */
-    overflow-x: hidden;
+    overflow-x: clip;
     /* flex-wrap: wrap; */
     white-space: nowrap;
     display: flex;
@@ -197,10 +199,11 @@ code {
     display: flex;
     padding-left: 1rem
 }
-nav .nav-link {
+.nav-link {
     color: white;
     /* flex-grow: 1; */
     display: flex;
+    white-space: nowrap;
     /* min-width: 200px; */
     align-items: center;
     /* justify-content: center; */
@@ -411,6 +414,5 @@ body {
     flex-direction: column;
 }
 .invisible {
-    display: none;
-    color: red;
+    display: none !important;
 }
