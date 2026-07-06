@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faRust, faTypescript, faJs, faCss } from "@fortawesome/free-brands-svg-icons";
 import { faBrain } from "@fortawesome/free-solid-svg-icons";
 import afghan from "../assets/images/3kmafghanistan.png";
+import myselfondiscord from "../assets/images/myselfondiscord.png";
 import Tooltip from "../components/Tooltip";
 // yeah sure upwards import isn't very good practice but who cares, my code editor has this inbuilt thing that changes the directory whenever you move the file
 export function AboutMe() {
@@ -10,9 +11,9 @@ export function AboutMe() {
         <div className="blog end">
             <div className="double-column">
                 <div className="default half">
+                    <img src={myselfondiscord}/>
                     <p>Hi there! I'm eves26phylum, a 15 year old self-taught full-stack developer who is interested into the field of Game Development. I have been learning programming for 5 years.
         I'm interested in software development and creative planning. This year, I am thinking about alternate paths besides Game Development.</p>
-                    <NavLink to="/projects">Projects</NavLink>
                 </div>
                 <div className="default half">
                     <h2>Experienced</h2>
@@ -100,6 +101,14 @@ export function AboutMe() {
                         </Tooltip>
                     </div>
                 </div>
+            </div>
+            <div className="default">
+                <p>In the last 5 years, I haven't really posted many things about what I have done. I've scrapped most of my projects, but to be fair—I don't know where I stored a lot of what I was working on, and I don't think I can find it now. Though, I have learnt a lot from programming whatever my mind comes to. This year, I will push myself forward—to achieve what I haven't.</p>
+                <p>
+                    <strong>Basically all</strong> of my projects are open-source—I believe people should be allowed to understand each other's work, build on what is presented, and ultimately share what we know so we can all help each other achieve anything. No one is to hide something to make others feel unsuperior; we are all capable enough—we shouldn't waste this capability.
+                </p>
+                <p>I will try to store whatever I work on—to a site like GitHub.</p>
+                <p>Below, are a curated selection of things I have made.</p>
             </div>
             <div className="default">
                 <img src={afghan} className="behaveImage"/>
