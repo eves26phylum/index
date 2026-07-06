@@ -213,7 +213,7 @@ code {
     /* width: max-content; */
     /* display: inline-flex; */
     /* overflow-y: visible; */
-    overflow-x: clip;
+    /* overflow-x: clip; */
     align-items: stretch;
     /* flex-wrap: wrap; */
     white-space: nowrap;
