@@ -71,7 +71,6 @@ export function AboutMe() {
                         </NavLink>
                     </Tooltip>
                 </div>
-                <p>Recreation of ROBLOX Deadline's UI.</p>
             </div>
         </div>
     </div>
