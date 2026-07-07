@@ -74,7 +74,7 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
                 }}>Click again to show my email address...</button> 
                 : <>
                 <p>Want to get my email? Answer this question to prove you're not one of them web scrapers.</p>
-                <p>I am a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male</p>
+                <strong>I am a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male</strong>
                 <div className="theform">                    
                     <p>How old am I?</p>
                     <input type="number" placeholder="Answer as a number" onChange={(event) => {
