@@ -116,6 +116,9 @@ footer {
     background-color: rgb(228, 228, 228);
     padding: 1rem;
 }
+.total-cavity-prevention-today {
+    font-size: 0rem;
+}
 .standing {
     display: flex;
     flex-direction: column;
@@ -144,8 +147,13 @@ main {
 }
 .theform {
     border: 1px black solid;
-    padding: 0.5rem 4rem;
-    padding-bottom: 4rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+}
+.top-4 {
+    padding-top: 4rem;
 }
 .showMail {
     padding: 0.5rem 1rem;
