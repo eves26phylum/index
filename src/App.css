@@ -142,6 +142,19 @@ main {
     flex-direction: row;
     width: 100%;
 }
+.showMail {
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font: inherit;
+    color: blue;
+    background: none;
+    border: none;
+    text-decoration: underline;
+    /* background-color: red; */
+}
+.showMail.red {
+    color: red;
+}
 code.youvegotmail {
     display: flex;
     justify-content: space-between;

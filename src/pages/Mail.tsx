@@ -2,7 +2,7 @@ import { faAt, faCircle, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { NavLink } from "react-router";
 import { getMailAddress } from "../assets/documents/mail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 type clipboardCopy = {
     copy: string
 }
@@ -19,6 +19,14 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
         setMail(eval(getMailAddress)[0]);
         setShown(true);
     };
+    const [part, setPart] = useState(0);
+    useEffect(() => {
+        if (part !== 1) return;
+        const id = setTimeout(()=> {
+            setPart(0);
+        }, 500);
+        return () => clearTimeout(id);
+    });
     return <div className="mainContent presentation">
                 <div className="default end blog centered">
                 <h1>My Contacts</h1>
@@ -48,9 +56,31 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
                     <p>use the clipboard copy button</p>
                 </>
                 : <>
-                <button onClick={() => {
+                { part === 0 ?
+                <button className="showMail" onClick={() => {
+                    setPart(part => part + 1);
+                }}>Click to show my email address</button> 
+                : 
+                <>
+                { part === 1 ?
+                <button className="showMail red" onClick={() => {
+                    setPart(part => part + 1);
+                }}>Click AGAIN show my email address...</button> 
+                : <>
+                <p>Want to get my email? Answer this question to prove you're not one of them web scrapers.</p>
+                <div>
+                    <p>Question One</p>
+                    <input type="text" placeholder="Answer." onChange={(event) => {
+                        const element = event.target;
+                    }}/>
+                </div>
+                <button className="showMail" onClick={() => {
                     handleReveal();
-                }}>Press this button to show</button>
+                }}>Grant Access to Email Address</button> 
+                </>
+                }
+                </>
+                }
             </>}
 
         </div> 
