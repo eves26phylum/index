@@ -73,10 +73,10 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
                     setPart(part => part + 1);
                 }}>Click again to show my email address...</button> 
                 : <>
-                <p>Want to get my email? Answer this question to prove you're not one of them web scrapers.</p>
-                <strong>eves26phylum is a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male</strong>
+                <p>Want to get my email? Answer this question.</p>
+                {/* <strong>eves26phylum is a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male</strong> */}
                 <div className="theform">                    
-                    <p>How old is eves26phylum?</p>
+                    {/* <p>How old is eves26phylum?</p>
                     <input type="number" placeholder="Answer as a number" onChange={(event) => {
                         const element = event.target;
                         setFirstQuestion(element.value);
@@ -96,15 +96,41 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
                         <option value="no">No—I am an automated web scraper designed for advertisement harvesting and I wish to be ejected.</option>
                     </select>
                     <p className="red top-4">If you answer wrong, you will get redirected to the homepage.</p>
+                     */}
+                    <p>What field does eves26phylum specialise in?</p>
+                    <select onChange={(event) => {
+                        const element = event.target;
+                        setThirdQuestion(element.value);
+                    }}>
+                        <option value="what">Choose an option —————————————</option>
+                        <option value="nutritionist">Nutritionist</option>
+                        <option value="omnipresent-scientist">Omnipresent Scientist</option>
+                        <option value="writer">Story Writer</option>
+                        <option value="correct-option">Marketing Specialist</option>
+                        <option value="content-creator">Content Creator</option>
+                        <option value="software-developer">Software Developer</option>
+                        <option value="3d-art-creator">3D Art Creator</option>
+                        <option value="painter">Painter</option>
+                    </select>
+                    <p className="red top-4">If you answer wrong, you will get redirected to the homepage.</p>
                 </div>
                 <button className="showMail red" onClick={() => {
-                    const age= Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()));
-                    if (parseInt(firstQuestion).toString() !== age.toString()) return navigate("/you_answered_the_questions_wrong");
-                    if (secondQuestion !== 2 + 2) return navigate("/you_answered_the_questions_wrong");
+                    // const age= Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()));
+                    // if (parseInt(firstQuestion).toString() !== age.toString()) return navigate("/you_answered_the_questions_wrong");
+                    // if (secondQuestion !== 2 + 2) return navigate("/you_answered_the_questions_wrong");
                     if (thirdQuestion === 'what' || thirdQuestion.length === 0) return navigate("/cat");
-                    if (thirdQuestion === 'no') return navigate("/dog");
+                    if (thirdQuestion === 'correct-option') return navigate("/dog");
+                    if (thirdQuestion !== 'software-developer') return navigate("/you_answered_the_questions_wrong");
                     handleReveal();
                 }}>🔒 Test if I'm correct. I want to be granted access.</button> 
+                {/* <button className="showMail red" onClick={() => {
+                    // const age= Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()));
+                    // if (parseInt(firstQuestion).toString() !== age.toString()) return navigate("/you_answered_the_questions_wrong");
+                    navigate("/you_answered_the_questions_wrong");
+                    // if (thirdQuestion === 'what' || thirdQuestion.length === 0) return navigate("/cat");
+                    // if (thirdQuestion === 'no') return navigate("/dog");
+                    // handleReveal();
+                }}>No, I am not a fullstack developer</button>  */}
                 </>
                 }
                 </>
