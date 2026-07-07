@@ -142,6 +142,10 @@ main {
     flex-direction: row;
     width: 100%;
 }
+code.youvegotmail {
+    display: flex;
+    justify-content: space-between;
+}
 code {
     background-color: rgb(226, 226, 226);
     color: black;
@@ -468,8 +472,29 @@ html.turned-off body {
     /* height: 24px; */
     height: 24px;
 }
+.no-select {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+}
 .full-size {
     width: 100%;
+}
+.at {
+    color: var(--accent-colour);
+    height: 0.7rem;
+    margin-left: -1px;
+    margin-right: -1px;
+}
+.period {
+    color: var(--accent-colour);
+    height: 3px;
+    margin-top: 6px;
+    margin-bottom: 1px;
+    margin-left: -5px;
+    margin-right: -4px;
 }
 .icon-skill-big {
     width: auto;
