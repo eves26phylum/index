@@ -20,33 +20,34 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
         setShown(true);
     };
     return <div className="mainContent presentation">
-        { shown ? <div className="default end blog centered">
-            <h1>My Contacts</h1>
-            <div>
-                <p>Email me at 
-                    <code className="youvegotmail">
-                        <div className="no-select">
-                            <span>
-                                {`${split_1[0]}`}
-                            </span>
-                            <FontAwesomeIcon icon={faAt} className="at"/>
-                            <span>
-                                {`${split_2[0]}`}
-                            </span>
-                            <FontAwesomeIcon className="period" icon={faCircle}/>
-                            <span>
-                                {`${split_2[1]}`}
-                            </span>
-                        </div>
-                        <ClipboardCopyButton copy={mail}/>
-                    </code>
-                </p>
-                {/* <NavLink to={`${mailAddress}${mail}`}>Send Mail</NavLink> */}
-            </div>
-            <p>use the clipboard copy button</p>
-        </div> : <>
-            <div className="default end blog centered">
-                <h1>My Mail</h1>
+                <div className="default end blog centered">
+                <h1>My Contacts</h1>
+            { shown ? 
+                <>
+                    <div>   
+                        <p>Email me at 
+                            <code className="youvegotmail">
+                                <div className="no-select">
+                                    <span>
+                                        {`${split_1[0]}`}
+                                    </span>
+                                    <FontAwesomeIcon icon={faAt} className="at"/>
+                                    <span>
+                                        {`${split_2[0]}`}
+                                    </span>
+                                    <FontAwesomeIcon className="period" icon={faCircle}/>
+                                    <span>
+                                        {`${split_2[1]}`}
+                                    </span>
+                                </div>
+                                <ClipboardCopyButton copy={mail}/>
+                            </code>
+                        </p>
+                        {/* <NavLink to={`${mailAddress}${mail}`}>Send Mail</NavLink> */}
+                    </div>
+                    <p>use the clipboard copy button</p>
+                </>
+                : <>
                 <button onClick={() => {
                     handleReveal();
                 }}>Press this button to show</button>
