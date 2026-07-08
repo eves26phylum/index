@@ -94,12 +94,10 @@ export function GetPizza() {
         <div className="mainContent presentation">
             <div className="default blog end">
                 <strong>{pizzaCount} pizza slices remaining</strong> 
-                <p>
-                    {userList.length > 0 
-                        ? `${userList.join(', ')}` 
-                        : "[the board of usernames goes here]"
-                    }
-                </p>
+                <div className='the-box'>
+                    <p>people who claimed the pizza</p>
+                    <strong className='status-text'>{userList.join(', ')}</strong>
+                </div>
                 <div>
                 { 
                     Array(pizzaCount).fill("").map(() => {
