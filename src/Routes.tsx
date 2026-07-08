@@ -12,6 +12,7 @@ import { HomePage } from "./pages/HomePage";
 import { HowThisWasMade } from "./pages/HowThisWasMade";
 import { WrongQuestions } from "./pages/WrongQuestions";
 import { Cat, Dog } from "./pages/Dog";
+import { GetPizza } from "./pages/DeliverPizza";
 export function AllRoutes() {
     return <Routes>
             <Route path="/" element={<HomePage/>}/>
@@ -22,6 +23,7 @@ export function AllRoutes() {
             <Route path="/email" element={<MailMe ClipboardCopyButton={ClipboardCopyButton}/>}/>
             <Route path="/futon_gpt" element={<GPT/>}/>
             <Route path="/github" element={<GitHub/>}/>
+            <Route path="/pizza_party" element={<GetPizza/>}/>
             <Route path="/you_answered_the_questions_wrong" element={<WrongQuestions/>}/>
             <Route path="/dog" element={<Dog/>}/>
             <Route path="/cat" element={<Cat/>}/>
