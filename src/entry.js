@@ -23,16 +23,19 @@ export default {
     const matchedKey = findMatch(pathname);
 
     if (matchedKey) {
-      const module = await functionModules[matchedKey]();
-      if (typeof module.onRequest === 'function') {
-        return await module.onRequest({ request, env, ctx });
+      try {
+        const module = await functionModules[matchedKey]();
+        if (typeof module.onRequest === 'function') {
+          return await module.onRequest({ request, env, ctx });
+        }
+        if (typeof module.default === 'function') {
+          return await module.default({ request, env, ctx });
+        }
+        return Response.json({ error: `No valid export in ${matchedKey}` }, { status: 500 });
+      } catch (err) {
+        return Response.json({ error: err.message, stack: err.stack }, { status: 500 });
       }
-      if (typeof module.default === 'function') {
-        return await module.default({ request, env, ctx });
-      }
-      return Response.json({ error: `No valid export in ${matchedKey}` }, { status: 500 });
     }
-
     return env.ASSETS.fetch(request);
   },
 };
