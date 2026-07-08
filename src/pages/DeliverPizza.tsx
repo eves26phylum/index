@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import Tooltip from '../components/Tooltip';
 import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import pizza from "../assets/images/pizza.png";
 
 interface PizzaApiResponse {
     success: boolean;
@@ -120,7 +121,7 @@ export function GetPizza() {
                     showLoadingText ? 
                     <p>claiming...</p> : <></>
                 }
-                { hasClaimed ? <FontAwesomeIcon color='red' className='big-pizza' icon={faPizzaSlice}/> :
+                { hasClaimed ? <img src={pizza} className='behaveImage'/> :
                 <Tooltip label="No pizzas left :(" open={pizzaCount <= 0}>
                     <button 
                         className='pizza-button showMail'
