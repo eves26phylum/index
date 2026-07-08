@@ -43,6 +43,9 @@ export const onRequest: PagesFunction<Env> = async (context) => {
         if (!username || username.trim() === "") {
             return new Response("Username is required", { status: 400 });
         }
+        if (username.length > 50) {
+            return new Response("Your username.. is very long. Consider shortening it.", { status: 400 })
+        }
         if (existingClaim) {
             return new Response("You have already claimed a pizza! No need to be greedy.", { status: 403 });
         }
