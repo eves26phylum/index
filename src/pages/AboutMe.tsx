@@ -46,8 +46,10 @@ export function AboutMe() {
                     </Tooltip>
                 </div>
                 <p>A procedurally generated map with modular, extensible code that uses custom biome rules and perlin-noise generation for the terrain.</p>
-                <p>Made in ROBLOX with roblox-ts (TypeScript to Luau Transpiler) inside <NavLink to="https://www.roblox.com/games/12144402492/Deadline">ROBLOX Deadline by Recoil Group</NavLink></p>
-                <p>Inspired by Afghanistan's scenery, and the DEADLINE semi-realistic gun system works well along with it to create a slow-paced experience for milsim enjoyers.</p>
+                <p>It features trees with wooden branches, procedurally generated buildings, drones, and a custom recoil extension for ROBLOX Deadline</p>
+                <p>This uses the <NavLink to="https://www.roblox.com/games/12144402492/Deadline">ROBLOX Deadline by Recoil Group</NavLink>'s custom modding feature that allows users to add extensions to the game—this procedurally generated map is one of them.</p>
+                <p>This map is around 7x larger than the largest standard map in-game.</p>
+                <p>Inspired by Afghanistan's scenery, and the DEADLINE semi-realistic gun system works well along with it to create a slower-paced experience for milsim enjoyers with its large size.</p>
                 <img src={deadlineuirecreation} className="behaveImage"/>
                 <h1><NavLink target="_blank" to="https://github.com/eves26phylum/DeadlineUIRecreation">Deadline UI Recreation</NavLink> </h1>
                     <div className="skill-list">
@@ -69,6 +71,7 @@ export function AboutMe() {
                         </NavLink>
                     </Tooltip>
                 </div>
+                <p>A recreation of <NavLink to="https://www.roblox.com/games/12144402492/Deadline">ROBLOX Deadline by Recoil Group</NavLink>'s in-game UI.</p>
             </div>
         </div>
     </div>
