@@ -19,6 +19,11 @@ export default {
     const pathname = url.pathname.endsWith('/') && url.pathname !== '/'
       ? url.pathname.slice(0, -1)
       : url.pathname;
+    if (pathname === "/.well-known/discord") {
+      return new Response("dh=e699c94268fab8d8870eb277fa7506fa55838eab", {
+        headers: { "Content-Type": "text/plain" },
+      });
+    }
 
     const matchedKey = findMatch(pathname);
 
