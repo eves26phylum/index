@@ -7,8 +7,9 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "npm run build && wrangler dev",
-    "deploy": "npm run build && wrangler deploy"
+    "preview": "npx wrangler dev",
+    "deploy": "npm run build && wrangler deploy",
+    "setupwrangler": "npx wrangler d1 execute pizza_db --local --file=./schema.sql"
   },
   "dependencies": {
     "@cloudflare/vite-plugin": "^1.40.0",
