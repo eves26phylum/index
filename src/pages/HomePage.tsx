@@ -21,7 +21,7 @@ export function HomePage() {
                 <NavLink to="/what_i_do">Looking for my software developer information?</NavLink>
             </div>
             <div className="default">
-								<NavLink to="/pizza_party">Pizza Party for 71 People (claim yours!)</NavLink>
+								<NavLink to="/pizza_party">Pizza party for 71 people (claim yours!)</NavLink>
                 <NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</NavLink>
             </div>
         </div>
