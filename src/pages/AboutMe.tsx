@@ -11,17 +11,16 @@ import { NeovimIconBecauseItWasTooBig } from "../components/NeovimIcon";
 export function AboutMe() {
     return <div className="mainContent presentation">
         <div className="blog end">
-            <div className="double-column">
-                <div className="default half">
+            {/* <div className="double-column"> */}
+                 <div className="default">
                     <p>Hi there! I'm eves26phylum, a self-taught full-stack developer who is interested into the field of Game Development. I have been learning programming since {
                         secondsToYears(getCurrentTime() - getUnixTimestampOfTime(2019, 12, 30)).toFixed(1)
-                    } years ago.
-        I'm interested in software development and creative planning. This year, I am thinking about alternate paths besides Game Development.</p>
+                    } years ago.</p>
                 </div>
-                <div className="default half">
-                    hello hi welcome
-                </div>
-            </div>
+            {/*      <div className="default half"> */}
+            {/*          hello hi welcome */}
+            {/*      </div> */}
+             {/* </div> */}
             <div className="default">
                 <p>
                     <strong>Basically all of my projects are open-source</strong>—I believe people should be allowed to understand each other's work, build on what is presented, and ultimately share what we know so we can all help each other achieve anything.
@@ -29,6 +28,13 @@ export function AboutMe() {
                 <p>Below, are a selection of things I have made.</p>
             </div>
             <div className="default">
+								<div className="double-column">
+												<p>Hello, World!</p>
+												<p>Hello, World (2)!</p>
+												<p>Hello, World (3)!</p>
+												<p>Hello, World (4)!</p>
+												<p>Hello, World (5)!</p>
+								</div>
                 <img src={afghan} className="behaveImage"/>
                 <h1><NavLink target="_blank" to="https://github.com/eves26phylum/ProcedurallyGeneratedDeadlineMap_TS">3 Kilometer Afghanistan</NavLink></h1>
                 <div className="skill-list">

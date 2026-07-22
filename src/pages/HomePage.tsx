@@ -6,7 +6,7 @@ import myselfondiscord from "../assets/images/myselfondiscord.png";
 export function HomePage() {
     return <div className="mainContent presentation">
         <div className="blog end">
-            <img src={myselfondiscord} className="behaveImage"/>
+            {/* <img src={myselfondiscord} className="behaveImage"/> */}
             <div className="default middle row">
                 <h1>eves26phylum</h1>
                 <div className="default row">
@@ -16,11 +16,12 @@ export function HomePage() {
                 </div>
             </div>
             <div className="default">
-                <p>I am a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male who enjoys using MacBooks and had an addiction to ROBLOX/Social Media for some of my teenage years
+                <p>{Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old, still learning 
                 </p>
                 <NavLink to="/what_i_do">Looking for my software developer information?</NavLink>
             </div>
             <div className="default">
+								<NavLink to="/pizza_party">Pizza Party for 71 People (claim yours!)</NavLink>
                 <NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</NavLink>
             </div>
         </div>

@@ -129,6 +129,7 @@ export function GetPizza() {
                         press to get a delicious pizza
                     </button>
                 </Tooltip>}
+								<p>This pizza party was made in celebration of something. Now, it's open to anyone—just place your name, and claim a delicious (virtual) pizza!</p>
             </div>
         </div>
     );
