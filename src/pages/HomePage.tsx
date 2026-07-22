@@ -9,18 +9,19 @@ export function HomePage() {
             <div className="default middle row">
                 <h1>eves26phylum</h1>
                 <div className="default row">
-                    <NavLink target="_blank" to="https://github.com/eves26phylum">GitHub</NavLink>
-                    <NavLink to="/destructive_actions">Settings</NavLink>
-                    <NavLink target="_blank" to="https://discord.gg/5x7aUsNp2V">Discord</NavLink>
-								    <NavLink to="/email">Email</NavLink>
+                    <NavLink target="_blank" to="https://github.com/eves26phylum">Visit my GitHub</NavLink>
+                    <NavLink target="_blank" to="https://discord.gg/5x7aUsNp2V">Join my Discord</NavLink>
+								    <NavLink to="/email">Contact me via email</NavLink>
                 </div>
             </div>
             <div className="default">
                 <p>{Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old, still learning 
                 </p>
-                <NavLink to="/what_i_do">Looking for my software developer information?</NavLink>
             </div>
             <div className="default">
+                <NavLink to="/what_i_do">Looking for my software developer information?</NavLink>
+								<hr/>
+								<NavLink to="/destructive_actions">Settings for this website</NavLink>
 								<NavLink to="/pizza_party">Pizza party for 71 people (claim yours!)</NavLink>
                 <NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</NavLink>
             </div>

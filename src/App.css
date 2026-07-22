@@ -231,9 +231,21 @@ code {
 				gap: 1rem;
 				padding: 0.5rem 1rem;
 }
-
 .row {
     flex-direction: row;
+}
+hr {
+				align-self: stretch;
+				height: 1px;
+				background-color: var(--border);
+				border: none;
+}
+.banner {
+				background-color: black;
+				padding: 0.5rem 1rem;
+				color: white;
+				white-space: nowrap;
+				overflow-x: clip;
 }
 .middle {
     align-items: center;

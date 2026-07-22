@@ -8,7 +8,7 @@ import { bootlog } from './assets/documents/bootlog';
 import React from 'react';
 import { BlinkingCursor } from './BlinkingCursor';
 import { Scroller } from './components/Scroller';
-
+import { NavLink } from 'react-router';
 export type uuid = ReturnType<Crypto["randomUUID"]>;
 export type ModalContextType = {
   destroyModalByUUID: (uuid: uuid) => void,
@@ -147,6 +147,7 @@ export function App() {
       </main>
       {/* <footer>
       </footer> */}
+				<NavLink aria-label="Navigate to home" className="banner" to="/">{"site home, ".repeat(50)}</NavLink>
     </BrowserRouter>
     : <StartScreen setHasLoaded={setHasLoaded}/>}
   </ModalContext.Provider>;
