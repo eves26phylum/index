@@ -8,6 +8,9 @@ import Tooltip from "../components/Tooltip";
 import { getCurrentTime, getUnixTimestampOfTime, secondsToYears } from "../utilities/age";
 import { NeovimIconBecauseItWasTooBig } from "../components/NeovimIcon";
 // yeah sure upwards import isn't very good practice but who cares, my code editor has this inbuilt thing that changes the directory whenever you move the file
+export function AboutCard({children}: {children: React.ReactNode}) {
+				return <div className="default no-side-padding">{children}</div>
+}
 export function AboutMe() {
     return <div className="mainContent presentation">
         <div className="blog end">
@@ -27,14 +30,8 @@ export function AboutMe() {
                 </p>
                 <p>Below, are a selection of things I have made.</p>
             </div>
-            <div className="default">
-								<div className="double-column">
-												<p>Hello, World!</p>
-												<p>Hello, World (2)!</p>
-												<p>Hello, World (3)!</p>
-												<p>Hello, World (4)!</p>
-												<p>Hello, World (5)!</p>
-								</div>
+            <div className="double-column gap">
+								<AboutCard>
                 <img src={afghan} className="behaveImage"/>
                 <h1><NavLink target="_blank" to="https://github.com/eves26phylum/ProcedurallyGeneratedDeadlineMap_TS">3 Kilometer Afghanistan</NavLink></h1>
                 <div className="skill-list">
@@ -56,6 +53,8 @@ export function AboutMe() {
                 <p>This uses the <NavLink to="https://www.roblox.com/games/12144402492/Deadline">ROBLOX Deadline by Recoil Group</NavLink>'s custom modding feature that allows users to add extensions to the game—this procedurally generated map is one of them.</p>
                 <p>This map is around 7x larger than the largest standard map in-game.</p>
                 <p>Inspired by Afghanistan's scenery, and the DEADLINE semi-realistic gun system works well along with it to create a slower-paced experience for milsim enjoyers with its large size.</p>
+								</AboutCard>
+								<AboutCard>
                 <img src={deadlineuirecreation} className="behaveImage"/>
                 <h1><NavLink target="_blank" to="https://github.com/eves26phylum/DeadlineUIRecreation">Deadline UI Recreation</NavLink> </h1>
                     <div className="skill-list">
@@ -78,6 +77,7 @@ export function AboutMe() {
                     </Tooltip>
                 </div>
                 <p>A recreation of <NavLink to="https://www.roblox.com/games/12144402492/Deadline">ROBLOX Deadline by Recoil Group</NavLink>'s in-game UI.</p>
+								</AboutCard>
             </div>
         </div>
     </div>

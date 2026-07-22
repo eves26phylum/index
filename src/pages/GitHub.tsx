@@ -1,5 +1,4 @@
 import { NavLink } from "react-router";
-
 export function GitHub() {
     return <div className="mainContent presentation">
         <div className="blog default end">

@@ -2,7 +2,6 @@ import { NavLink } from "react-router";
 import { calculateUntilUltraDeadline, getEnd, secondsToYears } from "../utilities/age";
 import Tooltip from "../components/Tooltip";
 import myselfondiscord from "../assets/images/myselfondiscord.png";
-
 export function HomePage() {
     return <div className="mainContent presentation">
         <div className="blog end">
@@ -13,6 +12,7 @@ export function HomePage() {
                     <NavLink target="_blank" to="https://github.com/eves26phylum">GitHub</NavLink>
                     <NavLink to="/destructive_actions">Settings</NavLink>
                     <NavLink target="_blank" to="https://discord.gg/5x7aUsNp2V">Discord</NavLink>
+								    <NavLink to="/email">Email</NavLink>
                 </div>
             </div>
             <div className="default">

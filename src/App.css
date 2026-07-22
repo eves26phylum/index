@@ -223,6 +223,14 @@ code {
     padding: 0.5rem 1rem;
     gap: 1rem;
 }
+.no-side-padding {
+				padding-left: 0;
+				padding-right: 0;
+}
+.gap {
+				gap: 1rem;
+				padding: 0.5rem 1rem;
+}
 
 .row {
     flex-direction: row;
