@@ -138,17 +138,15 @@ export function App() {
           </div>
           </React.Fragment>;
     })}
-    { hasLoaded ?
+    {/* { hasLoaded ? */}
     <BrowserRouter>
       <MenuBar/>
+			{/* <NavLink aria-label="Navigate to home" className="banner" to="/">{"site home, ".repeat(50)}</NavLink> */}
       <Scroller/>
       <main>
         <AllRoutes/>
       </main>
-      {/* <footer>
-      </footer> */}
-				<NavLink aria-label="Navigate to home" className="banner" to="/">{"site home, ".repeat(50)}</NavLink>
     </BrowserRouter>
-    : <StartScreen setHasLoaded={setHasLoaded}/>}
+    {/* : <StartScreen setHasLoaded={setHasLoaded}/>} */}
   </ModalContext.Provider>;
 }

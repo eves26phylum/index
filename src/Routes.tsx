@@ -13,6 +13,8 @@ import { HowThisWasMade } from "./pages/HowThisWasMade";
 import { WrongQuestions } from "./pages/WrongQuestions";
 import { Cat, Dog } from "./pages/Dog";
 import { GetPizza } from "./pages/DeliverPizza";
+import { Blog } from "./pages/Blog";
+
 export function AllRoutes() {
     return <Routes>
             <Route path="/" element={<HomePage/>}/>
@@ -27,6 +29,7 @@ export function AllRoutes() {
             <Route path="/you_answered_the_questions_wrong" element={<WrongQuestions/>}/>
             <Route path="/dog" element={<Dog/>}/>
             <Route path="/cat" element={<Cat/>}/>
+						<Route path="/blog" element={<Blog/>}/>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
 }
