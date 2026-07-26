@@ -13,6 +13,12 @@
     --text-color: black;
     --accent-gradient-select: linear-gradient(to bottom, var(--darkened-accent-darker) 0%, var(--darkened-accent) 20%, var(--darkened-accent) 100%);
 }
+.important-information {
+	user-select: none;
+	webkit-user-select: none;
+	font-size: 0.001rem;
+	color: red;
+}
 .the-box {
     border: 1px black solid;
     padding: 1rem;
