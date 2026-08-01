@@ -623,7 +623,7 @@ body {
 	gap: 0.5rem;
 	max-width: 400px;
 }
-.blog-card .mini-text {
+.mini-text {
 	text-transform: uppercase;
 	color: var(--ghost);
 	font-size: 0.67rem;

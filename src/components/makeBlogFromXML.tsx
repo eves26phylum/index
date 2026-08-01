@@ -1,3 +1,4 @@
+import { NavLink } from "react-router";
 import { validateXML } from "../utilities/validateXML";
 const dom_parser = new DOMParser();
 export function MakeBlogFromXML({blog_xml_text}: {blog_xml_text: string}) {
@@ -33,10 +34,14 @@ export function MakeBlogFromXML({blog_xml_text}: {blog_xml_text: string}) {
 				return <em>{parsedInsides}</em>
 			case "i":
 				return <i>{parsedInsides}</i>
+			case "link":
+				if (!attributes) return <p>[Link] failed to use attributes</p>;
+				return <NavLink to={attributes.getNamedItem("to")?.value || "this_is_a_404_page"}>{parsedInsides}</NavLink>
 			default:
-				return <div>
-					<h1>Error! Unsupported tag: {element.nodeName}, defaulting to nothing—but the content stays, so nothing is lost</h1>
-					{parsedInsides}
+				return <div style={{marginLeft: "4px", border: "1px red solid"}}>
+					{/* <h1>Unsupported tag: {element.nodeName}, defaulting to nothing—but the content stays, so nothing is lost</h1> */}
+					<p style={{backgroundColor: "white"}} className="mini-text"><span style={{textTransform: "none"}}>{element.nodeName}</span> (unsupported tag error)</p>
+					<code style={{flexDirection: "column"}}>{parsedInsides}</code>
 				</div>
 		}
 	}

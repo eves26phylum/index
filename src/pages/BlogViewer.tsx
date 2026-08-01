@@ -17,7 +17,7 @@ export function BlogViewer() {
 							} = await response.json();
 							setBlogContent(data?.blog_content || "<error>not found</error>");
 					} catch (error) {
-						setBlogContent("<text>No blog exists here :(</text>");
+						setBlogContent("<blog><text>No blog exists here :(</text><link to='/blog'>Go to my blogs</link></blog>");
 					}
 			}
 			fetchInitialState();
