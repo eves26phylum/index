@@ -32,7 +32,7 @@ export function Blog() {
 			<div className="blogs-list">
 				{blogs ? blogs.map((blog: Blog, index: number) => {
 					return <div key={index} className="blog-card">
-						<NavLink to={`/blog_viewer/${blog.id}`}>{blog.blog_title}</NavLink>
+						<NavLink to={`/blog/${blog.id}`}>{blog.blog_title}</NavLink>
 						<hr/>
 						<div>
 						<p className="mini-text">Creation date</p>

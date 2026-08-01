@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router";
+import { Navigate, Route, Routes } from "react-router";
 import { NotFound } from "./NotFound";
 import { AboutMe } from "./pages/AboutMe";
 import { MailMe } from "./pages/Mail";
@@ -30,8 +30,8 @@ export function AllRoutes() {
             <Route path="/you_answered_the_questions_wrong" element={<WrongQuestions/>}/>
             <Route path="/dog" element={<Dog/>}/>
             <Route path="/cat" element={<Cat/>}/>
+						<Route path="/blog/*" element={<BlogViewer/>}/>
 						<Route path="/blog" element={<Blog/>}/>
-						<Route path="/blog_viewer/*" element={<BlogViewer/>}/>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
 }
