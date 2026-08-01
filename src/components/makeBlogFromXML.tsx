@@ -7,11 +7,16 @@ export function MakeBlogFromXML({blog_xml_text}: {blog_xml_text: string}) {
 	function parseElement(element: Element) {
 		console.log(element.tagName);
 		const parsedInsides = parseSomething(element.children);
+		// todo: parse .attributes
 		switch (element.tagName) {
 			case "blog":
 				return <>{parsedInsides}</>
 			case "text":
 				return <p>{parsedInsides}</p>
+			case "title":
+				return <h1>{parsedInsides}</h1>
+			case "bold":
+				return <strong>{parsedInsides}</strong>
 			default:
 				return <div>
 					<h1>Error! Unsupported tag: {element.tagName}, defaulting to nothing—but the content stays, so nothing is lost</h1>
