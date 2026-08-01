@@ -641,3 +641,10 @@ body {
 	gap: 1rem;
 	flex-wrap: wrap;
 }
+blockquote {
+	border-left: 2px var(--ghost) solid;
+	padding: 4px;
+	border-radius: 4px;
+	padding-left: 1rem;
+	color: var(--ghost);
+}
