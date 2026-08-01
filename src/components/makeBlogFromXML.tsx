@@ -1,32 +1,31 @@
 import { validateXML } from "../utilities/validateXML";
-import { parseXML } from "../utilities/xmlParser";
-
+const dom_parser = new DOMParser();
 export function MakeBlogFromXML({blog_xml_text}: {blog_xml_text: string}) {
 	if (validateXML(blog_xml_text) !== true) {
 		return <p>Failed to load blog—syntax error while validating XML</p>
 	}
-	function parseSomething(something: object) {
-		return Object.keys(something).map((index: string): string | React.ReactNode => {
-				const value = (something as any)[index];
-				if (typeof value === "string") {
-					switch (index) {
-						case "#text":
-							return value;
-						case "text":
-							return <p>{value}</p>
-						case "title":
-							return <h1>{value}</h1>
-						default:
-							return <div className="non-semantic-tag">{value}</div>
-					}
-				}
-				if (typeof value === "object") {
-					return parseSomething(value as object);
-				}
-				return <p>[Warning: Could not parse.]{String(value)}</p>
-			})
+	function parseElement(element: Element) {
+		console.log(element.tagName);
+		const parsedInsides = parseSomething(element.children);
+		switch (element.tagName) {
+			case "blog":
+				return <>{parsedInsides}</>
+			case "text":
+				return <p>{parsedInsides}</p>
+			default:
+				return <div>
+					<h1>Error! Unsupported tag: {element.tagName}, defaulting to nothing—but the content stays, so nothing is lost</h1>
+					{parsedInsides}
+				</div>
+		}
 	}
-	const xml_parsed = parseXML(blog_xml_text);
+	function parseSomething(something: HTMLCollection): React.JSX.Element[] {
+		return Object.keys(something).map((value: string, index: number) => {
+			return parseElement(something[index]);	
+		})
+	}
+	console.log(blog_xml_text);
+	const xml_parsed = dom_parser.parseFromString(blog_xml_text, "text/xml").children;
 	return <>
 		{
 			parseSomething(xml_parsed)

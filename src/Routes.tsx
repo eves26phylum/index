@@ -14,7 +14,6 @@ import { WrongQuestions } from "./pages/WrongQuestions";
 import { Cat, Dog } from "./pages/Dog";
 import { GetPizza } from "./pages/DeliverPizza";
 import { Blog } from "./pages/Blog";
-import { ValidatorFrontend } from "./pages/validatorFrontend";
 import { BlogViewer } from "./pages/BlogViewer";
 
 export function AllRoutes() {
@@ -33,7 +32,6 @@ export function AllRoutes() {
             <Route path="/cat" element={<Cat/>}/>
 						<Route path="/blog" element={<Blog/>}/>
 						<Route path="/blog_viewer/*" element={<BlogViewer/>}/>
-						<Route path="/xml_validate" element={<ValidatorFrontend/>}/>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
 }

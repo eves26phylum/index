@@ -24,8 +24,8 @@ export function BlogViewer() {
 	}, []);
 	return <div className="mainContent presentation">
 		<div className="default blog end">
-			<MakeBlogFromXML blog_xml_text={blogContent || "<text>loading</text>"}/>
-			{blogContent}
+			<MakeBlogFromXML blog_xml_text={blogContent || "<text>This blog is loading...</text>"}/>
+			{/* {blogContent} */}
 		</div>
 	</div>
 }
