@@ -36,7 +36,7 @@ export function Blog() {
 						<hr/>
 						<div>
 						<p className="mini-text">Creation date</p>
-						<p>Created at {new Date(blog.creation_date * 1000).toLocaleDateString()}</p>
+						<p>{new Date(blog.creation_date * 1000).toLocaleDateString()}</p>
 						</div>
 						<div>
 						<p className="mini-text">Tags</p>
