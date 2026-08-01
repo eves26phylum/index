@@ -79,10 +79,10 @@ export function MenuBar() {
                 <nav className="justify-right">
                     <HeaderLink target="_blank" to="https://github.com/eves26phylum" className="redirect">{IconAndTextCombo({ filledIcon: faGithub, children: "GitHub" })}</HeaderLink>
                     <HeaderLink to="/email">{IconAndTextCombo({ filledIcon: faEnvelope, children: "mail" })}</HeaderLink>
-                    <HeaderLink key="destructive_actions" to="/destructive_actions" className="mobile-view">
+                    <HeaderLink key="destructive_actions" to="/destructive_actions" className="mobile-view" aria-label="eves26phylum—settings">
                         <FontAwesomeIcon icon={faFilledCog}/>
                     </HeaderLink>
-                    <HeaderLink key="destructive_actions" to="/destructive_actions" className="desktop-view">
+                    <HeaderLink key="destructive_actions" to="/destructive_actions" className="desktop-view" aria-label="eves26phylum—settings">
                         {IconAndTextCombo({ filledIcon: faFilledCog, children: "eves26phylum" })}
                     </HeaderLink>
                 </nav>

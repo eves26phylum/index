@@ -8,6 +8,7 @@
     --nav-item-padding-x: 0.5rem;
     --how-thick-is-the-line: 1px;
     --secondary: rgb(65, 65, 65);
+		--light: rgb(150, 150, 150);
     --ghost: rgb(200, 200, 200);
     --odd: rgba(255, 255, 255, 0.048);
     --text-color: black;
@@ -625,7 +626,7 @@ body {
 }
 .mini-text {
 	text-transform: uppercase;
-	color: var(--ghost);
+	color: var(--light);
 	font-size: 0.67rem;
 }
 .inline-tags a {
@@ -636,6 +637,9 @@ body {
 }
 .ghost {
 	color: var(--ghost);
+}
+.light {
+	color: var(--light);
 }
 .blogs-list {
 	display: flex;

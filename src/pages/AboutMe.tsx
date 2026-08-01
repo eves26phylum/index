@@ -32,7 +32,7 @@ export function AboutMe() {
             </div>
             <div className="double-column gap">
 								<AboutCard>
-                <img src={afghan} className="behaveImage"/>
+                <img src={afghan} className="behaveImage" alt="A 3D-Render style Afghanistan landscape with trees and buildings"/>
                 <h1><NavLink target="_blank" to="https://github.com/eves26phylum/ProcedurallyGeneratedDeadlineMap_TS">3 Kilometer Afghanistan</NavLink></h1>
                 <div className="skill-list">
                     <Tooltip label="ROBLOX Studio" open={true}>
@@ -55,7 +55,7 @@ export function AboutMe() {
                 <p>Inspired by Afghanistan's scenery, and the DEADLINE semi-realistic gun system works well along with it to create a slower-paced experience for milsim enjoyers with its large size.</p>
 								</AboutCard>
 								<AboutCard>
-                <img src={deadlineuirecreation} className="behaveImage"/>
+                <img src={deadlineuirecreation} className="behaveImage" alt="A UI Recreation for ROBLOX Deadline featuring a main menu, a navbar in dark mode."/>
                 <h1><NavLink target="_blank" to="https://github.com/eves26phylum/DeadlineUIRecreation">Deadline UI Recreation</NavLink> </h1>
                     <div className="skill-list">
                     <Tooltip label="ROBLOX Studio" open={true}>
