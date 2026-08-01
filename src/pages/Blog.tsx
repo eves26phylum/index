@@ -36,7 +36,7 @@ export function Blog() {
 					<div className="inline-tags">{blog.tags.map((tag: string, index: number) => {
 						return <NavLink to={`https://www.urbandictionary.com/define.php?term=${encodeURIComponent(tag)}`} key={index}>{tag}</NavLink>
 					})}</div>
-					<p>{blog.creation_date}</p>
+					<p>Created at {new Date(blog.creation_date * 1000).toLocaleDateString()}</p>
 					{blog.authors.map((tag: string, index: number) => {
 						return <p key={index}>{tag}</p>
 					})}

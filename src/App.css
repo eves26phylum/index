@@ -614,6 +614,6 @@ body {
 	display: flex;
 	gap: 0.5rem;
 }
-/* .inline-tags p { */
-/**/
-/* } */
+.inline-tags p {
+	background: black;
+}
