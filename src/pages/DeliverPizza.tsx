@@ -113,8 +113,6 @@ export function GetPizza() {
                     onChange={(e) => setUsername(e.target.value)}
                     disabled={loading || pizzaCount <= 0}
                 />}
-                { statusText.trim() !== "" ?
-                    <p className={statusGood ? 'status-text' : 'error-status'}>{statusText}</p> : <></> }
                 {
                     showLoadingText ? 
                     <p>claiming...</p> : <></>
@@ -129,6 +127,8 @@ export function GetPizza() {
                         press to get a delicious pizza
                     </button>
                 </Tooltip>}
+                { statusText.trim() !== "" ?
+                    <p className={statusGood ? 'status-text' : 'error-status'}>{statusText}</p> : <></> }
 								<p>This pizza party was made in celebration of something. Now, it's open to anyone—just place your name, and claim a delicious (virtual) pizza!</p>
             </div>
         </div>

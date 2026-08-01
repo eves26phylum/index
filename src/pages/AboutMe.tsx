@@ -36,15 +36,15 @@ export function AboutMe() {
                 <h1><NavLink target="_blank" to="https://github.com/eves26phylum/ProcedurallyGeneratedDeadlineMap_TS">3 Kilometer Afghanistan</NavLink></h1>
                 <div className="skill-list">
                     <Tooltip label="ROBLOX Studio" open={true}>
-                        <NavLink target="_blank" to="https://en.wikipedia.org/wiki/Roblox">
+                        <NavLink target="_blank" to="https://en.wikipedia.org/wiki/Roblox" aria-label="ROBLOX Studio Logo Link">
                             <img src="https://cdn.foundation.roblox.com/current/StudioLogo-Light.svg" className="icon-skill" style={{
                             filter: "invert(21%) sepia(100%) saturate(7414%) hue-rotate(357deg) brightness(91%) contrast(116%)drop-shadow(2px 0px 0px #000000) drop-shadow(-1px 0px 0px #000000) drop-shadow(0px 1px 0px #000000) drop-shadow(0px -1px 0px #000000)"
-                        }}/>
+                        }} alt="ROBLOX Studio Logo"/>
                         </NavLink>
                     </Tooltip>
                     <Tooltip label="TypeScript" open={true}>
-                        <NavLink target="_blank" to="https://typescriptlang.org">
-                            <FontAwesomeIcon icon={faTypescript} className="icon-skill" color="#3178C6"/>
+                        <NavLink target="_blank" to="https://typescriptlang.org" aria-label="TypeScript Link">
+                            <FontAwesomeIcon icon={faTypescript} className="icon-skill" color="#3178C6" aria-label="TypeScript Logo"/>
                         </NavLink>
                     </Tooltip>
                 </div>
@@ -59,19 +59,19 @@ export function AboutMe() {
                 <h1><NavLink target="_blank" to="https://github.com/eves26phylum/DeadlineUIRecreation">Deadline UI Recreation</NavLink> </h1>
                     <div className="skill-list">
                     <Tooltip label="ROBLOX Studio" open={true}>
-                        <NavLink target="_blank" to="https://en.wikipedia.org/wiki/Roblox">
+                        <NavLink target="_blank" to="https://en.wikipedia.org/wiki/Roblox" aria-label="ROBLOX Studio Logo Link">
                             <img src="https://cdn.foundation.roblox.com/current/StudioLogo-Light.svg" className="icon-skill" style={{
                             filter: "invert(21%) sepia(100%) saturate(7414%) hue-rotate(357deg) brightness(91%) contrast(116%)drop-shadow(2px 0px 0px #000000) drop-shadow(-1px 0px 0px #000000) drop-shadow(0px 1px 0px #000000) drop-shadow(0px -1px 0px #000000)"
-                        }}/>
+                        }} alt="ROBLOX Studio Logo"/>
                         </NavLink>
                     </Tooltip>
                     <Tooltip label="TypeScript" open={true}>
-                        <NavLink target="_blank" to="https://typescriptlang.org">
-                            <FontAwesomeIcon icon={faTypescript} className="icon-skill" color="#3178C6"/>
+                        <NavLink target="_blank" to="https://typescriptlang.org" aria-label="TypeScript Link">
+                            <FontAwesomeIcon icon={faTypescript} className="icon-skill" color="#3178C6" aria-label="TypeScript Icon"/>
                         </NavLink>
                     </Tooltip>
                     <Tooltip label="React" open={true}>
-                        <NavLink target="_blank" to="https://react.dev">
+                        <NavLink target="_blank" to="https://react.dev" aria-label="React Link">
                             <svg className="icon-skill" width="24px" height="24px" viewBox="-10.5 -9.45 21 18.9" fill="none" xmlns="http://www.w3.org/2000/svg"><circle cx="0" cy="0" r="2" fill="#61DBFB"></circle><g stroke="#61DBFB" fill="none"><ellipse rx="10" ry="4.5"></ellipse><ellipse rx="10" ry="4.5" transform="rotate(60)"></ellipse><ellipse rx="10" ry="4.5" transform="rotate(120)"></ellipse></g></svg>
                         </NavLink>
                     </Tooltip>
