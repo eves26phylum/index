@@ -33,9 +33,9 @@ export function Blog() {
 			{blogs ? blogs.map((blog: Blog, index: number) => {
 				return <div key={index}>
 					<NavLink to={`/blog_viewer/${blog.id}`}>{blog.blog_title}</NavLink>
-					{blog.tags.map((tag: string, index: number) => {
-						return <p key={index}>{tag}</p>
-					})}
+					<div className="inline-tags">{blog.tags.map((tag: string, index: number) => {
+						return <NavLink to={`https://www.urbandictionary.com/define.php?term=${encodeURIComponent(tag)}`} key={index}>{tag}</NavLink>
+					})}</div>
 					<p>{blog.creation_date}</p>
 					{blog.authors.map((tag: string, index: number) => {
 						return <p key={index}>{tag}</p>

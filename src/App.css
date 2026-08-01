@@ -610,3 +610,10 @@ body {
 .invisible {
     display: none !important;
 }
+.inline-tags {
+	display: flex;
+	gap: 0.5rem;
+}
+/* .inline-tags p { */
+/**/
+/* } */

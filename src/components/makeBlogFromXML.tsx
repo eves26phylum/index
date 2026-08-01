@@ -1,14 +1,17 @@
 import { validateXML } from "../utilities/validateXML";
 const dom_parser = new DOMParser();
 export function MakeBlogFromXML({blog_xml_text}: {blog_xml_text: string}) {
-	if (validateXML(blog_xml_text) !== true) {
+	try {
+		validateXML(blog_xml_text) !== true
+	}
+	catch(e) {
+		window.alert(e);
 		return <p>Failed to load blog—syntax error while validating XML</p>
 	}
 	function parseElement(element: Node) {
 		if (element.nodeName === "#text") {
 			return element.nodeValue;
 		}
-		console.log(element.nodeName);
 		const parsedInsides = parseSomething(element.childNodes);
 		// todo: parse .attributes
 		switch (element.nodeName) {
@@ -32,7 +35,6 @@ export function MakeBlogFromXML({blog_xml_text}: {blog_xml_text: string}) {
 			return parseElement(something[index]);	
 		})
 	}
-	console.log(blog_xml_text);
 	const xml_parsed = dom_parser.parseFromString(blog_xml_text, "text/xml").childNodes;
 	return <>
 		{
