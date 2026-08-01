@@ -1,5 +1,6 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
+import { MakeBlogFromXML } from "../components/makeBlogFromXML";
 export function BlogViewer() {
 	const params = useParams();
 	const blogName = params["*"];
@@ -14,7 +15,6 @@ export function BlogViewer() {
 							const data: {
 								blog_content: string
 							} = await response.json();
-							console.log(data);
 							setBlogContent(data?.blog_content || "<error>not found</error>");
 					} catch (error) {
 						window.alert(error); //temp
@@ -24,7 +24,8 @@ export function BlogViewer() {
 	}, []);
 	return <div className="mainContent presentation">
 		<div className="default blog end">
-
+			<MakeBlogFromXML blog_xml_text={blogContent || "<text>loading</text>"}/>
+			{blogContent}
 		</div>
 	</div>
 }
