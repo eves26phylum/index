@@ -27,6 +27,10 @@ export function MakeBlogFromXML({blog_xml_text}: {blog_xml_text: string}) {
 				return <image className="behaveImage"/>
 			case "quote":
 				return <blockquote>{parsedInsides}</blockquote>
+			case "em":
+				return <em>{parsedInsides}</em>
+			case "i":
+				return <i>{parsedInsides}</i>
 			default:
 				return <div>
 					<h1>Error! Unsupported tag: {element.nodeName}, defaulting to nothing—but the content stays, so nothing is lost</h1>
