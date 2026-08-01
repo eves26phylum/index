@@ -14,6 +14,7 @@ export function MakeBlogFromXML({blog_xml_text}: {blog_xml_text: string}) {
 		}
 		const parsedInsides = parseSomething(element.childNodes);
 		// todo: parse .attributes
+		const attributes = element instanceof Element ? element.attributes : undefined;
 		switch (element.nodeName) {
 			case "blog":
 				return <>{parsedInsides}</>
@@ -24,7 +25,8 @@ export function MakeBlogFromXML({blog_xml_text}: {blog_xml_text: string}) {
 			case "bold":
 				return <strong>{parsedInsides}</strong>
 			case "image":
-				return <image className="behaveImage"/>
+				if (!attributes) return <p>[Image] failed to use attributes</p>;
+				return <img className="behaveImage" src={attributes.getNamedItem("src")?.value || "/failed_to_load.png"} alt={attributes.getNamedItem("alt")?.value || "This is an image"}/>
 			case "quote":
 				return <blockquote>{parsedInsides}</blockquote>
 			case "em":

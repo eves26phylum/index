@@ -613,6 +613,7 @@ body {
 .inline-tags {
 	display: flex;
 	gap: 0.5rem;
+	flex-wrap: wrap;
 }
 .blog-card {
 	border: 1px black solid;

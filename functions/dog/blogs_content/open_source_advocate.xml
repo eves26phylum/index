@@ -1,6 +1,7 @@
 <blog>
-<title>Daily life of an open-source advocate</title>
+<title>My Aggressive Daily-Routine as an Open-Source Advocate</title>
 <text>When I grew up as a child, I always wondered how these people managed to fucking run these fancy neovim setups and all these flashing windows moving around on their screen. I had this desire to find out what they were doing, ever since I was in the womb. Once I realised how much data every company is harvesting from you—I pivoted, and never came back—it's been the most wonderful journey I have experienced.</text>
+<image src="/hackerman.png" alt="A wallpaper consisting of binary to signify that this is a hackerman's job. It contains the following commands shown: zellij, neovim, firefox, a Rust snippet of Hello, World!, Linux, Gentoo Linux, Unix"></image>
 <text>
 Ever since I was a child, I've been starting to love using Neovim more. I've realised how the corporate monopolies (Microsoft, Visual Studio Code) have actually been trying to HINDER our abilities to create things! YouTube—from Google has also been doing this, same with TikTok and all that typeof() stuff. Crazy, isn't it??
 Here's a quote from when I was a child:
