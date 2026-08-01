@@ -14,6 +14,7 @@ import { WrongQuestions } from "./pages/WrongQuestions";
 import { Cat, Dog } from "./pages/Dog";
 import { GetPizza } from "./pages/DeliverPizza";
 import { Blog } from "./pages/Blog";
+import { ValidatorFrontend } from "./pages/validatorFrontend";
 
 export function AllRoutes() {
     return <Routes>
@@ -30,6 +31,7 @@ export function AllRoutes() {
             <Route path="/dog" element={<Dog/>}/>
             <Route path="/cat" element={<Cat/>}/>
 						<Route path="/blog" element={<Blog/>}/>
+						<Route path="/xml_validate" element={<ValidatorFrontend/>}/>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
 }
