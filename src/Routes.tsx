@@ -31,6 +31,7 @@ export function AllRoutes() {
             <Route path="/dog" element={<Dog/>}/>
             <Route path="/cat" element={<Cat/>}/>
 						<Route path="/blog" element={<Blog/>}/>
+						<Route path="/blog_viewer/*" element={}/>
 						<Route path="/xml_validate" element={<ValidatorFrontend/>}/>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
