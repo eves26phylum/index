@@ -27,12 +27,12 @@ export function Blog() {
 	}, []);
 	return <div className="mainContent presentation">
 		<div className="default blog end">
-			<NavLink to={`/blog_viewer`}>Blog</NavLink>
-			<p>A collection of thoughts I find interesting.</p>
+			<h1>Blog</h1>
+			<p>collection of thoughts I find interesting.</p>
 			{(() => {console.log(blogs); return <></>;})()}
 			{blogs ? blogs.map((blog: Blog, index: number) => {
 				return <div key={index}>
-					<h1>{blog.blog_title}</h1>
+					<NavLink to={`/blog_viewer/${blog.id}`}>{blog.blog_title}</NavLink>
 					{blog.tags.map((tag: string, index: number) => {
 						return <p key={index}>{tag}</p>
 					})}
