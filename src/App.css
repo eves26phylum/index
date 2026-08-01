@@ -614,6 +614,30 @@ body {
 	display: flex;
 	gap: 0.5rem;
 }
-.inline-tags p {
-	background: black;
+.blog-card {
+	border: 1px black solid;
+	padding: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+	max-width: 400px;
+}
+.blog-card .mini-text {
+	text-transform: uppercase;
+	color: var(--ghost);
+	font-size: 0.67rem;
+}
+.inline-tags a {
+	/* background: black; */
+	border: 1px var(--ghost) solid;
+	padding: 0.25rem;
+	border-radius: 4px;
+}
+.ghost {
+	color: var(--ghost);
+}
+.blogs-list {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
 }

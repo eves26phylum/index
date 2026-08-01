@@ -28,20 +28,31 @@ export function Blog() {
 	return <div className="mainContent presentation">
 		<div className="default blog end">
 			<h1>Blog</h1>
-			<p>collection of thoughts I find interesting.</p>
-			{(() => {console.log(blogs); return <></>;})()}
-			{blogs ? blogs.map((blog: Blog, index: number) => {
-				return <div key={index}>
-					<NavLink to={`/blog_viewer/${blog.id}`}>{blog.blog_title}</NavLink>
-					<div className="inline-tags">{blog.tags.map((tag: string, index: number) => {
-						return <NavLink to={`https://www.urbandictionary.com/define.php?term=${encodeURIComponent(tag)}`} key={index}>{tag}</NavLink>
-					})}</div>
-					<p>Created at {new Date(blog.creation_date * 1000).toLocaleDateString()}</p>
-					{blog.authors.map((tag: string, index: number) => {
-						return <p key={index}>{tag}</p>
-					})}
-				</div>
-			}) : undefined}
+			<p>A collection of thoughts I find interesting.</p>
+			<div className="blogs-list">
+				{blogs ? blogs.map((blog: Blog, index: number) => {
+					return <div key={index} className="blog-card">
+						<NavLink to={`/blog_viewer/${blog.id}`}>{blog.blog_title}</NavLink>
+						<hr/>
+						<div>
+						<p className="mini-text">Creation date</p>
+						<p>Created at {new Date(blog.creation_date * 1000).toLocaleDateString()}</p>
+						</div>
+						<div>
+						<p className="mini-text">Tags</p>
+						<div className="inline-tags">{blog.tags.map((tag: string, index: number) => {
+							return <NavLink target="_blank" to={`https://www.urbandictionary.com/define.php?term=${encodeURIComponent(tag)}`} key={index}>{tag}</NavLink>
+						})}</div>
+						</div>
+						<div>
+						<p className="mini-text">Authors</p>
+						{blog.authors.map((tag: string, index: number) => {
+							return <p key={index}>{tag}</p>
+						})}
+						</div>
+					</div>
+				}) : undefined}
+			</div>
 		</div>
 	</div>
 }
