@@ -14,7 +14,7 @@ export function HomePage() {
                 </div>
             </div>
             <div className="default">
-                <p>{age} years old male based in Australia who is still learning and is currently changing their toolstack to words you have probably never heard of</p>
+                <p>{age} years old male based in Australia who is still learning and is currently changing their toolstack to words you have probably never heard of!</p>
             </div>
             <div className="default">
 								<NavLink to="/blog">Read my blogs</NavLink>
