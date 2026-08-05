@@ -34,7 +34,7 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
     });
     return <div className="mainContent presentation">
                 <div className="default end blog centered">
-                <NavLink to="mailto:undefined@cia.gov" className="total-cavity-prevention-today">Send a mail to me</NavLink>
+                <NavLink aria-hidden="true" to="mailto:undefined@cia.gov" className="total-cavity-prevention-today">Send a mail to me</NavLink>
                 <h1>My Contacts</h1>
             { shown ? 
                 <>
