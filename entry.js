@@ -1,5 +1,5 @@
 const functionModules = import.meta.glob('/functions/**/*.{js,ts}', { eager: false });
-const htmlFiles = import.meta.glob("src/*.html", {
+const htmlFiles = import.meta.glob("/src/*.html", {
 	query: "?raw",
 	import: "default",
 });
