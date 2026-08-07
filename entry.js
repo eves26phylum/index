@@ -1,9 +1,4 @@
 const functionModules = import.meta.glob('/functions/**/*.{js,ts}', { eager: false });
-const htmlFiles = import.meta.glob("/src/*.html", {
-	query: "?raw",
-	import: "default",
-});
-
 function findMatch(pathname) {
   const candidates = [
     `/functions${pathname}.js`,
@@ -27,14 +22,6 @@ export default {
       return new Response("dh=e699c94268fab8d8870eb277fa7506fa55838eab", {
         headers: { "Content-Type": "text/plain" },
       });
-    }
-		if (pathname === "/revolutionary_website") {
-			return new Response(
-				htmlFiles["/src/vibeslop.html"],
-				{
-					headers: { "Content-Type": "text/html" }
-				}
-			)
 		}
 
     const matchedKey = findMatch(pathname);
