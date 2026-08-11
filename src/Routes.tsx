@@ -15,6 +15,7 @@ import { Cat, Dog } from "./pages/Dog";
 import { GetPizza } from "./pages/DeliverPizza";
 import { Blog } from "./pages/Blog";
 import { BlogViewer } from "./pages/BlogViewer";
+import { MyCode } from "./pages/MyCode";
 
 export function AllRoutes() {
     return <Routes>
@@ -32,6 +33,7 @@ export function AllRoutes() {
             <Route path="/cat" element={<Cat/>}/>
 						<Route path="/blog/*" element={<BlogViewer/>}/>
 						<Route path="/blog" element={<Blog/>}/>
+						<Route path="/git" element={<MyCode/>}/>
             <Route path="*" element={<NotFound/>}/>
           </Routes>
 }

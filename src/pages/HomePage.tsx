@@ -8,7 +8,7 @@ export function HomePage() {
                 <h1>eves26phylum</h1>
                 <div className="default row">
 										{/* <p>external links</p> */}
-                    <NavLink target="_blank" to="https://github.com/eves26phylum">GitHub</NavLink>
+                    <NavLink to="/git">My Code</NavLink>
                     <NavLink target="_blank" to="https://discord.gg/5x7aUsNp2V">Discord</NavLink>
 								    <NavLink to="/email">E-Mail</NavLink>
                 </div>

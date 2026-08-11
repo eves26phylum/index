@@ -3,7 +3,7 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye as faFilledEye, faClipboard as faFilledClipboard, type IconDefinition, faFloppyDisk as faFilledFloppyDisk, faMoon as faFilledMoon, faEllipsis, faCog as faFilledCog, faCaretDown as faFilledCaretDown } from '@fortawesome/free-solid-svg-icons';
 import { faEye, faClipboard, faFloppyDisk, faMoon } from '@fortawesome/free-regular-svg-icons';
-import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faGit } from "@fortawesome/free-brands-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { usePriorityPlusMenu } from "../hooks/usePriorityPlusMenu";
@@ -77,7 +77,7 @@ export function MenuBar() {
                     </div>
                 </nav>
                 <nav className="justify-right">
-                    <HeaderLink target="_blank" to="https://github.com/eves26phylum" className="redirect">{IconAndTextCombo({ filledIcon: faGithub, children: "GitHub" })}</HeaderLink>
+                    <HeaderLink to="/git" className="redirect">{IconAndTextCombo({ filledIcon: faGit, children: "My Code" })}</HeaderLink>
                     <HeaderLink to="/email">{IconAndTextCombo({ filledIcon: faEnvelope, children: "mail" })}</HeaderLink>
                     <HeaderLink key="destructive_actions" to="/destructive_actions" className="mobile-view" aria-label="eves26phylum—settings">
                         <FontAwesomeIcon icon={faFilledCog}/>
