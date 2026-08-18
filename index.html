@@ -7,6 +7,24 @@
     <title>Welcome back</title>
   </head>
   <body>
+		<noscript class="client-side-decisions">
+			<style>
+				.client-side-decisions {
+					margin-bottom: 0.5rem;
+					padding: 1rem;
+					font-family: system-ui;
+					display: flex;
+					flex-direction: column;
+					gap: 0.5rem;
+				}
+			</style>
+			<h1>Sorry! This website does not run without JavaScript</h1>
+			<p>
+			This website is written entirely in pure client-side <a href="https://react.dev" target="_blank">React</a> and does not support pre-rendered pages being displayed to you
+			</p>
+			<strong>For now, you can enable JS on this site if you really want to view it</strong>
+			<p>Otherwise, just flutter away... into the corners of the web (or wait until I rewrite this site someday and stalk me again with your disabled-JS shield)</p>
+		</noscript>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>

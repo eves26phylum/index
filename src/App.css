@@ -27,6 +27,13 @@
 }
 .status-text {
     color: green;
+		display: flex;
+		align-items: flex-end;
+		white-space: pre-wrap;
+}
+.status-text > .username {
+		border: 1px var(--input-colour) solid;
+		padding: 0.1rem 0.25rem;
 }
 .error-status {
     color: red;

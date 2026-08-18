@@ -3,6 +3,7 @@ import Tooltip from '../components/Tooltip';
 import { faPizzaSlice } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import pizza from "../assets/images/pizza.png";
+import { PizzaUsersList } from '../components/pizza_users_list_text';
 
 interface PizzaApiResponse {
     success: boolean;
@@ -96,7 +97,7 @@ export function GetPizza() {
                 <strong>{pizzaCount} pizza slices remaining</strong> 
                 <div className='the-box'>
                     <p>people who claimed the pizza</p>
-                    <strong className='status-text'>{userList.join(', ')}</strong>
+										<PizzaUsersList user_list={userList}/>
                 </div>
                 <div>
                 { 
