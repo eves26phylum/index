@@ -26,7 +26,7 @@ function render() {
       element.setAttribute('tabindex', '0');
     });
   }
-  const onKeyDown = (event: KeyboardEvent) => { // support fucking safari
+  const onKeyDown = (event: KeyboardEvent) => { // support apple safari
     if (event.key !== 'Tab') return;
     addTabIndex();
   }
