@@ -30,6 +30,7 @@
 		display: flex;
 		align-items: flex-end;
 		white-space: pre-wrap;
+		flex-wrap: wrap;
 }
 .status-text > .username {
 		border: 1px var(--input-colour) solid;
