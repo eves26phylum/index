@@ -2,13 +2,12 @@ import { BrowserRouter } from 'react-router';
 import './App.css';
 import { MenuBar } from './components/Header';
 import { AllRoutes } from './Routes';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createContext } from 'react';
 import { bootlog } from './assets/documents/bootlog';
 import React from 'react';
 import { BlinkingCursor } from './BlinkingCursor';
 import { Scroller } from './components/Scroller';
-import { NavLink } from 'react-router';
 export type uuid = ReturnType<Crypto["randomUUID"]>;
 export type ModalContextType = {
   destroyModalByUUID: (uuid: uuid) => void,
@@ -24,17 +23,16 @@ export const ModalContext = createContext<ModalContextType>({
     const error = "Critical Error: addModal called before definition"; 
     window.alert(error);
     throw new Error(error);
-    // return `What-What-What-What-What`;
   }
 });
-function getLineDelay(lineIndex: number): number {
-  const roll = Math.random();
-  if (roll < 0.025) return 2 + Math.random() * 6;
-  if (roll < 0.05) return 300 + Math.random() * 600;
-  const base = 10 + Math.random() * 20;
-  const jitter = Math.random() < 0.4 ? Math.random() * 60 : 0;
-  return base + jitter;
-}
+// function getLineDelay(lineIndex: number): number {
+//   const roll = Math.random();
+//   if (roll < 0.025) return 2 + Math.random() * 6;
+//   if (roll < 0.05) return 300 + Math.random() * 600;
+//   const base = 10 + Math.random() * 20;
+//   const jitter = Math.random() < 0.4 ? Math.random() * 60 : 0;
+//   return base + jitter;
+// }
 export function StartScreen({ setHasLoaded }: { setHasLoaded: React.Dispatch<React.SetStateAction<boolean>> }) {
   const containerRef = useRef<HTMLDivElement>(null);
   const cursorRef = useRef<HTMLSpanElement>(null);
