@@ -34,7 +34,6 @@ export function MenuBar() {
 
     const rawNavItems = [
         <HeaderLink key="home" to="/">{IconAndTextCombo({ filledIcon: faFilledMoon, nonFilledIcon: faMoon, children: "about" })}</HeaderLink>,
-                    <HeaderLink to="/git" className="redirect">{IconAndTextCombo({ filledIcon: faGit, children: "My Code" })}</HeaderLink>
     ];
 
     const navItems = rawNavItems.map((item, index) => {

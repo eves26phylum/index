@@ -1,13 +1,23 @@
 import { NavLink } from "react-router";
+import { faGithub, faCodeberg } from "@fortawesome/free-brands-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { MailMe } from "./Mail";
+import { ClipboardCopyButton } from "../components/ClipboardCopy";
 export function HomePage() {
     return <div className="mainContent presentation">
         <div className="blog end">
             <div className="default middle row">
                 <h1>eves26phylum</h1>
                 <div className="default row">
-										{/* <p>external links</p> */}
-                    <NavLink to="/git">My Code</NavLink>
-								    <NavLink to="/email">E-Mail</NavLink>
+										<MailMe ClipboardCopyButton={ClipboardCopyButton}/>
+										<NavLink target="_blank" to="https://github.com/eves26phylum">
+											<FontAwesomeIcon icon={faGithub}/>
+											GitHub
+										</NavLink>
+										<NavLink target="_blank" to="https://codeberg.org/eves26phylum">
+											<FontAwesomeIcon icon={faCodeberg}/>
+											Codeberg
+										</NavLink>
                 </div>
             </div>
             <div className="default">

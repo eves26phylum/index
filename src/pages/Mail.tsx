@@ -6,36 +6,13 @@ import { useEffect, useState } from "react";
 type clipboardCopy = {
     copy: string
 }
-export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.ComponentType<clipboardCopy>}) {
-    const [shown, setShown] = useState<boolean>(false);
-    const [boi, setSplit] = useState<[string[],string[]]>([["no", "no"], ["no", "no"]]);
-    const navigate = useNavigate();
-    const [split_1, split_2] = boi;
-    const [mail, setMail] = useState<string>("hah");
-    const handleReveal = () => {
-        const mail = eval(getMailAddress)[0];
-        setSplit([mail.split("@"), mail.split("@")[1].split(".")]);
-        setMail(eval(getMailAddress)[0]);
-        setShown(true);
-    };
-    const [part, setPart] = useState(0);
-    const [thirdQuestion, setThirdQuestion] = useState<string>("");
-    useEffect(() => {
-        if (part !== 1) return;
-        const id = setTimeout(()=> {
-            setPart(0);
-        }, 500);
-        return () => clearTimeout(id);
-    });
-    return <div className="mainContent presentation">
-                <div className="default end blog centered">
-                <NavLink aria-hidden="true" to="mailto:undefined@cia.gov" className="total-cavity-prevention-today">Send a mail to me</NavLink>
-                <h1>My Contacts</h1>
-            { shown ? 
-                <>
-                    <div>   
-                        <p>Email me at 
-                            <code className="youvegotmail">
+function MailDisplay({ split_1, split_2, ClipboardCopyButton, mail }: {
+	split_1: [string, string],
+	split_2: [string, string],
+	ClipboardCopyButton: React.ComponentType<clipboardCopy>,
+	mail: string
+}) {
+	return <code className="youvegotmail">
                                 <div className="no-select">
                                     <span>
                                         {`${split_1[0]}`}
@@ -51,53 +28,21 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
                                 </div>
                                 <ClipboardCopyButton copy={mail}/>
                             </code>
-                        </p>
-                    </div>
-                    <p>use the clipboard copy button</p>
-                </>
-                : <>
-                { part === 0 ?
-                <button className="showMail" onClick={() => {
-                    setPart(part => part + 1);
-                }}>Double-click to show my email address</button> 
-                : 
-                <>
-                { part === 1 ?
-                <button className="showMail red" onClick={() => {
-                    setPart(part => part + 1);
-                }}>Click again to show my email address...</button> 
-                : <>
-                <p>Want to get my email? Answer this question.</p>
-                <div className="theform">                    
-                    <p>What field does eves26phylum specialise in?</p>
-                    <select onChange={(event) => {
-                        const element = event.target;
-                        setThirdQuestion(element.value);
-                    }}>
-                        <option value="what">Choose an option —————————————</option>
-                        <option value="nutritionist">Nutritionist</option>
-                        <option value="omnipresent-scientist">Omnipresent Scientist</option>
-                        <option value="writer">Story Writer</option>
-                        <option value="correct-option">Marketing Specialist</option>
-                        <option value="content-creator">Content Creator</option>
-                        <option value="software-developer">Software Developer</option>
-                        <option value="3d-art-creator">3D Art Creator</option>
-                        <option value="painter">Painter</option>
-                    </select>
-                    <p className="red top-4">If you answer wrong, you will get redirected to the homepage.</p>
-                </div>
-                <button className="showMail red" onClick={() => {
-                    if (thirdQuestion === 'what' || thirdQuestion.length === 0) return navigate("/cat");
-                    if (thirdQuestion === 'correct-option') return navigate("/dog");
-                    if (thirdQuestion !== 'software-developer') return navigate("/you_answered_the_questions_wrong");
-                    handleReveal();
-                }}>🔒 Test if I'm correct. I want to be granted access.</button> 
-                </>
-                }
-                </>
-                }
-            </>}
-
-        </div> 
-    </div>
+}
+export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.ComponentType<clipboardCopy>}) {
+    const [shown, setShown] = useState<boolean>(false);
+    const [boi, setSplit] = useState<[[string, string],[string, string]]>([["no", "no"], ["no", "no"]]);
+    const [split_1, split_2] = boi;
+    const [mail, setMail] = useState<string>("hah");
+    const handleReveal = () => {
+        const mail = eval(getMailAddress)[0];
+        setSplit([mail.split("@"), mail.split("@")[1].split(".")]);
+        setMail(eval(getMailAddress)[0]);
+        setShown(true);
+    };
+    return <>
+			<NavLink aria-hidden="true" to="mailto:undefined@cia.gov" className="total-cavity-prevention-today">Send a mail to me</NavLink>
+		
+		<MailDisplay split_1={split_1} split_2={split_2} ClipboardCopyButton={ClipboardCopyButton} mail={mail}/>	
+	</>
 }
