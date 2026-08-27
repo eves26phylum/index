@@ -25,7 +25,7 @@ export function HomePage() {
             <div className="default">
 								<div>
 									<p>A person you might never hear from again.</p>
-									<p>Australian 🇦🇺 software developer</p>
+									<p>Australian 🇦🇺 who does software development as a hobby</p>
 								</div>
 								<DestructiveActions/>
 								<hr/>
