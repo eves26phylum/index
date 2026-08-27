@@ -46,7 +46,7 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
 		{ shown ?	
 		<MailDisplay split_1={split_1} split_2={split_2} ClipboardCopyButton={ClipboardCopyButton} mail={mail}/>	
 		: <button onClick={handleReveal} className="email-button">
-				E-Mail
+				Reveal My E-Mail
 			</button> }
 	</>
 }

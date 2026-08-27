@@ -4,13 +4,26 @@ import { getUnixTimestampOfTime, secondsToYears, getUltraDeadline, getStartTask,
 
                                 // localStorage.setItem('dark_mode', document.body.classList.contains("dark_mode").toString());
 export function LearningProgressBar({progress, children, outerChildren}: {progress: number, children?: React.ReactNode, outerChildren?: React.ReactNode}) {
-    return <div className="progressBar">
+		return <div className="progressBar">
         <div className="progressIns" style={{
-            width: `${progress * 100}%`
+                width: `${progress * 100}%`
         }}>
-            {children}
+                {children}
         </div>
-        {outerChildren}
+        <div style={{
+            position: 'absolute',
+            right: '0.5rem',
+            top: 0,
+            bottom: 0,
+            display: 'flex',
+            alignItems: 'center',
+            whiteSpace: 'nowrap',
+            overflow: 'hidden',
+            textOverflow: 'ellipsis',
+            maxWidth: '100%'
+        }}>
+            {outerChildren}
+        </div>
     </div>
 }
 export function DestructiveActions() {
@@ -24,7 +37,7 @@ export function DestructiveActions() {
         return () => {clearTimeout(id)};
     });
     const yearsLeft = secondsToYears(getEnd() - progress * getEnd()).toFixed(1);
-	return <LearningProgressBar progress={progress} outerChildren={<p className="yearsLeft dogger">{yearsLeft === "0.0" ? `ready to produce` : `${yearsLeft} years`}</p>}>
+	return <LearningProgressBar progress={progress} outerChildren={<p className="yearsLeft dogger">{yearsLeft === "0.0" ? `no longer legally bound to the conformities of being a minor` : `${yearsLeft} years`}</p>}>
                     <p className="yearsLeft">{secondsToYears(progress * getEnd()).toFixed(2)} years old</p>
                 </LearningProgressBar>
 }

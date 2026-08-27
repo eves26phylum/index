@@ -24,10 +24,13 @@
 	gap: 1rem;
 }
 .email-button {
-	padding: 0.5rem 1rem;
+	/* padding: 0.5rem 1rem; */
+	font-size: 1rem;
 	background-color: white;
 	border: none;
 	font-family: "PublicSans";
+	color: black;
+	padding: .25rem .5rem;
 	cursor: pointer;
 	outline: 1px black solid;
 }
@@ -216,10 +219,6 @@ main {
 .space-between {
 	justify-content: space-between;
 }
-.broadcast {
-	gap: 1rem;
-	border: 1px black solid;
-}
 .boogie {
 	display: flex;
 	gap: 1rem;
@@ -291,6 +290,15 @@ code {
     flex-direction: row;
 		align-items: center;
 		flex-wrap: wrap;
+}
+.broadcast {
+	gap: 1rem;
+	border: 1px black solid;
+	flex-wrap: nowrap;
+	align-items: flex-start;
+}
+.broadcast p {
+	white-space: nowrap;
 }
 hr {
 				align-self: stretch;
@@ -456,6 +464,7 @@ footer {
     justify-content: space-between;
     height: 24px;
     width: 100%;    
+    position: relative;
 }
 .os-container {
     background-color: var(--secondary);
@@ -554,6 +563,7 @@ footer {
     justify-content: space-between;
     display: flex;
     padding: 0rem 0.5rem;
+		flex-shrink: 0;
     background-image: linear-gradient(
         -45deg,
         rgba(255, 255, 255, 0.2) 25%,
@@ -566,7 +576,7 @@ footer {
     );
     background-size: 16px 16px; 
     height: 24px;
-    animation: move-stripes 0.5s linear infinite;
+    animation: move-stripes 2s linear infinite;
 }
 .turned-off {
     background-color: black;
