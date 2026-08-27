@@ -51,7 +51,7 @@ export function HomePage() {
 									</div>
 								</div>
             </div>
-						<div className="rabbit_that_takes_up_everything_and_is_only_for_filler_and_serves_no_other_purpose">
+						<div className="rabbit_that_takes_up_everything_and_is_only_for_filler_and_serves_no_other_purpose" aria-hidden={true}>
 							🐇
 						</div>
         </div>
