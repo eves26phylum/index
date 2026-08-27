@@ -92,8 +92,7 @@ export function GetPizza() {
     }
 
     return (
-        <div className="mainContent presentation">
-            <div className="default blog end">
+		<>
                 <strong>{pizzaCount} pizza slices remaining</strong> 
                 <div className='the-box'>
                     <p>people who claimed the pizza</p>
@@ -131,7 +130,6 @@ export function GetPizza() {
                 { statusText.trim() !== "" ?
                     <p className={statusGood ? 'status-text' : 'error-status'}>{statusText}</p> : <></> }
 								<p>This pizza party was made in celebration of something. Now, it's open to anyone—just place your name, and claim a delicious (virtual) pizza!</p>
-            </div>
-        </div>
+						</>
     );
 }

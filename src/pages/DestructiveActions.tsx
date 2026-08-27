@@ -1,12 +1,8 @@
 import React from "react";
-import { NavLink } from "react-router";
-import diskSpaceLeft from "../assets/images/diskSpaceLeft.png";
 import { useEffect, useState } from "react";
-import { useContext } from "react";
-import { ModalContext } from "../App";
-import type { DraggableModalType, ModalBodyType, ModalButtonsType, ModalDefaultButtonType, ModalHeaderType } from "../types/ModalTypes";
 import { getUnixTimestampOfTime, secondsToYears, getUltraDeadline, getStartTask, getEnd, calculateUntilUltraDeadline, getCurrentTime } from "../utilities/age";
 
+                                // localStorage.setItem('dark_mode', document.body.classList.contains("dark_mode").toString());
 export function LearningProgressBar({progress, children, outerChildren}: {progress: number, children?: React.ReactNode, outerChildren?: React.ReactNode}) {
     return <div className="progressBar">
         <div className="progressIns" style={{
@@ -17,10 +13,8 @@ export function LearningProgressBar({progress, children, outerChildren}: {progre
         {outerChildren}
     </div>
 }
-export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, ModalDefaultButton, ModalBody}: {DraggableModal: React.ComponentType<DraggableModalType>, ModalHeader: React.ComponentType<ModalHeaderType>, ModalButtons: React.ComponentType<ModalButtonsType>, ModalDefaultButton: React.ComponentType<ModalDefaultButtonType>, ModalBody: React.ComponentType<ModalBodyType>}) {
-    const modals = useContext(ModalContext);
+export function DestructiveActions() {
     const calculateSimulatedTime = () => {
-        // return getUltraDeadline();
         return getCurrentTime();
     }
     const [simulatedTime, setSimulatedTime] = useState<number>(calculateSimulatedTime());
@@ -30,138 +24,7 @@ export function DestructiveActions({DraggableModal, ModalHeader, ModalButtons, M
         return () => {clearTimeout(id)};
     });
     const yearsLeft = secondsToYears(getEnd() - progress * getEnd()).toFixed(1);
-    return <div className="mainContent presentation">
-        <img src={diskSpaceLeft} className="behaveImage" alt="Disk Space Left on Macintosh—not much is left"/>
-        <div className="default end blog">
-            <p>Version 1 [up to date since 06/06/2026]</p>
-            <NavLink to="/email">Report bugs or contact eves26phylum</NavLink>
-            <div className="group">
-                <strong>Time Until Grown</strong>
-                <LearningProgressBar progress={progress} outerChildren={<p className="yearsLeft dogger">{yearsLeft === "0.0" ? `ready to produce` : `${yearsLeft} years left`}</p>}>
+	return <LearningProgressBar progress={progress} outerChildren={<p className="yearsLeft dogger">{yearsLeft === "0.0" ? `ready to produce` : `${yearsLeft} years left`}</p>}>
                     <p className="yearsLeft">{secondsToYears(progress * getEnd()).toFixed(2)} years old</p>
                 </LearningProgressBar>
-            </div>
-            <div className="group">
-                <strong>Destructive Actions</strong>
-                <div className="os-container">
-                    <button className="os-option" onClick={() => {
-                        const uuid = crypto.randomUUID();
-                        modals.addModal(<DraggableModal defaultPosition={{
-                            x: window.innerWidth / 2,
-                            y: window.innerHeight / 2
-                        }}>
-                        <ModalHeader>
-                            Are you sure you want to shut down the computer now?
-                        </ModalHeader>
-                        <ModalBody>
-                            <p>You will need to reload the webpage to turn on the OS.</p>
-                        </ModalBody>
-                        <ModalButtons>
-                            <ModalDefaultButton onClick={() => {
-                                modals.destroyModalByUUID(uuid);
-                            }}>Cancel</ModalDefaultButton>
-                            <ModalDefaultButton onClick={() => {
-                                document.documentElement.classList.add("turned-off");
-                                document.body.remove();
-                                setTimeout(() => {
-                                document.documentElement.innerHTML = "<img src='https://spinningtoaster.weebly.com/uploads/2/0/5/1/20512720/3136285_orig.gif' style='width: 100px; height: auto;'>";
-                                document.body.style = "display: flex; justify-content: center; align-items: center; background-color: black; height: 100dvh;";}, 2000);
-                            }}>Confirm</ModalDefaultButton>
-                        </ModalButtons>
-                    </DraggableModal>, uuid);
-                    }}>Shut Down OS</button>
-                    <button className="os-option" onClick={() => {
-                        const uuid = crypto.randomUUID();
-                        modals.addModal(<DraggableModal defaultPosition={{
-                            x: window.innerWidth / 2,
-                            y: window.innerHeight / 2
-                        }}>
-                        <ModalHeader>
-                            Are you sure you want to toggle dark mode
-                        </ModalHeader>
-                        <ModalBody>
-                            <p>This is an experimental feature! Most components have not been adapted to work with dark mode—yet.</p>
-                        </ModalBody>
-                        <ModalButtons>
-                            <ModalDefaultButton onClick={() => {
-                                modals.destroyModalByUUID(uuid);
-                            }}>Cancel</ModalDefaultButton>
-                            <ModalDefaultButton onClick={() => {
-                                modals.destroyModalByUUID(uuid);
-                                document.body.classList.toggle("dark_mode");
-                                localStorage.setItem('dark_mode', document.body.classList.contains("dark_mode").toString());
-                            }}>Confirm</ModalDefaultButton>
-                        </ModalButtons>
-                    </DraggableModal>, uuid);
-                    }}>turn {
-                        document.body.classList.contains("dark_mode") ? "off" : "on"
-                    } dark mode</button>
-                    <button className="os-option" onClick={() => {
-                        const uuid = crypto.randomUUID();
-                        modals.addModal(<DraggableModal defaultPosition={{
-                            x: window.innerWidth / 2,
-                            y: window.innerHeight / 2
-                        }}>
-                        <ModalHeader>
-                            Are you sure you want to make everything red?
-                        </ModalHeader>
-                        <ModalBody>
-                            <p>Just making sure.. If you want to restore everything to normal—reload the page.</p>
-                        </ModalBody>
-                        <ModalButtons>
-                            <ModalDefaultButton onClick={() => {
-                                modals.destroyModalByUUID(uuid);
-                            }}>Cancel</ModalDefaultButton>
-                            <ModalDefaultButton onClick={() => {
-                                modals.destroyModalByUUID(uuid);
-                                document.documentElement.className = "red-book";
-                            }}>Confirm</ModalDefaultButton>
-                        </ModalButtons>
-                    </DraggableModal>, uuid);
-                    }}>Make everything red.</button>
-                    <button className="os-option" onClick={() => {
-                        const uuid = crypto.randomUUID();
-                        modals.addModal(<DraggableModal defaultPosition={{
-                            x: window.innerWidth / 2,
-                            y: window.innerHeight / 2
-                        }}>
-                        <ModalHeader>
-                            Are you sure you want to make everything green?
-                        </ModalHeader>
-                        <ModalBody>
-                            <p>Just making sure.. If you want to restore everything to normal—reload the page.</p>
-                        </ModalBody>
-                        <ModalButtons>
-                            <ModalDefaultButton onClick={() => {
-                                modals.destroyModalByUUID(uuid);
-                            }}>Cancel</ModalDefaultButton>
-                            <ModalDefaultButton onClick={() => {
-                                modals.destroyModalByUUID(uuid);
-                                document.documentElement.className = "geen-book";
-                            }}>Confirm</ModalDefaultButton>
-                        </ModalButtons>
-                    </DraggableModal>, uuid);
-                    }}>make everything geen</button>
-                </div>
-            </div>
-        </div>
-    </div>;
 }
-
-{/* 
-<DraggableModal>
-    <ModalHeader>
-        {thisUUID}
-    </ModalHeader>
-    <p>Something went wrong</p>
-    <ModalButtons>
-        <ModalDefaultButton onClick={() => {
-            destroyModalByUUID(thisUUID);
-        }}></ModalDefaultButton>
-        <ModalDefaultButton onClick={() => {
-            document.documentElement.style = "background-color: black";
-            document.body.remove();
-        }}></ModalDefaultButton>
-    </ModalButtons>
-</DraggableModal>
-*/}

@@ -3,6 +3,7 @@ import { faGithub, faCodeberg } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MailMe } from "./Mail";
 import { ClipboardCopyButton } from "../components/ClipboardCopy";
+import { DestructiveActions } from "./DestructiveActions";
 export function HomePage() {
     return <div className="mainContent presentation">
         <div className="blog end">
@@ -21,6 +22,7 @@ export function HomePage() {
                 </div>
             </div>
             <div className="default">
+								<DestructiveActions/>
 								<NavLink to="/blog">Read my blogs</NavLink>
 								<hr/>
 								<NavLink to="/destructive_actions">Settings for this website</NavLink>

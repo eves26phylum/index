@@ -138,7 +138,6 @@ export function App() {
     })}
     {/* { hasLoaded ? */}
     <BrowserRouter>
-      <MenuBar/>
 			{/* <NavLink aria-label="Navigate to home" className="banner" to="/">{"site home, ".repeat(50)}</NavLink> */}
       <Scroller/>
       <main>
