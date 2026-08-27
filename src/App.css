@@ -60,6 +60,9 @@
     width: 150px;
     height: auto;
 }
+.pizza-input {
+	max-width: 10rem;
+}
 .mobile-view {
     display: none !important;
 }
