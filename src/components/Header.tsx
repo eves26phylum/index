@@ -34,8 +34,7 @@ export function MenuBar() {
 
     const rawNavItems = [
         <HeaderLink key="home" to="/">{IconAndTextCombo({ filledIcon: faFilledMoon, nonFilledIcon: faMoon, children: "about" })}</HeaderLink>,
-        <HeaderLink key="what_i_do" to="/what_i_do">{IconAndTextCombo({ filledIcon: faFilledClipboard, nonFilledIcon: faClipboard, children: "programmer life" })}</HeaderLink>,
-        // <HeaderLink key="destructive_actions" to="/destructive_actions">{IconAndTextCombo({ filledIcon: faFilledFloppyDisk, nonFilledIcon: faFloppyDisk, children: "eves26phylumOS information" })}</HeaderLink>
+                    <HeaderLink to="/git" className="redirect">{IconAndTextCombo({ filledIcon: faGit, children: "My Code" })}</HeaderLink>
     ];
 
     const navItems = rawNavItems.map((item, index) => {
@@ -77,7 +76,6 @@ export function MenuBar() {
                     </div>
                 </nav>
                 <nav className="justify-right">
-                    <HeaderLink to="/git" className="redirect">{IconAndTextCombo({ filledIcon: faGit, children: "My Code" })}</HeaderLink>
                     <HeaderLink to="/email">{IconAndTextCombo({ filledIcon: faEnvelope, children: "mail" })}</HeaderLink>
                     <HeaderLink key="destructive_actions" to="/destructive_actions" className="mobile-view" aria-label="eves26phylum—settings">
                         <FontAwesomeIcon icon={faFilledCog}/>
