@@ -741,6 +741,7 @@ input {
 	justify-content: center;
 	text-align: center;
 	filter: grayscale(100%) brightness(50%);
+	margin-top: 50dvh;
 }
 body.dark_mode input {
 	border: 1px solid var(--text-color);
