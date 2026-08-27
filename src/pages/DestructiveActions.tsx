@@ -24,7 +24,7 @@ export function DestructiveActions() {
         return () => {clearTimeout(id)};
     });
     const yearsLeft = secondsToYears(getEnd() - progress * getEnd()).toFixed(1);
-	return <LearningProgressBar progress={progress} outerChildren={<p className="yearsLeft dogger">{yearsLeft === "0.0" ? `ready to produce` : `${yearsLeft} years left`}</p>}>
+	return <LearningProgressBar progress={progress} outerChildren={<p className="yearsLeft dogger">{yearsLeft === "0.0" ? `ready to produce` : `${yearsLeft} years`}</p>}>
                     <p className="yearsLeft">{secondsToYears(progress * getEnd()).toFixed(2)} years old</p>
                 </LearningProgressBar>
 }
