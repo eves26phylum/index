@@ -217,6 +217,11 @@ main {
 	gap: 1rem;
 	border: 1px black solid;
 }
+.boogie {
+	display: flex;
+	gap: 1rem;
+	flex-wrap: wrap;
+}
 .showMail {
     /* padding: 0.5rem 1rem; */
     cursor: pointer;

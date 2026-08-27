@@ -11,7 +11,7 @@ export function HomePage() {
         <div className="blog end">
             <div className="default middle row space-between">
                 <h1>eves26phylum</h1>
-                <div className="default row">
+                <div className="boogie row">
 										<MailMe ClipboardCopyButton={ClipboardCopyButton}/>
 										<NavLink target="_blank" to="https://github.com/eves26phylum">
 											<FontAwesomeIcon icon={faGithub}/>
