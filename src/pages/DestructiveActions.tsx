@@ -18,9 +18,13 @@ export function LearningProgressBar({progress, children, outerChildren}: {progre
             display: 'flex',
             alignItems: 'center',
             whiteSpace: 'nowrap',
-            overflow: 'hidden',
+            overflow: 'visible',
+						justifyContent: 'center',
             textOverflow: 'ellipsis',
-            maxWidth: '100%'
+            maxWidth: '100%',
+						backgroundColor: 'white',
+						rotate: '15deg',
+						border: '1px solid red'
         }}>
             {outerChildren}
         </div>
@@ -37,7 +41,7 @@ export function DestructiveActions() {
         return () => {clearTimeout(id)};
     });
     const yearsLeft = secondsToYears(getEnd() - progress * getEnd()).toFixed(1);
-	return <LearningProgressBar progress={progress} outerChildren={<p className="yearsLeft dogger">{yearsLeft === "0.0" ? `no longer legally bound to the conformities of being a minor` : `${yearsLeft} years`}</p>}>
+	return <LearningProgressBar progress={progress} outerChildren={<p style={{color: 'black'}} className="yearsLeft dogger">{yearsLeft === "0.0" ? `no longer legally bound to the conformities of being a minor` : `${yearsLeft} years left`}</p>}>
                     <p className="yearsLeft">{secondsToYears(progress * getEnd()).toFixed(2)} years old</p>
                 </LearningProgressBar>
 }
