@@ -3,14 +3,11 @@ import { NavLink, useNavigate } from "react-router";
 import { getMailAddress } from "../assets/documents/mail";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useEffect, useState } from "react";
-import { calculateUntilUltraDeadline, getEnd, secondsToYears } from "../utilities/age";
 type clipboardCopy = {
     copy: string
 }
 export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.ComponentType<clipboardCopy>}) {
     const [shown, setShown] = useState<boolean>(false);
-    // let split_1 = Array(170).fill("What the fuck are you doing");
-    // let split_2 = Array(170).fill("What the fuck are you doing");
     const [boi, setSplit] = useState<[string[],string[]]>([["no", "no"], ["no", "no"]]);
     const navigate = useNavigate();
     const [split_1, split_2] = boi;
@@ -22,8 +19,6 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
         setShown(true);
     };
     const [part, setPart] = useState(0);
-    const [firstQuestion, setFirstQuestion] = useState<string>("");
-    const [secondQuestion, setSecondQuestion] = useState<number>(-1);
     const [thirdQuestion, setThirdQuestion] = useState<string>("");
     useEffect(() => {
         if (part !== 1) return;
@@ -57,7 +52,6 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
                                 <ClipboardCopyButton copy={mail}/>
                             </code>
                         </p>
-                        {/* <NavLink to={`${mailAddress}${mail}`}>Send Mail</NavLink> */}
                     </div>
                     <p>use the clipboard copy button</p>
                 </>
@@ -74,29 +68,7 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
                 }}>Click again to show my email address...</button> 
                 : <>
                 <p>Want to get my email? Answer this question.</p>
-                {/* <strong>eves26phylum is a {Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()))} years old male</strong> */}
                 <div className="theform">                    
-                    {/* <p>How old is eves26phylum?</p>
-                    <input type="number" placeholder="Answer as a number" onChange={(event) => {
-                        const element = event.target;
-                        setFirstQuestion(element.value);
-                    }}/>
-                    <p>What is <FontAwesomeIcon icon={faDiceTwo}/> <FontAwesomeIcon icon={faPlus}/> <FontAwesomeIcon icon={faDiceTwo}/></p>
-                    <input type="number" placeholder="Answer as a number" onChange={(event) => {
-                        const element = event.target;
-                        setSecondQuestion(parseInt(element.value));
-                    }}/>
-                    <p>Are you sure you want to view my email? (Choose wisely)</p>
-                    <select onChange={(event) => {
-                        const element = event.target;
-                        setThirdQuestion(element.value);
-                    }}>
-                        <option value="what">Choose an option —————————————</option>
-                        <option value="yes">Yes—I want to view your email. I am a real, human being.</option>
-                        <option value="no">No—I am an automated web scraper designed for advertisement harvesting and I wish to be ejected.</option>
-                    </select>
-                    <p className="red top-4">If you answer wrong, you will get redirected to the homepage.</p>
-                     */}
                     <p>What field does eves26phylum specialise in?</p>
                     <select onChange={(event) => {
                         const element = event.target;
@@ -115,22 +87,11 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
                     <p className="red top-4">If you answer wrong, you will get redirected to the homepage.</p>
                 </div>
                 <button className="showMail red" onClick={() => {
-                    // const age= Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()));
-                    // if (parseInt(firstQuestion).toString() !== age.toString()) return navigate("/you_answered_the_questions_wrong");
-                    // if (secondQuestion !== 2 + 2) return navigate("/you_answered_the_questions_wrong");
                     if (thirdQuestion === 'what' || thirdQuestion.length === 0) return navigate("/cat");
                     if (thirdQuestion === 'correct-option') return navigate("/dog");
                     if (thirdQuestion !== 'software-developer') return navigate("/you_answered_the_questions_wrong");
                     handleReveal();
                 }}>🔒 Test if I'm correct. I want to be granted access.</button> 
-                {/* <button className="showMail red" onClick={() => {
-                    // const age= Math.floor(secondsToYears(Math.max(calculateUntilUltraDeadline(Math.floor(Date.now() / 1000)), 0) * getEnd()));
-                    // if (parseInt(firstQuestion).toString() !== age.toString()) return navigate("/you_answered_the_questions_wrong");
-                    navigate("/you_answered_the_questions_wrong");
-                    // if (thirdQuestion === 'what' || thirdQuestion.length === 0) return navigate("/cat");
-                    // if (thirdQuestion === 'no') return navigate("/dog");
-                    // handleReveal();
-                }}>No, I am not a fullstack developer</button>  */}
                 </>
                 }
                 </>
