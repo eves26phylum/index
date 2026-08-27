@@ -1,5 +1,5 @@
-DROP TABLE IF EXISTS pizza_counter;
-DROP TABLE IF EXISTS pizza_orders;
+-- DROP TABLE IF EXISTS pizza_counter;
+-- DROP TABLE IF EXISTS pizza_orders;
 
 CREATE TABLE pizza_counter (
     id INTEGER PRIMARY KEY CHECK (id = 1),
