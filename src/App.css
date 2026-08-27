@@ -15,6 +15,9 @@
     --accent-gradient-select: linear-gradient(to bottom, var(--darkened-accent-darker) 0%, var(--darkened-accent) 20%, var(--darkened-accent) 100%);
 		--input-colour: rgb(226, 226, 226);
 }
+.rah > * {
+	rotate: 180deg;
+}
 .important-information {
 	user-select: none;
 	webkit-user-select: none;

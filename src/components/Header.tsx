@@ -75,7 +75,6 @@ export function MenuBar() {
                     </div>
                 </nav>
                 <nav className="justify-right">
-                    <HeaderLink to="/email">{IconAndTextCombo({ filledIcon: faEnvelope, children: "mail" })}</HeaderLink>
                     <HeaderLink key="destructive_actions" to="/destructive_actions" className="mobile-view" aria-label="eves26phylum—settings">
                         <FontAwesomeIcon icon={faFilledCog}/>
                     </HeaderLink>

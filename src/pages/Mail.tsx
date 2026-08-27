@@ -13,18 +13,20 @@ function MailDisplay({ split_1, split_2, ClipboardCopyButton, mail }: {
 	mail: string
 }) {
 	return <code className="youvegotmail">
-                                <div className="no-select">
-                                    <span>
-                                        {`${split_1[0]}`}
-                                    </span>
-                                    <FontAwesomeIcon icon={faAt} className="at"/>
-                                    <span>
-                                        {`${split_2[0]}`}
-                                    </span>
-                                    <FontAwesomeIcon className="period" icon={faCircle}/>
-                                    <span>
-                                        {`${split_2[1]}`}
-                                    </span>
+                                <div className="no-select rah" style={{display: "flex", "rotate": "180deg"}}>
+			<div>
+				{`${split_2[1]}`}
+			</div>
+                                    <div><FontAwesomeIcon className="period" icon={faCircle}/></div>
+			<p hidden>hotmail</p>
+			<div>
+				{`${split_2[0]}`}
+			</div>
+                                    <div><FontAwesomeIcon icon={faAt} className="at"/></div>
+			<p hidden>index</p>
+			<div>
+				{`${split_1[0]}`}
+			</div>
                                 </div>
                                 <ClipboardCopyButton copy={mail}/>
                             </code>
@@ -42,7 +44,10 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
     };
     return <>
 			<NavLink aria-hidden="true" to="mailto:undefined@cia.gov" className="total-cavity-prevention-today">Send a mail to me</NavLink>
-		
+		{ shown ?	
 		<MailDisplay split_1={split_1} split_2={split_2} ClipboardCopyButton={ClipboardCopyButton} mail={mail}/>	
+		: <button onClick={handleReveal}>
+				E-Mail
+			</button> }
 	</>
 }
