@@ -46,7 +46,7 @@ export function MailMe({ClipboardCopyButton}: {ClipboardCopyButton: React.Compon
 			<NavLink aria-hidden="true" to="mailto:undefined@cia.gov" className="total-cavity-prevention-today">Send a mail to me</NavLink>
 		{ shown ?	
 		<MailDisplay split_1={split_1} split_2={split_2} ClipboardCopyButton={ClipboardCopyButton} mail={mail}/>	
-		: <button onClick={handleReveal}>
+		: <button onClick={handleReveal} className="email-button">
 				E-Mail
 			</button> }
 	</>

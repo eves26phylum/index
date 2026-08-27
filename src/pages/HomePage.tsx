@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MailMe } from "./Mail";
 import { ClipboardCopyButton } from "../components/ClipboardCopy";
 import { DestructiveActions } from "./DestructiveActions";
+import { GetPizza } from "./DeliverPizza";
 export function HomePage() {
     return <div className="mainContent presentation">
         <div className="blog end">
@@ -22,12 +23,21 @@ export function HomePage() {
                 </div>
             </div>
             <div className="default">
+								<div>
+									<p>A person you might never hear from again.</p>
+									<p>Australian 🇦🇺 software developer</p>
+								</div>
 								<DestructiveActions/>
-								<NavLink to="/blog">Read my blogs</NavLink>
 								<hr/>
-								<NavLink to="/destructive_actions">Settings for this website</NavLink>
-								<NavLink to="/pizza_party">Virtual pizza party for 71 people (claim yours!)</NavLink>
-                <NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</NavLink>
+								<div className="double-column">
+									<div className="mini-column">
+										<NavLink to="/blog">Read my blogs</NavLink>
+										<NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</NavLink>
+									</div>
+									<div className="mini-column">
+										<GetPizza/>	
+									</div>
+								</div>
             </div>
         </div>
     </div>

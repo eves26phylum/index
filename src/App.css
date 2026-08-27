@@ -18,6 +18,19 @@
 .rah > * {
 	rotate: 180deg;
 }
+.mini-column {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+.email-button {
+	padding: 0.5rem 1rem;
+	background-color: white;
+	border: none;
+	font-family: "PublicSans";
+	cursor: pointer;
+	outline: 1px black solid;
+}
 .important-information {
 	user-select: none;
 	webkit-user-select: none;
@@ -253,6 +266,7 @@ code {
 }
 .row {
     flex-direction: row;
+		align-items: center;
 }
 hr {
 				align-self: stretch;

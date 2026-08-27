@@ -53,6 +53,7 @@ export function Blog() {
 					</div>
 				}) : undefined}
 			</div>
+			<strong>This page is a work in-progress; I haven't written anything yet.</strong>
 		</div>
 	</div>
 }
