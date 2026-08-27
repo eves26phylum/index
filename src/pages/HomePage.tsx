@@ -5,6 +5,7 @@ import { MailMe } from "./Mail";
 import { ClipboardCopyButton } from "../components/ClipboardCopy";
 import { DestructiveActions } from "./DestructiveActions";
 import { GetPizza } from "./DeliverPizza";
+import { Broadcasts } from "./Broadcasts";
 export function HomePage() {
     return <div className="mainContent presentation">
         <div className="blog end">
@@ -29,10 +30,11 @@ export function HomePage() {
 								</div>
 								<DestructiveActions/>
 								<hr/>
-								<div className="double-column">
+								<div className="double-column gapper">
 									<div className="mini-column">
 										<NavLink to="/blog">Read my blogs</NavLink>
 										<NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</NavLink>
+										<Broadcasts/>
 									</div>
 									<div className="mini-column">
 										<GetPizza/>	

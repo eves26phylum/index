@@ -206,8 +206,16 @@ main {
 	gap: 1rem;
 	display: flex;
 }
+.gapper {
+	gap: 1rem;
+	flex-direction: row;
+}
 .space-between {
 	justify-content: space-between;
+}
+.broadcast {
+	gap: 1rem;
+	border: 1px black solid;
 }
 .showMail {
     /* padding: 0.5rem 1rem; */
