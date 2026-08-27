@@ -287,6 +287,7 @@ code {
 .row {
     flex-direction: row;
 		align-items: center;
+		flex-wrap: wrap;
 }
 hr {
 				align-self: stretch;
