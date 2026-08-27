@@ -206,6 +206,9 @@ main {
 	gap: 1rem;
 	display: flex;
 }
+.space-between {
+	justify-content: space-between;
+}
 .showMail {
     /* padding: 0.5rem 1rem; */
     cursor: pointer;

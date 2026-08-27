@@ -8,7 +8,7 @@ import { GetPizza } from "./DeliverPizza";
 export function HomePage() {
     return <div className="mainContent presentation">
         <div className="blog end">
-            <div className="default middle row">
+            <div className="default middle row space-between">
                 <h1>eves26phylum</h1>
                 <div className="default row">
 										<MailMe ClipboardCopyButton={ClipboardCopyButton}/>
