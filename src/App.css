@@ -202,8 +202,12 @@ main {
 .top-4 {
     padding-top: 4rem;
 }
+.gappy {
+	gap: 1rem;
+	display: flex;
+}
 .showMail {
-    padding: 0.5rem 1rem;
+    /* padding: 0.5rem 1rem; */
     cursor: pointer;
     font: inherit;
     color: blue;

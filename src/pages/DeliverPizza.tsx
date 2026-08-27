@@ -105,6 +105,7 @@ export function GetPizza() {
                     })
                 }
                 </div>
+								<div className='row gappy'>
                 { hasClaimed ? <></> : <input 
                     type="text" 
                     placeholder="enter your name"
@@ -124,9 +125,10 @@ export function GetPizza() {
                         onClick={handleGetPizza} 
                         disabled={loading || pizzaCount <= 0 || !username.trim()}
                         >
-                        press to get a delicious pizza
+												{"> press to get a delicious pizza"}
                     </button>
                 </Tooltip>}
+								</div>
                 { statusText.trim() !== "" ?
                     <p className={statusGood ? 'status-text' : 'error-status'}>{statusText}</p> : <></> }
 								<p>This pizza party was made in celebration of something. Now, it's open to anyone—just place your name, and claim a delicious (virtual) pizza!</p>
