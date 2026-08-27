@@ -6,7 +6,9 @@ import { ClipboardCopyButton } from "../components/ClipboardCopy";
 import { DestructiveActions } from "./DestructiveActions";
 import { GetPizza } from "./DeliverPizza";
 import { Broadcasts } from "./Broadcasts";
+import { useState } from "react";
 export function HomePage() {
+		const [checkedDarkMode, setCheckedDarkMode] = useState<boolean>(localStorage.getItem('dark_mode') === 'true');
     return <div className="mainContent presentation">
         <div className="blog end">
             <div className="default middle row space-between">
@@ -32,6 +34,14 @@ export function HomePage() {
 								<hr/>
 								<div className="double-column gapper">
 									<div className="mini-column">
+										<div className="row tiny-gappy flexy pointy-cursor" onClick={()=>{
+							document.body.classList.toggle('dark_mode');
+              localStorage.setItem('dark_mode', document.body.classList.contains("dark_mode").toString());
+							setCheckedDarkMode(document.body.classList.contains("dark_mode"));
+						}}>
+											<input type="checkbox" checked={checkedDarkMode} />
+											<span>Enable Dark Mode</span>
+										</div>
 										<NavLink to="/blog">Read my blogs</NavLink>
 										<NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</NavLink>
 										<Broadcasts/>

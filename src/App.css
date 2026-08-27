@@ -23,16 +23,22 @@
 	flex-direction: column;
 	gap: 1rem;
 }
+.tiny-gappy {
+	gap: 0.25rem;
+}
+.flexy {
+	display: flex;
+}
 .email-button {
 	/* padding: 0.5rem 1rem; */
 	font-size: 1rem;
-	background-color: white;
+	background-color: var(--background-color);
 	border: none;
 	font-family: "PublicSans";
-	color: black;
+	color: var(--text-color);
 	padding: .25rem .5rem;
 	cursor: pointer;
-	outline: 1px black solid;
+	outline: 1px var(--text-color) solid;
 }
 .important-information {
 	user-select: none;
@@ -41,7 +47,7 @@
 	color: red;
 }
 .the-box {
-    border: 1px black solid;
+    border: 1px var(--text-color) solid;
     padding: 1rem;
 }
 .status-text {
@@ -90,6 +96,9 @@ body.dark_mode {
     --background-color: black;
     color: white; /* fallback */
     background-color: black;
+}
+.pointy-cursor {
+	cursor: pointer;
 }
 .dark_mode a {
     color: rgb(0, 119, 255);
@@ -199,7 +208,7 @@ main {
     width: 100%;
 }
 .theform {
-    border: 1px black solid;
+    border: 1px var(--text-color) solid;
     display: flex;
     gap: 1rem;
     flex-direction: column;
@@ -293,7 +302,7 @@ code {
 }
 .broadcast {
 	gap: 1rem;
-	border: 1px black solid;
+	border: 1px var(--text-color) solid;
 	flex-wrap: nowrap;
 	align-items: flex-start;
 }
@@ -678,7 +687,7 @@ body {
 	flex-wrap: wrap;
 }
 .blog-card {
-	border: 1px black solid;
+	border: 1px var(--text-color) solid;
 	padding: 1rem;
 	display: flex;
 	flex-direction: column;
@@ -724,4 +733,9 @@ input {
 	border: none;
 	padding: 0.25rem;
 	border: 1px solid var(--input-colour);
+}
+body.dark_mode input {
+	border: 1px solid var(--text-color);
+	background-color: var(--background-color);
+	color: var(--text-color);
 }
