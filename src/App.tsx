@@ -124,19 +124,21 @@ export function App() {
     if (localStorage.getItem('dark_mode') === "true") document.body.classList.add("dark_mode");
   }, [])
 	const [place, setPlace] = useState<Element | null>(null);
-	const portalContainer = document.createElement('div');
+	const portalContainerRef = useRef<null | Element>(null);
   useEffect(() => {// compatibility because my code is bad
     const root = document.querySelector(".blog");
 		if (!root) {
 			console.log("No root, this is an error.");
 			return () => {};
 		}
-    root.insertBefore(portalContainer, root.firstChild);
-		setPlace(portalContainer);
+		const element = document.createElement("div");
+		portalContainerRef.current = element;
+    root.insertBefore(element, root.firstChild);
+		setPlace(element);
     return () => {
-      root.removeChild(portalContainer);
+      root.removeChild(element);
     };
-  }, [portalContainer]);
+  });
   return <ModalContext.Provider value={{
     destroyModalByUUID: destroyModalByUUID,
     addModal: addModal
