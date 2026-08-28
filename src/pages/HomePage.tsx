@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MailMe } from "./Mail";
 import { ClipboardCopyButton } from "../components/ClipboardCopy";
 import { DestructiveActions } from "./DestructiveActions";
-import { GetPizza } from "./DeliverPizza";
+import { PizzaComponent } from "../components/pizza_party";
 import { Broadcasts } from "./Broadcasts";
 import { useState } from "react";
 export function HomePage() {
@@ -47,7 +47,7 @@ export function HomePage() {
 										<Broadcasts/>
 									</div>
 									<div className="mini-column">
-										<GetPizza/>	
+										<PizzaComponent/>	
 									</div>
 								</div>
             </div>
