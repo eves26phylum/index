@@ -1,4 +1,4 @@
-import { BrowserRouter } from 'react-router';
+import { BrowserRouter, useLocation } from 'react-router';
 import './App.css';
 import { MenuBar } from './components/Header';
 import { AllRoutes } from './Routes';
@@ -98,6 +98,29 @@ export function StartScreen({ setHasLoaded }: { setHasLoaded: React.Dispatch<Rea
     </div>
   );
 }
+
+function GoHomePortalHost() { // non-idiomatic fix for my really bad code, it smells in here and this is entirely client-sided so i am sad
+  const location = useLocation();
+  const [place, setPlace] = useState<Element | null>(null);
+  const portalContainerRef = useRef<null | Element>(null);
+  useEffect(() => {
+    const root = document.querySelector(".blog");
+    if (!root) {
+      console.log("No root, this is an error.");
+      setPlace(null);
+      return () => {};
+    }
+    const element = document.createElement("div");
+    portalContainerRef.current = element;
+    root.insertBefore(element, root.firstChild);
+    setPlace(element);
+    return () => {
+      root.removeChild(element);
+    };
+  }, [location.pathname]);
+  return createPortal(<GoHome/>, place || document.body);
+}
+
 export type modal = {uuid: string, modal: React.ReactElement, zindex: number};
 export function App() {
   const [modals, setModals] = useState<modal[]>([]);
@@ -123,22 +146,6 @@ export function App() {
   useEffect(() => {
     if (localStorage.getItem('dark_mode') === "true") document.body.classList.add("dark_mode");
   }, [])
-	const [place, setPlace] = useState<Element | null>(null);
-	const portalContainerRef = useRef<null | Element>(null);
-  useEffect(() => {// compatibility because my code is bad
-    const root = document.querySelector(".blog");
-		if (!root) {
-			console.log("No root, this is an error.");
-			return () => {};
-		}
-		const element = document.createElement("div");
-		portalContainerRef.current = element;
-    root.insertBefore(element, root.firstChild);
-		setPlace(element);
-    return () => {
-      root.removeChild(element);
-    };
-  });
   return <ModalContext.Provider value={{
     destroyModalByUUID: destroyModalByUUID,
     addModal: addModal
@@ -158,11 +165,7 @@ export function App() {
     <BrowserRouter>
 			{/* <NavLink aria-label="Navigate to home" className="banner" to="/">{"site home, ".repeat(50)}</NavLink> */}
       <Scroller/>
-			{
-				createPortal(
-					<GoHome/>, place || document.body
-				)
-			}
+      <GoHomePortalHost/>
       <main>
         <AllRoutes/>
       </main>
