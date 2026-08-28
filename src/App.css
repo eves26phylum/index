@@ -15,6 +15,12 @@
     --accent-gradient-select: linear-gradient(to bottom, var(--darkened-accent-darker) 0%, var(--darkened-accent) 20%, var(--darkened-accent) 100%);
 		--input-colour: rgb(226, 226, 226);
 }
+.hidden {
+	display: none;
+}
+.mainContent.presentation > .blog {
+	padding-top: 3rem;
+}
 .rah > * {
 	rotate: 180deg;
 }

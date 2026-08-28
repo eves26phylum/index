@@ -8,6 +8,8 @@ import { bootlog } from './assets/documents/bootlog';
 import React from 'react';
 import { BlinkingCursor } from './BlinkingCursor';
 import { Scroller } from './components/Scroller';
+import { GoHome } from './components/go_home';
+import { createPortal } from 'react-dom';
 export type uuid = ReturnType<Crypto["randomUUID"]>;
 export type ModalContextType = {
   destroyModalByUUID: (uuid: uuid) => void,
@@ -121,6 +123,20 @@ export function App() {
   useEffect(() => {
     if (localStorage.getItem('dark_mode') === "true") document.body.classList.add("dark_mode");
   }, [])
+	const [place, setPlace] = useState<Element | null>(null);
+	const portalContainer = document.createElement('div');
+  useEffect(() => {// compatibility because my code is bad
+    const root = document.querySelector(".blog");
+		if (!root) {
+			console.log("No root, this is an error.");
+			return () => {};
+		}
+    root.insertBefore(portalContainer, root.firstChild);
+		setPlace(portalContainer);
+    return () => {
+      root.removeChild(portalContainer);
+    };
+  }, [portalContainer]);
   return <ModalContext.Provider value={{
     destroyModalByUUID: destroyModalByUUID,
     addModal: addModal
@@ -140,6 +156,11 @@ export function App() {
     <BrowserRouter>
 			{/* <NavLink aria-label="Navigate to home" className="banner" to="/">{"site home, ".repeat(50)}</NavLink> */}
       <Scroller/>
+			{
+				createPortal(
+					<GoHome/>, place || document.body
+				)
+			}
       <main>
         <AllRoutes/>
       </main>
