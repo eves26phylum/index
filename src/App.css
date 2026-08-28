@@ -18,9 +18,6 @@
 .hidden {
 	display: none;
 }
-.mainContent.presentation > .blog {
-	padding-top: 3rem;
-}
 .rah > * {
 	rotate: 180deg;
 }
