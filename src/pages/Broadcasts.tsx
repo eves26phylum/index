@@ -3,8 +3,8 @@ function Broadcast(
 	{children: React.ReactNode, date: number}
 ) {
 	return<tr>
-		<td>{children}</td>
 		<td style={{"textWrap": "nowrap"}}>{new Date(date * 1000).toDateString()}</td>
+		<td>{children}</td>
 	</tr> 
 }
 export function Broadcasts() {
@@ -13,10 +13,10 @@ export function Broadcasts() {
 		<table className="greyble">
 			<thead>
 				<th>
-					Broadcast
+					Date
 				</th>
 				<th>
-					Date
+					Broadcast
 				</th>
 			</thead>
 			<tbody>
