@@ -183,11 +183,11 @@ export function App() {
 							</ItemList>
 						</div>
 						</td>
-						<td className='default maincontent'>
-							<main>
-								<AllRoutes/>
-							</main>
-						</td>
+						<main>
+							<td className='default maincontent'>
+									<AllRoutes/>
+							</td>
+						</main>
 					</tr>
 				</tbody>
 			</table>
