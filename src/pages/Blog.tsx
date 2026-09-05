@@ -42,30 +42,24 @@ export function Blog({is_log}: {is_log?: boolean}) {
 				<p>A collection of thoughts I find interesting.</p>
 			</>
 		}
-		<div className="blogs-list">
+		<table className="greyble">
 			{blogs ? blogs.map((blog: Blog, index: number) => {
-				return <div key={index} className="blog-card">
-					<NavLink to={`/${is_log ? "" : "b"}log/${blog.id}`}>{blog.blog_title}</NavLink>
-					<hr/>
-					<div>
-						<p className="mini-text">Creation date</p>
-						<p>{new Date(blog.creation_date * 1000).toLocaleDateString()}</p>
-					</div>
-					<div>
-						<p className="mini-text">Tags</p>
+				return<tr key={index}>
+					<td><NavLink to={`/${is_log ? "" : "b"}log/${blog.id}`}>{blog.blog_title}</NavLink></td>
+					<td><p>{new Date(blog.creation_date * 1000).toLocaleDateString()}</p></td>
+					<td>
 						<div className="inline-tags">{blog.tags.map((tag: string, index: number) => {
 							return <NavLink target="_blank" to={`https://www.urbandictionary.com/define.php?term=${encodeURIComponent(tag)}`} key={index}>{tag}</NavLink>
 						})}</div>
-					</div>
-					<div>
-						<p className="mini-text">Authors</p>
-						{blog.authors.map((tag: string, index: number) => {
-							return <p key={index}>{tag}</p>
-						})}
-					</div>
-				</div>
+					</td>
+					<td>
+					{blog.authors.map((tag: string, index: number) => {
+						return <p key={index}>{tag}</p>
+					})}
+					</td>
+				</tr> 
 			}) : undefined}
-		</div>
+		</table>	
 		{ blogs?.length === 0 && <strong>This page is a work in-progress; I haven't written anything yet.</strong> }
 
 	</> 
