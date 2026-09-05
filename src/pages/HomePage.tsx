@@ -41,7 +41,7 @@ export function HomePage() {
 		const [checkedDarkMode, setCheckedDarkMode] = useState<boolean>(localStorage.getItem('dark_mode') === 'true');
     return <>
 		<h1>eves26phylum</h1>
-		<table>
+		<table className="mini">
 			<tr>
 				<td>
 					<div>

@@ -484,6 +484,9 @@ button.drop-menu-toggle.open, button.drop-menu-toggle:hover.open {
     display: flex;
     /* flex-grow: 1; */
 }
+.mini td {
+	width: fit-content;
+}
 .justify-right {
     justify-content: right;
 }
@@ -747,6 +750,9 @@ html.turned-off body {
     display: flex;
     flex-direction: column;
     flex-grow: 1;
+}
+table.mini {
+	table-layout: fixed;
 }
 body {
 	font-size: 13px;
