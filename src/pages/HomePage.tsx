@@ -61,13 +61,12 @@ export function HomePage() {
 				<tr>
 					<td>
 						<div className="left-column">
-							<h1>eves26phylum</h1>
 							<ItemList header_name={"Links!"}>
 								<ul>
 								<ListLink to="/"><img src="/icons/home.png"/>Home</ListLink>
-								<ListLink to="/blog">Read my blogs</ListLink>
-								<ListLink to="/log">Read my logs</ListLink>
-								<ListLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</ListLink>
+								<ListLink to="/blog"><img src="/icons/blogs.png"/>Read my blogs</ListLink>
+								<ListLink to="/log"><img src="/icons/logs.png"/>Read my logs</ListLink>
+								<ListLink to="/futon_gpt"><img src="/icons/announcement.png"/>FutonGPT</ListLink>
 								</ul>
 							</ItemList>
 						</div>

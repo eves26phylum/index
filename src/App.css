@@ -55,6 +55,7 @@ table.blog td {
 	font-size: 11px;
 	display: flex;
 	align-items: center;
+	text-wrap: nowrap;
 }
 .headbox a img {
 	height: 21px;
