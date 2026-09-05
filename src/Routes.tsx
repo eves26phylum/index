@@ -17,7 +17,7 @@ export function AllRoutes() {
             <Route path="/dog" element={<Dog/>}/>
             <Route path="/cat" element={<Cat/>}/>
 						<Route path="/blog/*" element={<BlogViewer/>}/>
-						<Route path="/log/*" element={<BlogViewer/>}/>
+						<Route path="/log/*" element={<BlogViewer is_log={true}/>}/>
 						<Route path="/blog" element={<Blog/>}/>
 						<Route path="/log" element={<Blog is_log={true}/>}/>
             <Route path="*" element={<NotFound/>}/>
