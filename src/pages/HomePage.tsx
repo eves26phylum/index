@@ -43,6 +43,7 @@ export function HomePage() {
 											<span>Enable Dark Mode</span>
 										</div>
 										<NavLink to="/blog">Read my blogs</NavLink>
+										<NavLink to="/log">Read my logs</NavLink>
 										<NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</NavLink>
 										<Broadcasts/>
 									</div>
