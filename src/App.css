@@ -51,14 +51,29 @@ table.blog td {
 }
 .headbox a {
 	border: 1px transparent solid;
+	padding: 2px 6px;
+	font-size: 11px;
+	display: flex;
+	align-items: center;
+}
+.headbox a img {
+	height: 21px;
+	width: 31px;
+	object-fit: contain;
 }
 .headbox a:hover {
 	border: 1px black solid;
 	border-radius: 2px;
-	background-image: linear-gradient(to top, rgb(200, 200, 230) 0%, rgb(170, 170, 200) 100%);
+	background-image: linear-gradient(to top, rgb(200, 200, 230) 0%, rgb(230, 230, 255) 100%);
+}
+.headbox ul {
+	list-style-type: none;
 }
 .header-w {
-	background-image: linear-gradient(to top, rgb(200, 200, 230) 0%, rgb(170, 170, 200) 100%);
+	font-size: 11px;
+	/* background-image: linear-gradient(to top, rgb(200, 200, 230) 0%, rgb(170, 170, 200) 100%); */
+	background-color: lightgrey;
+	color: purple;
 	padding: 2px 6px;
 	font-weight: bold;
 }
@@ -84,7 +99,7 @@ table.blog td {
 	font-size: 1rem;
 	background-color: var(--background-color);
 	border: none;
-	font-family: "PublicSans";
+	font-family: "Verdana";
 	color: var(--text-color);
 	padding: .25rem .5rem;
 	cursor: pointer;
@@ -200,7 +215,7 @@ header:has(.header) {
     border-top: 1px solid var(--ghost);
     /* overflow-y: visible; */
     /* overflow-x: hidden; */
-    font-family: 'PublicSans';
+    font-family: 'Verdana';
     position: sticky;
     z-index: 6767;
     top: 0;
@@ -245,7 +260,7 @@ footer {
     max-width: 100%;
 }
 main {
-    font-family: 'PublicSans';
+    font-family: 'Verdana';
     display: flex;
     flex-direction: column;
     flex-grow: 1;
@@ -493,14 +508,14 @@ button.drop-menu-toggle.open, button.drop-menu-toggle:hover.open {
     color: black;
     padding: 0.25rem;
     font-size: 0.618rem;
-    font-family: 'PublicSans';
+    font-family: 'Verdana';
     border-radius: 4px;
 }
 .nav-link:not(.redirect:hover) {
     text-decoration: none;
 }
 footer {
-    font-family: 'PublicSans';
+    font-family: 'Verdana';
 }
 .nav-link:nth-child(odd) {
     background-color: var(--odd);
@@ -549,7 +564,7 @@ footer {
     0 0 0 1px rgba(0, 0, 0, 0.05),
     0 2px 4px -1px rgba(0, 0, 0, 0.2);
     border-radius: 4px;
-    font-family: 'PublicSans';
+    font-family: 'Verdana';
 }
 .modal-button:active {
     background-color: rgb(219, 219, 219);
@@ -572,7 +587,7 @@ footer {
     border-top: 1px white solid;
     outline: 1px rgb(192, 192, 192) solid;
     display: flex;
-    font-family: 'PublicSans';
+    font-family: 'Verdana';
     flex-direction: column;
     color: black;
     user-select: none;
@@ -593,7 +608,7 @@ footer {
     cursor: pointer;
     /* background: linear-gradient(to bottom, rgb(221, 221, 221) 0%, rgb(255, 255, 255) 100%); */
     background: none;
-    font-family: 'PublicSans';
+    font-family: 'Verdana';
     color: white;
     display: flex;
 }

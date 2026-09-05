@@ -50,7 +50,7 @@ export function Rabbit() {
 }
 export function ListLink(props: NavLinkProps) {
 	return <li>
-		<NavLink {...props}/>
+		<NavLink className={({isActive}) => isActive ? "active" : ""} {...props}/>
 	</li>
 }
 export function HomePage() {
@@ -64,6 +64,7 @@ export function HomePage() {
 							<h1>eves26phylum</h1>
 							<ItemList header_name={"Links!"}>
 								<ul>
+								<ListLink to="/"><img src="/icons/home.png"/>Home</ListLink>
 								<ListLink to="/blog">Read my blogs</ListLink>
 								<ListLink to="/log">Read my logs</ListLink>
 								<ListLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</ListLink>
