@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { NavLink, type NavLinkProps } from "react-router";
 import { faGithub, faCodeberg } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { MailMe } from "./Mail";
@@ -22,12 +22,10 @@ export function DarkModeToggle({setCheckedDarkMode, checkedDarkMode}: {setChecke
 						<span>Enable Dark Mode</span>
 					</div>
 }
-export function ItemList({items, header_name}: {items: React.ReactNode, header_name: string}) {
+export function ItemList({children, header_name}: {children: React.ReactNode, header_name: string}) {
 	return <div className="headbox">
 		<Header>{header_name}</Header>
-		<div className="content-head">
-			{items}
-		</div>
+		{children}
 	</div>
 }
 export function GitHub() {
@@ -50,6 +48,11 @@ export function Rabbit() {
 							🐇
 						</div>
 }
+export function ListLink(props: NavLinkProps) {
+	return <li>
+		<NavLink {...props}/>
+	</li>
+}
 export function HomePage() {
 		const [checkedDarkMode, setCheckedDarkMode] = useState<boolean>(localStorage.getItem('dark_mode') === 'true');
     return <div className="mainContent presentation">
@@ -57,8 +60,15 @@ export function HomePage() {
 			<tbody>
 				<tr>
 					<td>
-						<h1>eves26phylum</h1>
-						<div className="boogie row">
+						<div className="left-column">
+							<h1>eves26phylum</h1>
+							<ItemList header_name={"Links!"}>
+								<ul>
+								<ListLink to="/blog">Read my blogs</ListLink>
+								<ListLink to="/log">Read my logs</ListLink>
+								<ListLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</ListLink>
+								</ul>
+							</ItemList>
 						</div>
 					</td>
 					<td>
@@ -71,9 +81,6 @@ export function HomePage() {
 								</div>
 								<DestructiveActions/>
 								<hr/>
-								<NavLink to="/blog">Read my blogs</NavLink>
-								<NavLink to="/log">Read my logs</NavLink>
-								<NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</NavLink>
 								<Broadcasts/>
 							</div>
 							<div className="mini-column">
