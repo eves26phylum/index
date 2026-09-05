@@ -52,11 +52,11 @@ export function Blog({is_log}: {is_log?: boolean}) {
 
 				<small>
 					<div>Tags: {blog.tags.map((tag: string, index: number) => {
-						return <NavLink target="_blank" to={`https://www.urbandictionary.com/define.php?term=${encodeURIComponent(tag)}`} key={index}>{tag}</NavLink>
+						return <><NavLink target="_blank" to={`https://www.urbandictionary.com/define.php?term=${encodeURIComponent(tag)}`} key={index}>{tag}</NavLink>{'\u00A0'}</>
 					})}</div>	
 				</small>
 
-
+				<i>Authors</i>
 				<small>
 					{blog.authors.map((tag: string, index: number) => {
 						return <p key={index}>{tag}</p>
