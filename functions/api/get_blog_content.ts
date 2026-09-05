@@ -2,6 +2,10 @@ const blogFiles = import.meta.glob("../dog/blogs_content/*.xml", {
 	query: "?raw",
 	import: "default",
 });
+const logFiles = import.meta.glob("../dog/logs_content/*.xml", {
+	query: "?raw",
+	import: "default",
+});
 export const onRequest: PagesFunction = async (context) => {
 	if (context.request.method !== "GET") {
 			return new Response("Method Not Allowed", { status: 405 });
@@ -12,7 +16,9 @@ export const onRequest: PagesFunction = async (context) => {
     return new Response("Bad Request", { status: 400 });
   }
 
-  const load = blogFiles[`../dog/blogs_content/${blogId}.xml`]; // was .ts
+  const load_1 = blogFiles[`../dog/blogs_content/${blogId}.xml`]; // was .ts
+  const load_2 = blogFiles[`../dog/logs_content/${blogId}.xml`]; // was .ts
+	const load = load_1 || load_2; // Prioritise blogs
 	if (!load) {
 		return new Response("Not Found", { status: 404 });
 	}
