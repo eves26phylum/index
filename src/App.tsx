@@ -10,6 +10,7 @@ import { BlinkingCursor } from './BlinkingCursor';
 import { Scroller } from './components/Scroller';
 import { GoHome } from './components/go_home';
 import { createPortal } from 'react-dom';
+import { ItemList, ListLink } from './components/sidebar';
 export type uuid = ReturnType<Crypto["randomUUID"]>;
 export type ModalContextType = {
   destroyModalByUUID: (uuid: uuid) => void,
@@ -166,9 +167,31 @@ export function App() {
 			{/* <NavLink aria-label="Navigate to home" className="banner" to="/">{"site home, ".repeat(50)}</NavLink> */}
       <Scroller/>
       <GoHomePortalHost/>
-      <main>
-        <AllRoutes/>
-      </main>
+			<div className="mainContent presentation">
+				<table className="blog end">
+				<tbody>
+					<tr>
+						<td>
+						<div className="left-column">
+							<ItemList header_name={"Links!"}>
+								<ul>
+								<ListLink to="/"><img src="/icons/home.png"/>Home</ListLink>
+								<ListLink to="/blog"><img src="/icons/blogs.png"/>Read my blogs</ListLink>
+								<ListLink to="/log"><img src="/icons/logs.png"/>Read my logs</ListLink>
+								<ListLink to="/futon_gpt"><img src="/icons/announcement.png"/>FutonGPT</ListLink>
+								</ul>
+							</ItemList>
+						</div>
+						</td>
+						<td className='default maincontent'>
+							<main>
+								<AllRoutes/>
+							</main>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
     </BrowserRouter>
     {/* : <StartScreen setHasLoaded={setHasLoaded}/>} */}
   </ModalContext.Provider>;
