@@ -62,7 +62,7 @@ export function Blog({is_log}: {is_log?: boolean}) {
 					</div>
 				}) : undefined}
 			</div>
-			<strong>This page is a work in-progress; I haven't written anything yet.</strong>
+			{ blogs?.length === 0 && <strong>This page is a work in-progress; I haven't written anything yet.</strong> }
 		</div>
 	</div>
 }
