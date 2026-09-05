@@ -48,6 +48,8 @@ export function HomePage() {
 		</div>
 		<DestructiveActions/>
 		<br/>
+		<h2 className="titles">Fun stuff!</h2>
+		<br/>
 		<table>
 			<tr>
 				<td><Broadcasts/></td>
