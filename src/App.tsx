@@ -173,6 +173,8 @@ export function App() {
 					<tr>
 						<td style={{"width": "0"}}>
 						<div className="left-column">
+							<h2>eves26phylum</h2>
+							<br/>
 							<ItemList header_name={"Links!"}>
 								<ul>
 								<ListLink href="/"><img src="/icons/home.png"/>Home</ListLink>
