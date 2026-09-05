@@ -15,11 +15,6 @@
     --accent-gradient-select: linear-gradient(to bottom, var(--darkened-accent-darker) 0%, var(--darkened-accent) 20%, var(--darkened-accent) 100%);
 		--input-colour: rgb(226, 226, 226);
 }
-.mini-column > .mini-column { /* mini-column ception */
-	border: 1px black solid;
-	/* background-image: linear-gradient(to top, rgb(200, 200, 200) 0%, white 100%); */
-	/* padding: 1rem; */
-}
 .highlight {
 	background-image: linear-gradient(to top, rgb(200, 200, 230) 0%, rgb(170, 170, 200) 100%);
 	padding: 2px 6px;
@@ -30,11 +25,11 @@ td {
 	vertical-align: top;
 }
 table.blog td {
-	padding: 0rem;
+	/* padding: 0rem; */
 	border: none;
 }
 .left-column {
-	padding: 1rem;
+	padding: 0.5rem;
 	padding-right: 0rem;
 }
 .headbox {
@@ -260,7 +255,7 @@ footer {
 .behaveImage {
     max-width: 100%;
 }
-main {
+body {
     font-family: 'Verdana';
     display: flex;
     flex-direction: column;
