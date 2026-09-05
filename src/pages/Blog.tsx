@@ -43,23 +43,39 @@ export function Blog({is_log}: {is_log?: boolean}) {
 			</>
 		}
 		<table className="greyble">
-			{blogs ? blogs.map((blog: Blog, index: number) => {
-				return<tr key={index}>
-					<td><NavLink to={`/${is_log ? "" : "b"}log/${blog.id}`}>{blog.blog_title}</NavLink></td>
-					<td><p>{new Date(blog.creation_date * 1000).toLocaleDateString()}</p></td>
-					<td>
-						<div className="inline-tags">{blog.tags.map((tag: string, index: number) => {
-							return <NavLink target="_blank" to={`https://www.urbandictionary.com/define.php?term=${encodeURIComponent(tag)}`} key={index}>{tag}</NavLink>
-						})}</div>
-					</td>
-					<td>
-					{blog.authors.map((tag: string, index: number) => {
-						return <p key={index}>{tag}</p>
-					})}
-					</td>
-				</tr> 
-			}) : undefined}
-		</table>	
+			<thead>
+				<th>
+					Blog Title
+				</th>
+				<th>
+					Date Created
+				</th>
+				<th>
+					Tags
+				</th>
+				<th>
+					Creators
+				</th>
+			</thead>
+			<tbody>
+				{blogs ? blogs.map((blog: Blog, index: number) => {
+					return<tr key={index}>
+						<td><NavLink to={`/${is_log ? "" : "b"}log/${blog.id}`}>{blog.blog_title}</NavLink></td>
+						<td><p>{new Date(blog.creation_date * 1000).toLocaleDateString()}</p></td>
+						<td>
+							<div>{blog.tags.map((tag: string, index: number) => {
+								return <NavLink target="_blank" to={`https://www.urbandictionary.com/define.php?term=${encodeURIComponent(tag)}`} key={index}>{tag}</NavLink>
+							})}</div>	
+						</td>
+						<td>
+							{blog.authors.map((tag: string, index: number) => {
+								return <p key={index}>{tag}</p>
+							})}
+						</td>
+					</tr> 
+				}) : undefined}
+		</tbody>
+	</table>	
 		{ blogs?.length === 0 && <strong>This page is a work in-progress; I haven't written anything yet.</strong> }
 
 	</> 
