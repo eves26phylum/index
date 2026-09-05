@@ -41,13 +41,15 @@ export function HomePage() {
 		const [checkedDarkMode, setCheckedDarkMode] = useState<boolean>(localStorage.getItem('dark_mode') === 'true');
     return <>
 		<h1>eves26phylum</h1>
+		<br/>
 		<div>
 			<p>A person you might never hear from again.</p>
 			<p>Australian 🇦🇺 who does software development as a hobby</p>
 		</div>
 		<DestructiveActions/>
-		<hr/>
+		<br/>
 		<Broadcasts/>
+		<br/>
 		<PizzaComponent/>	
 	</>
 }
