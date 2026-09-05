@@ -20,6 +20,9 @@
 	padding: 2px 6px;
 	font-weight: bold;
 }
+body {
+	padding-right: 2rem;
+}
 h2.titles {
 	background-image: linear-gradient(to bottom, rgb(200, 200, 230) 0%, rgb(230, 230, 255) 100%);
 	font-size: 13px;
