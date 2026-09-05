@@ -33,49 +33,35 @@ export function Blog({is_log}: {is_log?: boolean}) {
 	return <>
 		{ is_log ?
 			<>
-				<h1>My Log</h1>
-				<p>Noting what I have done</p>
+				<h4 className="titles">My Log</h4>
+				<p>Here, I will post whatever goes on my day—whenever I feel like it.</p>
 			</>
 			:
 			<>
-				<h1>Blog</h1>
+				<h4 className="titles">Blog</h4>
 				<p>A collection of thoughts I find interesting.</p>
 			</>
 		}
-		<table className="greyble">
-			<thead>
-				<th>
-					Blog Title
-				</th>
-				<th>
-					Date Created
-				</th>
-				<th>
-					Tags
-				</th>
-				<th>
-					Creators
-				</th>
-			</thead>
-			<tbody>
+		<br/>
 				{blogs ? blogs.map((blog: Blog, index: number) => {
 					return<tr key={index}>
-						<td><NavLink to={`/${is_log ? "" : "b"}log/${blog.id}`}>{blog.blog_title}</NavLink></td>
-						<td><p>{new Date(blog.creation_date * 1000).toLocaleDateString()}</p></td>
-						<td>
-							<div>{blog.tags.map((tag: string, index: number) => {
-								return <NavLink target="_blank" to={`https://www.urbandictionary.com/define.php?term=${encodeURIComponent(tag)}`} key={index}>{tag}</NavLink>
-							})}</div>	
-						</td>
-						<td>
-							{blog.authors.map((tag: string, index: number) => {
-								return <p key={index}>{tag}</p>
-							})}
-						</td>
+						<NavLink to={`/${is_log ? "" : "b"}log/${blog.id}`}>{blog.blog_title}</NavLink>
+						<br/><small>{new Date(blog.creation_date * 1000).toLocaleDateString()}</small>	
+
+				<small>
+					<div>Tags: {blog.tags.map((tag: string, index: number) => {
+						return <NavLink target="_blank" to={`https://www.urbandictionary.com/define.php?term=${encodeURIComponent(tag)}`} key={index}>{tag}</NavLink>
+					})}</div>	
+				</small>
+
+				
+				<small>
+					{blog.authors.map((tag: string, index: number) => {
+						return <p key={index}>{tag}</p>
+					})}
+				</small>
 					</tr> 
 				}) : undefined}
-		</tbody>
-	</table>	
 		{ blogs?.length === 0 && <strong>This page is a work in-progress; I haven't written anything yet.</strong> }
 
 	</> 
