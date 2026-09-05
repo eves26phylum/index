@@ -17,7 +17,7 @@ export const onRequest: PagesFunction = async (context) => {
   }
 
   const load_1 = blogFiles[`../dog/blogs_content/${blogId}.xml`]; // was .ts
-  const load_2 = blogFiles[`../dog/logs_content/${blogId}.xml`]; // was .ts
+  const load_2 = logFiles[`../dog/logs_content/${blogId}.xml`]; // was .ts
 	const load = load_1 || load_2; // Prioritise blogs
 	if (!load) {
 		return new Response("Not Found", { status: 404 });
