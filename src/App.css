@@ -242,6 +242,9 @@ footer {
 .total-cavity-prevention-today {
     font-size: 0rem;
 }
+.maincontentstuff td {
+	border: none;
+}
 .standing {
     display: flex;
     flex-direction: column;
@@ -254,6 +257,9 @@ footer {
 }
 .behaveImage {
     max-width: 100%;
+}
+.manie {
+	width: 100%;
 }
 body {
     font-family: 'Verdana';
@@ -335,7 +341,7 @@ code {
 }
 .presentation {
     /* justify-content: center; */
-    align-items: center;
+    /* align-items: center; */
     display: flex;
     flex-direction: column;
     gap: 1rem;

@@ -166,9 +166,9 @@ export function App() {
     <BrowserRouter>
 			{/* <NavLink aria-label="Navigate to home" className="banner" to="/">{"site home, ".repeat(50)}</NavLink> */}
       <Scroller/>
-      <GoHomePortalHost/>
+      {/* <GoHomePortalHost/> */}
 			<div className="mainContent presentation">
-				<table className="blog end">
+				<table className='maincontentstuff'>
 				<tbody>
 					<tr>
 						<td>
@@ -183,11 +183,9 @@ export function App() {
 							</ItemList>
 						</div>
 						</td>
-						<main>
-							<td className='default maincontent'>
-									<AllRoutes/>
-							</td>
-						</main>
+						<td className='manie default'>
+							<AllRoutes/>
+						</td>
 					</tr>
 				</tbody>
 			</table>
