@@ -1,7 +1,7 @@
 import { useParams } from "react-router";
 import { useEffect, useState } from "react";
 import { MakeBlogFromXML } from "../components/makeBlogFromXML";
-export function BlogViewer() {
+export function BlogViewer({is_log}: {is_log?: boolean}) {
 	const params = useParams();
 	const blogName = params["*"];
 	const [blogContent, setBlogContent] = useState<string | null>(null);
@@ -22,6 +22,11 @@ export function BlogViewer() {
 			}
 			fetchInitialState();
 	}, []);
+	useEffect(() => {
+		if (is_log) {
+			document.head.append(`<meta name='robots' content='noindex,follow' />`);
+		}	
+	}, [])
 	return <div className="mainContent presentation">
 		<div className="default blog end">
 			<MakeBlogFromXML blog_xml_text={blogContent || "<text>This blog is loading...</text>"}/>

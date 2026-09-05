@@ -40,7 +40,7 @@ export function MakeBlogFromXML({blog_xml_text}: {blog_xml_text: string}) {
 			default:
 				return <div style={{marginLeft: "4px", border: "1px red solid"}}>
 					{/* <h1>Unsupported tag: {element.nodeName}, defaulting to nothing—but the content stays, so nothing is lost</h1> */}
-					<p style={{backgroundColor: "white"}} className="mini-text"><span style={{textTransform: "none"}}>{element.nodeName}</span> (unsupported tag error)</p>
+					<p style={{backgroundColor: "white"}} className="mini-text"><span style={{textTransform: "none", color: "red", backgroundColor: "black"}}>{element.nodeName}</span> (unsupported tag error)</p>
 					<code style={{flexDirection: "column"}}>{parsedInsides}</code>
 				</div>
 		}

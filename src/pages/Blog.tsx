@@ -25,6 +25,11 @@ export function Blog({is_log}: {is_log?: boolean}) {
 			}
 			fetchInitialState();
 	}, []);
+	useEffect(() => {
+		if (is_log) {
+			document.head.append(`<meta name='robots' content='noindex,follow' />`);
+		}
+	}, [])
 	return <div className="mainContent presentation">
 		<div className="default blog end">
 			{ is_log ?
