@@ -9,7 +9,7 @@ function Broadcast(
 }
 export function Broadcasts() {
 	return <>
-		<strong>What I'm saying</strong>
+		<h2 className="titles">What I'm Saying</h2>
 		<table className="greyble">
 			<thead>
 				<th>

@@ -183,7 +183,7 @@ export function App() {
 							</ItemList>
 						</div>
 						</td>
-						<td className='manie default'>
+						<td className='manie'>
 							<AllRoutes/>
 						</td>
 					</tr>
