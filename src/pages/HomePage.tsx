@@ -31,17 +31,24 @@ export function HomePage() {
     return <>
 		<h1>eves26phylum</h1>
 		<br/>
-		<div>
-			<p>A person you might never hear from again.</p>
-			<p>Australian 🇦🇺 who does software development as a hobby</p>
-		</div>
+		<br/>
+		<table style={{"width": "100%", 'tableLayout': 'fixed'}}>
+			<tbody>
+				<td>
+					<p>A person you might never hear from again.</p>
+					<p>Australian 🇦🇺 who does software development as a hobby</p>
+				</td>
+				<td style={{"float": "right"}}>
+					<DestructiveActions/>
+				</td>
+			</tbody>
+		</table>
 		<br/>
 		<h2 className="titles">Fun stuff!</h2>
 		<br/>
 		<table>
 			<tr>
 				<td>
-					<DestructiveActions/>
 					<br/>
 					<Broadcasts/></td>
 				<td><PizzaComponent/></td>	
