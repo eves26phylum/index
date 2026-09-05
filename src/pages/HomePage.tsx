@@ -47,9 +47,11 @@ export function HomePage() {
 			<p>Australian 🇦🇺 who does software development as a hobby</p>
 		</div>
 		<DestructiveActions/>
-		<br/>
-		<Broadcasts/>
-		<br/>
-		<PizzaComponent/>	
+		<table>
+			<tr>
+				<td><Broadcasts/></td>
+				<td><PizzaComponent/></td>	
+			</tr>
+		</table>
 	</>
 }
