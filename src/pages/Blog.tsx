@@ -45,7 +45,7 @@ export function Blog({is_log}: {is_log?: boolean}) {
 		<br/>
 				{blogs ? blogs.map((blog: Blog, index: number) => {
 					return<tr key={index}>
-						<NavLink to={`/${is_log ? "" : "b"}log/${blog.id}`}>{blog.blog_title}</NavLink>
+						<NavLink to={`/${is_log ? "" : "b"}log/${blog.id}`} style={{"fontWeight": "bold"}}>{blog.blog_title}</NavLink>
 						<br/><small>{new Date(blog.creation_date * 1000).toLocaleDateString()}</small>	
 
 				<small>
