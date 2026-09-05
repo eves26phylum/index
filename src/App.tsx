@@ -11,6 +11,8 @@ import { Scroller } from './components/Scroller';
 import { GoHome } from './components/go_home';
 import { createPortal } from 'react-dom';
 import { ItemList, ListLink } from './components/sidebar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from '@fortawesome/free-brands-svg-icons';
 export type uuid = ReturnType<Crypto["randomUUID"]>;
 export type ModalContextType = {
   destroyModalByUUID: (uuid: uuid) => void,
@@ -122,6 +124,16 @@ function GoHomePortalHost() { // non-idiomatic fix for my really bad code, it sm
   return createPortal(<GoHome/>, place || document.body);
 }
 
+export function DarkModeToggle({setCheckedDarkMode, checkedDarkMode}: {setCheckedDarkMode: React.Dispatch<React.SetStateAction<boolean>>, checkedDarkMode: boolean}) {
+	return <div className="row tiny-gappy flexy pointy-cursor" onClick={()=>{
+						document.body.classList.toggle('dark_mode');
+						localStorage.setItem('dark_mode', document.body.classList.contains("dark_mode").toString());
+						setCheckedDarkMode(document.body.classList.contains("dark_mode"));
+					}}>
+						<input type="checkbox" checked={checkedDarkMode} />
+						<span>Enable Dark Mode</span>
+					</div>
+}
 export type modal = {uuid: string, modal: React.ReactElement, zindex: number};
 export function App() {
   const [modals, setModals] = useState<modal[]>([]);
@@ -147,6 +159,7 @@ export function App() {
   useEffect(() => {
     if (localStorage.getItem('dark_mode') === "true") document.body.classList.add("dark_mode");
   }, [])
+	const [checkedDarkMode, setCheckedDarkMode] = useState<boolean>(localStorage.getItem('dark_mode') === 'true');
   return <ModalContext.Provider value={{
     destroyModalByUUID: destroyModalByUUID,
     addModal: addModal
@@ -175,12 +188,20 @@ export function App() {
 						<div className="left-column">
 							<h2>eves26phylum</h2>
 							<br/>
+							{/* <DarkModeToggle checkedDarkMode={checkedDarkMode} setCheckedDarkMode={setCheckedDarkMode}/> */}
+							{/* <br/> */}
 							<ItemList header_name={"Links!"}>
 								<ul>
 								<ListLink href="/"><img src="/icons/home.png"/>Home</ListLink>
 								<ListLink href="/blog"><img src="/icons/blogs.png"/>Read my blogs</ListLink>
 								<ListLink href="/log"><img src="/icons/logs.png"/>Read my logs</ListLink>
 								<ListLink href="/futon_gpt"><img src="/icons/announcement.png"/>FutonGPT</ListLink>
+								</ul>
+							</ItemList>
+							<br/>
+							<ItemList header_name={"My Code!"}>
+								<ul>
+								<ListLink href="https://github.com/eves26phylum"><FontAwesomeIcon icon={faGithub}/>GitHub</ListLink>
 								</ul>
 							</ItemList>
 						</div>
