@@ -1,5 +1,5 @@
 <blog>
-	<title>First log</title>
+	<title>First log: Hardening My Digital Setup, and Preparing For More</title>
 	<text>Today is a nice day. I get to take the day off, and I just finished creating the log feature for this website.</text>
 	<text>My hardened setup is now complete with <link to="https://bitwarden.com">BitWarden</link> as my password manager.</text>
 	<text>BitWarden is an open-source (meaning you can self-host it!) password manager run by a private company, created in 2016. It is a secure way of managing your passwords—instead of remembering a password for each site—you get to remember one master password, and place that into BitWarden for them to be able to remember your other passwords, and even generate random passwords for every site for more security! This means, you just have to remember one super secure password that you know you will remember—instead of being forced to remember a password for every site, and end up making your passwords less secure, with more re-usage across sites. BitWarden encrypts your other passwords based on your master password with a <link to="https://bitwarden.com/help/what-encryption-is-used/">secure algorithm</link></text>
