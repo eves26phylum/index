@@ -46,9 +46,9 @@ export function Blog({is_log}: {is_log?: boolean}) {
 		}
 		<br/>
 				{blogs ? blogs.map((blog: Blog, index: number) => {
-					return<tr key={index}>
-						<NavLink to={`/${is_log ? "" : "b"}log/${blog.id}`} style={{"fontWeight": "bold"}}>{blog.blog_title}</NavLink>
-						<br/><small>{new Date(blog.creation_date * 1000).toLocaleDateString()}</small>	
+			return<div key={index}>
+				<NavLink to={`/${is_log ? "" : "b"}log/${blog.id}`} style={{"fontWeight": "bold"}}>{blog.blog_title}</NavLink>
+				<br/><small>{new Date(blog.creation_date * 1000).toLocaleDateString()}</small>	
 
 				<small>
 					<div>Tags: {blog.tags.map((tag: string, index: number) => {
@@ -56,13 +56,14 @@ export function Blog({is_log}: {is_log?: boolean}) {
 					})}</div>	
 				</small>
 
-				
+
 				<small>
 					{blog.authors.map((tag: string, index: number) => {
 						return <p key={index}>{tag}</p>
 					})}
 				</small>
-					</tr> 
+				<br/>
+			</div> 
 				}) : undefined}
 		{ blogs?.length === 0 && <strong>This page is a work in-progress; I haven't written anything yet.</strong> }
 

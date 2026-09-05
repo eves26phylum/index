@@ -9,7 +9,7 @@ export function GPT() {
 		<p>Now, prepare. FutonGPT is readier than ever, to answer your questions—and the AI assistant of the future.</p>
 		<p>With the new RandomTokenRemover (RTR) feature—it removes random tokens from what our AI assistant sees; to reduce on token cost and increase efficiency!</p>
 		<p>Take a look at this benchmark conducted by yours, truly.</p>
-		<table>
+		<table className="greyble">
 			<thead>
 				<tr>
 					<td>Model</td>
