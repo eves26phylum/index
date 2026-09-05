@@ -33,12 +33,12 @@ export function Blog({is_log}: {is_log?: boolean}) {
 	return <>
 		{ is_log ?
 			<>
-				<h4 className="titles">My Log</h4>
+				<h2 className="titles">My Log</h2>
 				<p>Here, I will post whatever goes on my day—whenever I feel like it.</p>
 			</>
 			:
 			<>
-				<h4 className="titles">Blog</h4>
+				<h2 className="titles">Blog</h2>
 				<p>A collection of thoughts I find interesting.</p>
 			</>
 		}

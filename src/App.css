@@ -24,6 +24,7 @@ a {
 	font-weight: bold;
 }
 #root {
+	padding-top: 0.5rem;
 	padding-right: 10rem;
 }
 h2.titles {
@@ -779,8 +780,6 @@ table.mini {
 }
 body {
 	font-size: 13px;
-    margin: 0;
-    padding: 0;
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
