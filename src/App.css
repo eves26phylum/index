@@ -487,6 +487,9 @@ button.drop-menu-toggle.open, button.drop-menu-toggle:hover.open {
 .mini td {
 	width: fit-content;
 }
+.greyble td, .greyble td {
+	border: 1px grey solid;
+}
 .justify-right {
     justify-content: right;
 }

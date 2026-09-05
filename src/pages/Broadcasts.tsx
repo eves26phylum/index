@@ -10,7 +10,15 @@ function Broadcast(
 export function Broadcasts() {
 	return <>
 		<strong>What I'm saying</strong>
-		<table>
+		<table className="greyble">
+			<thead>
+				<th>
+					Broadcast
+				</th>
+				<th>
+					Date
+				</th>
+			</thead>
 			<tbody>
 				<Broadcast date={
 					1787833605
