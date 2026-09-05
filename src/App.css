@@ -92,7 +92,6 @@ table.blog td {
 }
 .email-button {
 	/* padding: 0.5rem 1rem; */
-	font-size: 1rem;
 	background-color: var(--background-color);
 	border: none;
 	font-family: "Verdana";
@@ -338,6 +337,17 @@ code {
 }
 .clipboardCopy.green {
     background-color: rgb(37, 176, 74);
+}
+.manie {
+	width: 100%;
+}
+table.maincontentstuff {
+	width: 100%;
+}
+h1 {
+	font-weight: normal;
+	width: 100%;
+	text-align: center;
 }
 .presentation {
     /* justify-content: center; */
@@ -739,6 +749,7 @@ html.turned-off body {
     flex-grow: 1;
 }
 body {
+	font-size: 13px;
     margin: 0;
     padding: 0;
     min-height: 100dvh;

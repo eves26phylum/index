@@ -171,14 +171,14 @@ export function App() {
 				<table className='maincontentstuff'>
 				<tbody>
 					<tr>
-						<td>
+						<td style={{"width": "0"}}>
 						<div className="left-column">
 							<ItemList header_name={"Links!"}>
 								<ul>
-								<ListLink to="/"><img src="/icons/home.png"/>Home</ListLink>
-								<ListLink to="/blog"><img src="/icons/blogs.png"/>Read my blogs</ListLink>
-								<ListLink to="/log"><img src="/icons/logs.png"/>Read my logs</ListLink>
-								<ListLink to="/futon_gpt"><img src="/icons/announcement.png"/>FutonGPT</ListLink>
+								<ListLink href="/"><img src="/icons/home.png"/>Home</ListLink>
+								<ListLink href="/blog"><img src="/icons/blogs.png"/>Read my blogs</ListLink>
+								<ListLink href="/log"><img src="/icons/logs.png"/>Read my logs</ListLink>
+								<ListLink href="/futon_gpt"><img src="/icons/announcement.png"/>FutonGPT</ListLink>
 								</ul>
 							</ItemList>
 						</div>

@@ -10,8 +10,8 @@ export function ItemList({children, header_name}: {children: React.ReactNode, he
 		{children}
 	</div>
 }
-export function ListLink(props: NavLinkProps) {
+export function ListLink(props: React.ComponentProps<"a">) {
 	return <li>
-		<NavLink className={({isActive}) => isActive ? "active" : ""} {...props}/>
+		<a {...props}/>
 	</li>
 }
