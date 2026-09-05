@@ -7,11 +7,6 @@ import { DestructiveActions } from "./DestructiveActions";
 import { PizzaComponent } from "../components/pizza_party";
 import { Broadcasts } from "./Broadcasts";
 import { useState } from "react";
-export function Header({children}: {children?: React.ReactNode}) {
-	return <div className="header-w">
-		{children}
-	</div>
-}
 export function DarkModeToggle({setCheckedDarkMode, checkedDarkMode}: {setCheckedDarkMode: React.Dispatch<React.SetStateAction<boolean>>, checkedDarkMode: boolean}) {
 	return <div className="row tiny-gappy flexy pointy-cursor" onClick={()=>{
 						document.body.classList.toggle('dark_mode');
@@ -21,12 +16,6 @@ export function DarkModeToggle({setCheckedDarkMode, checkedDarkMode}: {setChecke
 						<input type="checkbox" checked={checkedDarkMode} />
 						<span>Enable Dark Mode</span>
 					</div>
-}
-export function ItemList({children, header_name}: {children: React.ReactNode, header_name: string}) {
-	return <div className="headbox">
-		<Header>{header_name}</Header>
-		{children}
-	</div>
 }
 export function GitHub() {
 	return <NavLink target="_blank" to="https://github.com/eves26phylum">
@@ -48,32 +37,9 @@ export function Rabbit() {
 							🐇
 						</div>
 }
-export function ListLink(props: NavLinkProps) {
-	return <li>
-		<NavLink className={({isActive}) => isActive ? "active" : ""} {...props}/>
-	</li>
-}
 export function HomePage() {
 		const [checkedDarkMode, setCheckedDarkMode] = useState<boolean>(localStorage.getItem('dark_mode') === 'true');
-    return <div className="mainContent presentation">
-		<table className="blog end">
-			<tbody>
-				<tr>
-					<td>
-						<div className="left-column">
-							<ItemList header_name={"Links!"}>
-								<ul>
-								<ListLink to="/"><img src="/icons/home.png"/>Home</ListLink>
-								<ListLink to="/blog"><img src="/icons/blogs.png"/>Read my blogs</ListLink>
-								<ListLink to="/log"><img src="/icons/logs.png"/>Read my logs</ListLink>
-								<ListLink to="/futon_gpt"><img src="/icons/announcement.png"/>FutonGPT</ListLink>
-								</ul>
-							</ItemList>
-						</div>
-					</td>
-					<td>
-						<div className="default maincontent">
-
+    return <>
 							<div className="mini-column">
 								<div>
 									<p>A person you might never hear from again.</p>
@@ -86,10 +52,5 @@ export function HomePage() {
 							<div className="mini-column">
 								<PizzaComponent/>	
 							</div>
-						</div>
-					</td>
-				</tr>
-			</tbody>
-		</table>
-    </div>
+	</>
 }
