@@ -15,6 +15,16 @@
     --accent-gradient-select: linear-gradient(to bottom, var(--darkened-accent-darker) 0%, var(--darkened-accent) 20%, var(--darkened-accent) 100%);
 		--input-colour: rgb(226, 226, 226);
 }
+.mini-column > .mini-column { /* mini-column ception */
+	border: 1px black solid;
+	/* background-image: linear-gradient(to top, rgb(200, 200, 200) 0%, white 100%); */
+	/* padding: 1rem; */
+}
+.header-w {
+	background-image: linear-gradient(to top, rgb(200, 200, 230) 0%, rgb(170, 170, 200) 100%);
+	padding: 2px 6px;
+	font-weight: bold;
+}
 .hidden {
 	display: none;
 }

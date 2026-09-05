@@ -7,6 +7,44 @@ import { DestructiveActions } from "./DestructiveActions";
 import { PizzaComponent } from "../components/pizza_party";
 import { Broadcasts } from "./Broadcasts";
 import { useState } from "react";
+export function Header({children}: {children?: React.ReactNode}) {
+	return <div className="header-w">
+		{children}
+	</div>
+}
+export function DarkModeToggle({setCheckedDarkMode, checkedDarkMode}: {setCheckedDarkMode: React.Dispatch<React.SetStateAction<boolean>>, checkedDarkMode: boolean}) {
+	return <div className="row tiny-gappy flexy pointy-cursor" onClick={()=>{
+						document.body.classList.toggle('dark_mode');
+						localStorage.setItem('dark_mode', document.body.classList.contains("dark_mode").toString());
+						setCheckedDarkMode(document.body.classList.contains("dark_mode"));
+					}}>
+						<input type="checkbox" checked={checkedDarkMode} />
+						<span>Enable Dark Mode</span>
+					</div>
+}
+export function ItemList({items, header_name}: {items: React.ReactNode, header_name: string}) {
+	return <div className="headbox">
+		<Header>{header_name}</Header>
+		<div className="content-head">
+			{items}
+		</div>
+	</div>
+}
+export function GitHub() {
+	return <NavLink target="_blank" to="https://github.com/eves26phylum">
+											<FontAwesomeIcon icon={faGithub}/>
+											GitHub
+										</NavLink>
+}
+export function Codeberg() {
+	return <NavLink target="_blank" to="https://codeberg.org/eves26phylum">
+											<FontAwesomeIcon icon={faCodeberg}/>
+											Codeberg
+										</NavLink>
+}
+export function Mailer() {
+	return <MailMe ClipboardCopyButton={ClipboardCopyButton}/>
+}
 export function HomePage() {
 		const [checkedDarkMode, setCheckedDarkMode] = useState<boolean>(localStorage.getItem('dark_mode') === 'true');
     return <div className="mainContent presentation">
@@ -14,37 +52,23 @@ export function HomePage() {
             <div className="default middle row space-between">
                 <h1>eves26phylum</h1>
                 <div className="boogie row">
-										<MailMe ClipboardCopyButton={ClipboardCopyButton}/>
-										<NavLink target="_blank" to="https://github.com/eves26phylum">
-											<FontAwesomeIcon icon={faGithub}/>
-											GitHub
-										</NavLink>
-										<NavLink target="_blank" to="https://codeberg.org/eves26phylum">
-											<FontAwesomeIcon icon={faCodeberg}/>
-											Codeberg
-										</NavLink>
                 </div>
             </div>
             <div className="default">
-								<div>
-									<p>A person you might never hear from again.</p>
-									<p>Australian 🇦🇺 who does software development as a hobby</p>
-								</div>
-								<DestructiveActions/>
-								<hr/>
 								<div className="double-column gapper">
 									<div className="mini-column">
-										<div className="row tiny-gappy flexy pointy-cursor" onClick={()=>{
-							document.body.classList.toggle('dark_mode');
-              localStorage.setItem('dark_mode', document.body.classList.contains("dark_mode").toString());
-							setCheckedDarkMode(document.body.classList.contains("dark_mode"));
-						}}>
-											<input type="checkbox" checked={checkedDarkMode} />
-											<span>Enable Dark Mode</span>
-										</div>
-										<NavLink to="/blog">Read my blogs</NavLink>
-										<NavLink to="/log">Read my logs</NavLink>
-										<NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</NavLink>
+						<div className="mini-column">
+							<Header>eves26phylum</Header>
+							<div>
+								<p>A person you might never hear from again.</p>
+								<p>Australian 🇦🇺 who does software development as a hobby</p>
+							</div>
+							<DestructiveActions/>
+							<hr/>
+							<NavLink to="/blog">Read my blogs</NavLink>
+							<NavLink to="/log">Read my logs</NavLink>
+							<NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</NavLink>
+						</div>
 										<Broadcasts/>
 									</div>
 									<div className="mini-column">
