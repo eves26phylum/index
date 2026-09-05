@@ -12,10 +12,10 @@ export function GPT() {
 		<table className="greyble">
 			<thead>
 				<tr>
-					<td>Model</td>
-					<td>Speed</td>
-					<td>Smart</td>
-					<td>Funny</td>
+					<th>Model</th>
+					<th>Speed</th>
+					<th>Smart</th>
+					<th>Funny</th>
 				</tr>
 			</thead>
 			<tbody>
