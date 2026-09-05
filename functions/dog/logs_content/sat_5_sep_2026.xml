@@ -12,5 +12,5 @@
 	<text>I will continue tinkering with <link to="https://bevy.org">Bevy</link> and experimenting with <link to="https://www.geeksforgeeks.org/javascript/server-side-rendering-vs-client-side-rendering-vs-server-side-generation/">SSR</link> soon. Maybe even working on something within Rust, or exploring something else.</text>
 	<text>Bevy is a game engine, written in Rust. It is <link to="https://rust-lang.org">blazingly fast 🚀</link>, based on the ECS paradigm, installable as a single cargo crate. It's not <link to="https://crates.io/crates/bevy">production-ready</link> yet, but I think it will be fun to work with. It's different to some other game engines—it's open-source, <link to="https://www.reddit.com/r/Unity3D/comments/16he67l/so_i_did_some_math_on_the_unity_runtime_fee_and/">free</link>, and does not rely on large inheritance trees.</text>
 	<text>I didn't do much today. I also configured a couple of browser settings.</text>
-	<bold>I hope you enjoyed reading my first log, even if it didn't convince you to use any of the things I listed here—though, I recommend it, it's been useful for me!</bold>
+	<text>I hope you enjoyed reading my first log, even if it didn't convince you to use any of the things I listed here—though, I recommend it, it's been useful for me!</text>
 </blog>
