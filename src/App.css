@@ -20,6 +20,19 @@
 	/* background-image: linear-gradient(to top, rgb(200, 200, 200) 0%, white 100%); */
 	/* padding: 1rem; */
 }
+.highlight {
+	background-image: linear-gradient(to top, rgb(200, 200, 230) 0%, rgb(170, 170, 200) 100%);
+	padding: 2px 6px;
+	font-weight: bold;
+}
+td {
+	text-align: left;
+	vertical-align: top;
+}
+table.blog td {
+	padding: 0rem;
+	border: none;
+}
 .header-w {
 	background-image: linear-gradient(to top, rgb(200, 200, 230) 0%, rgb(170, 170, 200) 100%);
 	padding: 2px 6px;

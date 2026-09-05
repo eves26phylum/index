@@ -45,40 +45,44 @@ export function Codeberg() {
 export function Mailer() {
 	return <MailMe ClipboardCopyButton={ClipboardCopyButton}/>
 }
+export function Rabbit() {
+	return <div className="rabbit_that_takes_up_everything_and_is_only_for_filler_and_serves_no_other_purpose" aria-hidden={true}>
+							🐇
+						</div>
+}
 export function HomePage() {
 		const [checkedDarkMode, setCheckedDarkMode] = useState<boolean>(localStorage.getItem('dark_mode') === 'true');
     return <div className="mainContent presentation">
-        <div className="blog end">
-            <div className="default middle row space-between">
-                <h1>eves26phylum</h1>
-                <div className="boogie row">
-                </div>
-            </div>
-            <div className="default">
-								<div className="double-column gapper">
-									<div className="mini-column">
-						<div className="mini-column">
-							<Header>eves26phylum</Header>
-							<div>
-								<p>A person you might never hear from again.</p>
-								<p>Australian 🇦🇺 who does software development as a hobby</p>
-							</div>
-							<DestructiveActions/>
-							<hr/>
-							<NavLink to="/blog">Read my blogs</NavLink>
-							<NavLink to="/log">Read my logs</NavLink>
-							<NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</NavLink>
+		<table className="blog end">
+			<tbody>
+				<tr>
+					<td>
+						<h1>eves26phylum</h1>
+						<div className="boogie row">
 						</div>
-										<Broadcasts/>
-									</div>
-									<div className="mini-column">
-										<PizzaComponent/>	
-									</div>
+					</td>
+					<td>
+						<div className="default maincontent">
+
+							<div className="mini-column">
+								<div>
+									<p>A person you might never hear from again.</p>
+									<p>Australian 🇦🇺 who does software development as a hobby</p>
 								</div>
-            </div>
-						<div className="rabbit_that_takes_up_everything_and_is_only_for_filler_and_serves_no_other_purpose" aria-hidden={true}>
-							🐇
+								<DestructiveActions/>
+								<hr/>
+								<NavLink to="/blog">Read my blogs</NavLink>
+								<NavLink to="/log">Read my logs</NavLink>
+								<NavLink to="/futon_gpt">FutonGPT Public Release Announcement: A New Era of Efficiency</NavLink>
+								<Broadcasts/>
+							</div>
+							<div className="mini-column">
+								<PizzaComponent/>	
+							</div>
 						</div>
-        </div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
     </div>
 }

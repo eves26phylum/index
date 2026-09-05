@@ -104,7 +104,7 @@ function GoHomePortalHost() { // non-idiomatic fix for my really bad code, it sm
   const [place, setPlace] = useState<Element | null>(null);
   const portalContainerRef = useRef<null | Element>(null);
   useEffect(() => {
-    const root = document.querySelector(".blog");
+    const root = document.querySelector(".maincontent") || document.querySelector(".blog");
     if (!root) {
       console.log("No root, this is an error.");
       setPlace(null);
