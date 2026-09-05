@@ -568,7 +568,7 @@ footer {
     padding: 0rem 0.5rem;
 }
 .progressBar {
-		width: 500px;
+		width: clamp(100px, 500px, 20rem);
     background-color: var(--secondary);
     border-bottom: 2px rgb(27, 27, 27) solid;
     display: flex;
