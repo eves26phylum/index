@@ -41,7 +41,7 @@ export function Blog({is_log}: {is_log?: boolean}) {
 			<div className="blogs-list">
 				{blogs ? blogs.map((blog: Blog, index: number) => {
 					return <div key={index} className="blog-card">
-						<NavLink to={`/blog/${blog.id}`}>{blog.blog_title}</NavLink>
+						<NavLink to={`/${is_log ? "" : "b"}log/${blog.id}`}>{blog.blog_title}</NavLink>
 						<hr/>
 						<div>
 						<p className="mini-text">Creation date</p>
