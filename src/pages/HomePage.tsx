@@ -1,8 +1,6 @@
 import { NavLink, type NavLinkProps } from "react-router";
 import { faGithub, faCodeberg } from "@fortawesome/free-brands-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { MailMe } from "./Mail";
-import { ClipboardCopyButton } from "../components/ClipboardCopy";
 import { DestructiveActions } from "./DestructiveActions";
 import { PizzaComponent } from "../components/pizza_party";
 import { Broadcasts } from "./Broadcasts";
@@ -18,9 +16,6 @@ export function Codeberg() {
 											<FontAwesomeIcon icon={faCodeberg}/>
 											Codeberg
 										</NavLink>
-}
-export function Mailer() {
-	return <MailMe ClipboardCopyButton={ClipboardCopyButton}/>
 }
 export function Rabbit() {
 	return <div className="rabbit_that_takes_up_everything_and_is_only_for_filler_and_serves_no_other_purpose" aria-hidden={true}>

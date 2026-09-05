@@ -14,6 +14,8 @@ import { ItemList, ListLink } from './components/sidebar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCodeberg, faGithub } from '@fortawesome/free-brands-svg-icons';
 export type uuid = ReturnType<Crypto["randomUUID"]>;
+import { MailMe } from "./pages/Mail";
+import { ClipboardCopyButton } from "./components/ClipboardCopy";
 export type ModalContextType = {
   destroyModalByUUID: (uuid: uuid) => void,
   addModal: (modal: React.ReactElement, uuid?: uuid) => uuid
@@ -134,6 +136,9 @@ export function DarkModeToggle({setCheckedDarkMode, checkedDarkMode}: {setChecke
 						<span>Enable Dark Mode</span>
 					</div>
 }
+export function Mailer() {
+	return <MailMe ClipboardCopyButton={ClipboardCopyButton}/>
+}
 export type modal = {uuid: string, modal: React.ReactElement, zindex: number};
 export function App() {
   const [modals, setModals] = useState<modal[]>([]);
@@ -187,6 +192,8 @@ export function App() {
 						<td style={{"width": "0"}}>
 						<div className="left-column">
 							<h2>eves26phylum</h2>
+							<br/>
+							<Mailer/>
 							<br/>
 							{/* <DarkModeToggle checkedDarkMode={checkedDarkMode} setCheckedDarkMode={setCheckedDarkMode}/> */}
 							{/* <br/> */}
