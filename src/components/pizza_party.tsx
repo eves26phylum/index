@@ -98,6 +98,7 @@ export function PizzaComponent() {
                     <p>people who claimed the pizza</p>
 										<PizzaUsersList user_list={userList}/>
                 </div>
+			<br/>
                 <div>
                 { 
                     Array(pizzaCount).fill("").map(() => {
@@ -105,6 +106,7 @@ export function PizzaComponent() {
                     })
                 }
                 </div>
+			<br/>
 								<div className='row gappy'>
                 { hasClaimed ? <></> : <input 
                     type="text" 
@@ -131,6 +133,7 @@ export function PizzaComponent() {
 								</div>
                 { statusText.trim() !== "" ?
                     <p className={statusGood ? 'status-text' : 'error-status'}>{statusText}</p> : <></> }
+			<br/>
 								<p>This pizza party was made in celebration of something. Now, it's open to anyone—just place your name, and claim a delicious (virtual) pizza!</p>
 						</>
     );

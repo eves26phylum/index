@@ -46,13 +46,15 @@ export function HomePage() {
 			<p>A person you might never hear from again.</p>
 			<p>Australian 🇦🇺 who does software development as a hobby</p>
 		</div>
-		<DestructiveActions/>
 		<br/>
 		<h2 className="titles">Fun stuff!</h2>
 		<br/>
 		<table>
 			<tr>
-				<td><Broadcasts/></td>
+				<td>
+		<DestructiveActions/>
+					<br/>
+					<Broadcasts/></td>
 				<td><PizzaComponent/></td>	
 			</tr>
 		</table>

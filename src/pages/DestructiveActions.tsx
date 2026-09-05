@@ -4,7 +4,7 @@ import { getUnixTimestampOfTime, secondsToYears, getUltraDeadline, getStartTask,
 
                                 // localStorage.setItem('dark_mode', document.body.classList.contains("dark_mode").toString());
 export function LearningProgressBar({progress, children, outerChildren}: {progress: number, children?: React.ReactNode, outerChildren?: React.ReactNode}) {
-		return <div className="progressBar">
+		return <div className="progressBar" style={{"maxWidth": "500px"}}>
         <div className="progressIns" style={{
                 width: `${progress * 100}%`
         }}>

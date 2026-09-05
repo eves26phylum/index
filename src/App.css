@@ -118,7 +118,7 @@ table.blog td {
 }
 .the-box {
     border: 1px var(--text-color) solid;
-    padding: 1rem;
+    padding: 2px 6px;
 }
 .status-text {
     color: green;
