@@ -12,7 +12,7 @@ import { GoHome } from './components/go_home';
 import { createPortal } from 'react-dom';
 import { ItemList, ListLink } from './components/sidebar';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGithub } from '@fortawesome/free-brands-svg-icons';
+import { faCodeberg, faGithub } from '@fortawesome/free-brands-svg-icons';
 export type uuid = ReturnType<Crypto["randomUUID"]>;
 export type ModalContextType = {
   destroyModalByUUID: (uuid: uuid) => void,
@@ -201,7 +201,8 @@ export function App() {
 							<br/>
 							<ItemList header_name={"My Code!"}>
 								<ul>
-								<ListLink href="https://github.com/eves26phylum"><FontAwesomeIcon icon={faGithub}/>GitHub</ListLink>
+								<ListLink href="https://github.com/eves26phylum"><FontAwesomeIcon style={{"width": "31px", "height": '21px'}} icon={faGithub}/>GitHub</ListLink>
+								<ListLink href="https://codeberg.org/eves26phylum"><FontAwesomeIcon style={{"width": "31px", "height": '21px'}} icon={faCodeberg}/>Codeberg</ListLink>
 								</ul>
 							</ItemList>
 						</div>
