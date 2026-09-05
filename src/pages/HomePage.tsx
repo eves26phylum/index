@@ -40,17 +40,22 @@ export function Rabbit() {
 export function HomePage() {
 		const [checkedDarkMode, setCheckedDarkMode] = useState<boolean>(localStorage.getItem('dark_mode') === 'true');
     return <>
-							<div className="mini-column">
-								<div>
-									<p>A person you might never hear from again.</p>
-									<p>Australian 🇦🇺 who does software development as a hobby</p>
-								</div>
-								<DestructiveActions/>
-								<hr/>
-								<Broadcasts/>
-							</div>
-							<div className="mini-column">
-								<PizzaComponent/>	
-							</div>
+		<h1>eves26phylum</h1>
+		<table>
+			<tr>
+				<td>
+					<div>
+						<p>A person you might never hear from again.</p>
+						<p>Australian 🇦🇺 who does software development as a hobby</p>
+					</div>
+					<DestructiveActions/>
+					<hr/>
+				</td>
+				<td>
+					<Broadcasts/>
+					<PizzaComponent/>	
+				</td>
+			</tr>
+		</table>
 	</>
 }
